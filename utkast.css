@@ -1,0 +1,983 @@
+body {
+  width: 480px;
+  /* text-align: center; */
+  margin: auto;
+}
+
+
+header {
+    display: flex;
+    grid-area: 1 / span 6;
+    background-color: #011827;
+    background-image: url("");
+    background-repeat: no-repeat;
+    font-family: "Roboto", sans-serif;
+     width: 100%; 
+    height: 216px;
+}
+
+     /* header { 
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px; */
+    /* } */
+
+    figcaption {
+        display: flex;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-style: bold;
+        font-size: 1.5rem;
+        font-style: bold;
+        font-weight: 700;
+        align-items: last baseline;
+        align-content: center;
+        margin-left: 15px;
+        /* margin-top: 10px; */
+        /* width: 110px; */
+    }
+
+    .logo {
+        /*Loggo samma storlek och margin i desktop och mobile */
+        width: 200px;
+        height: 140px;
+        margin-top: 20px;
+        margin-left: 27px;
+    }
+
+    .playOne,.playTwo,.story,.contact {
+        display: none;
+    }
+
+    .onlineBtn {
+        display: none;
+    }
+
+    .btnList {
+        list-style: none;
+    }
+
+    .mobileOnline {
+        display: inline block;
+        list-style: none;
+        color: #36769D;
+        background-color: white;
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        top: 180px;
+        width: 308px;
+        height: 30px;
+        border: none;
+        text-decoration: underline;
+    }
+
+    .onsiteBtn {
+        background-color: #8ACFE5;
+        font-family: "Roboto", sans-serif;
+        border-radius: 5px;
+        font-size: 30px;
+        font-weight: 700;
+        width: 80%;
+        height: 100px;
+        margin-bottom: 50px;
+        border: none;
+    }
+
+    .userImg {
+        float: left;
+    }
+
+    .reviewOne {
+        padding-left: 300px;
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 400;
+        margin-left: 80px;
+        margin-top: 70px;
+        width: 522px;
+        height: 139px;
+    }
+
+    .reviewTwo {
+        display: none;
+    }
+
+    .name {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        margin-left: 80px;
+    }
+
+    .popular {
+        font-family: "Roboto", sans-serif;
+        font-style: bold;
+        font-weight: 400;
+        font-size: 45px;
+        margin-left: 80px;
+    }
+
+    .imageCard {
+        width: 100%;
+        height: auto;
+    }
+
+    .scroll {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        gap: 50px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+        font-family: "Roboto", sans-serif;
+        background-color: white;
+        border: #011827;
+        margin-bottom: 20px;
+    }
+
+    .cardTwo {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+        font-family: "Roboto", sans-serif;
+        background-color: white;
+        border: #011827;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cardThree {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+        font-family: "Roboto", sans-serif;
+        background-color: white;
+        border: #011827;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .roomTitle {
+        font-family: "Roboto" sans-serif;
+        font-size: 50px;
+        text-align: left;
+        margin-left: 10px;
+        font-weight: 400;
+    }
+
+    .star {
+        float: left;
+        margin-left: 10px;
+        margin-top: -50px;
+    }
+
+    .participants {
+        font-family: "Roboto" sans-serif;
+        font-size: 20px;
+        margin-left: -170px;
+        font-weight: 400;
+        margin-top: -50px;
+    }
+
+    .roomInfo {
+        font-family: "Roboto" sans-serif;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 400;
+        padding: 20px;
+    }
+
+    .book {
+        float: right;
+        width: 300px;
+        height: 90px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-color: #E3170A;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .btnTwo {
+        list-style: none;
+    }
+
+    .mobileOnlineTwo {
+        display: inline block;
+        list-style: none;
+        color: #36769D;
+        background-color: white;
+        font-size: 24px;
+        font-weight: 700;
+        top: 180px;
+        width: 308px;
+        height: 30px;
+        border: none;
+        text-decoration: underline;
+    }
+
+    .onsiteBtnTwo {
+        background-color: #8ACFE5;
+        border-radius: 5px;
+        font-size: 30px;
+        font-weight: 700;
+        width: 80%;
+        height: 100px;
+        margin-bottom: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .onlineBtnTwo {
+        display: none;
+    }
+
+    .about {
+        background-color: #011827;
+        color: white;
+        height: 800px;
+        font-size: 60px;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        text-align: center;
+        padding-top: 100px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .aboutBtn {
+        border-color: #8ACFE5;
+        color: #8ACFE5;
+        background-color: #011827;
+        margin-top: 55px;
+        width: 500px;
+        height: 150px;
+        border-radius: 5px;
+        font-size: 50px;
+    }
+
+    .bookingImg {
+        width: 100%;
+        height: auto;
+    }
+
+    .bookingHead {
+        display: flex;
+        text-align: left;
+        font-size: 50px;
+        font-family: "Roboto" sans-serif;
+        font-weight: 700;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .bookingText {
+        display: flex;
+        text-align: left;
+        font-family: "Roboto" sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .bookingBtn {
+        display: block;
+        align-items: center;
+        width: 308px;
+        height: 66px;
+        border: none;
+        background-color: #E3170A;
+        color: white;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin-left: 150px;
+        margin-bottom: 50px;
+    }
+
+    .challengesImg {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+    .challengesHead {
+        display: flex;
+        text-align: left;
+        font-size: 50px;
+        font-family: "Roboto" sans-serif;
+        font-weight: 700;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .challengesText {
+        display: flex;
+        text-align: left;
+        font-family: "Roboto" sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .challengesBtn {
+        display: block;
+        align-items: center;
+        width: 308px;
+        height: 66px;
+        border: none;
+        background-color: #E3170A;
+        color: white;
+        border-radius: 5px;
+        font-style: "Roboto", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin-left: 150px;
+        margin-bottom: 50px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        background-color: #011827;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        width: auto;
+        height: auto;
+        padding-left: 40px;
+        align-content: center;
+    }
+
+    .footerHead {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        margin-left: -800px;
+    }
+
+    .footerText {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        width: 700px;
+        text-align: left;
+        margin-left: 40px;
+    }
+
+    .siteMap {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: white;
+        text-align: left;
+        margin-left: 40px;
+    }
+
+    h4 {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .siteList {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        list-style: none;
+        text-align: left;
+        margin-left: -30px;
+    }
+
+    .socials {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        display: block;
+        color: white;
+        text-align: left;
+        margin-left: 40px;
+    }
+
+    .socialHead {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .socialList {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        list-style: none;
+        text-align: left;
+        margin-left: -30px;
+    }
+/*
+@media (min-width: 480px) and(max-width:1020px) {
+
+  .mobileOnline,
+  .mobileOnlineTwo {
+    display: none;
+  }
+
+  .logo {
+    width: 128px;
+    height: 82px;
+    margin-top: 26px;
+    margin-left: 27px;
+  }
+
+  header {
+    grid-area: 1 / span 6;
+    background-color: #011827;
+    font-family: "Roboto", sans-serif;
+    width: 1280px;
+    height: 220px;
+  }
+
+  .headFlex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .head {
+    display: flex;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 15px;
+    margin-top: 50px;
+    margin-bottom: -15px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+
+  .playOne:hover,
+  .playTwo:hover,
+  .story:hover,
+  .contact:hover {
+    color: #8ACFE5;
+  }
+
+  .playOne {
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 215px;
+    margin-top: 60px;
+    border: none;
+    background-color: #011827;
+    color: white;
+  }
+
+  .playTwo {
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-left: 100px;
+    border: none;
+    background-color: #011827;
+    color: white;
+  }
+
+  .story {
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-left: 100px;
+    border: none;
+    background-color: #011827;
+    color: white;
+  }
+
+  .contact {
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 100px;
+    margin-right: auto;
+    margin-top: 60px;
+    border: none;
+    background-color: #011827;
+    color: white;
+  }
+
+  .btnList {
+    list-style: none;
+    list-style-type: none;
+    margin-left: 25%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: -40px;
+  }
+
+  .onlineBtn {
+    display: block;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #E3170A;
+    color: white;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 20px;
+  }
+
+  .onsiteBtn {
+    display: block;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #8ACFE5;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .userImg {
+    float: left;
+  }
+
+  .reviews {
+    display: flex;
+  }
+
+  .reviewOne {
+    float: left;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: 80px;
+    margin-top: 70px;
+    width: 522px;
+    height: 139px;
+  }
+
+  .reviewTwo {
+    float: right;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-top: 70px;
+    width: 522px;
+    height: 139px;
+  }
+
+  .reviewTwo {
+    flex-direction: row;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-top: 70px;
+    width: 522px;
+    height: 139px;
+  }
+
+  .name {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 80px;
+  }
+
+  .userImg {
+    float: left;
+  }
+
+  .popular {
+    font-family: "Roboto", sans-serif;
+    font-style: bold;
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 80px;
+  }
+
+  .imageCard {
+    width: 100%;
+    height: auto;
+  }
+
+  .scroll {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    border: #011827;
+    margin-bottom: 20px;
+  }
+
+  .cardTwo {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    border: #011827;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cardThree {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    border: #011827;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .roomTitle {
+    font-family: "Roboto" sans-serif;
+    font-size: 28px;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 400;
+  }
+
+  .star {
+    float: left;
+    margin-left: 10px;
+  }
+
+  .participants {
+    display: flex;
+    justify-content: end;
+    font-family: "Roboto" sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 15px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+  .roomInfo {
+    font-family: "Roboto" sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 400;
+    margin-left: 10px;
+    padding: 20px;
+  }
+
+  .book {
+    float: right;
+    width: 200px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #E3170A;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .btnTwo {
+    list-style: none;
+    list-style-type: none;
+    margin-left: 25%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    list-style: none;
+  }
+
+  .onlineBtnTwo {
+    display: block;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #E3170A;
+    color: white;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 20px;
+  }
+
+  .onsiteBtnTwo {
+    display: block;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #8ACFE5;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .about {
+    background-color: #011827;
+    color: white;
+    width: 1280px;
+    height: 500px;
+    font-size: 35px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .aboutBtn {
+    border-color: #8ACFE5;
+    color: #8ACFE5;
+    background-color: #011827;
+    margin-top: 40px;
+    width: 350px;
+    height: 90px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-style: normal;
+    font-family: "Roboto" sans-serif;
+    font-weight: 700;
+  }
+
+  .bookingImg {
+    float: left
+  }
+
+  .bookingHead {
+    display: flex;
+    text-align: left;
+    font-size: 50px;
+    font-family: "Roboto" sans-serif;
+    font-weight: 700;
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+
+  .bookingText {
+    display: flex;
+    text-align: left;
+    font-family: "Roboto" sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .bookingBtn {
+    display: block;
+    align-items: center;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #E3170A;
+    color: white;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 800px;
+    margin-bottom: 50px;
+  }
+
+  .challengesImg {
+    float: right;
+  }
+
+  .challengesHead {
+    display: flex;
+    text-align: left;
+    font-size: 40px;
+    font-family: "Roboto" sans-serif;
+    font-weight: 700;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .challengesText {
+    display: flex;
+    text-align: left;
+    font-family: "Roboto" sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .challengesBtn {
+    display: block;
+    align-items: center;
+    width: 308px;
+    height: 66px;
+    border: none;
+    background-color: #E3170A;
+    color: white;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 150px;
+    margin-bottom: 50px;
+  }
+
+  footer {
+    display: flex;
+    margin-top: 400px;
+    background-color: #011827;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 1280px;
+    height: 467px;
+  }
+
+  .footerAbout {
+    display: block;
+
+  }
+
+  .footerHead {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 150px;
+  }
+
+  .footerText {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 80px;
+    width: 300px;
+    text-align: left;
+    margin-top: -10px;
+  }
+
+  .siteMap {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: block;
+    color: white;
+    text-align: left;
+    margin-left: 300px;
+  }
+
+  .siteMapHead {
+    display: flex;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 40px;
+    padding-top: 150px;
+  }
+
+  .siteList {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    list-style: none;
+    text-align: left;
+    margin-top: -10px;
+  }
+
+  .socials {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: block;
+    color: white;
+    text-align: left;
+  }
+
+  .socialHead {
+    display: flex;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 140px;
+    padding-top: 150px;
+  }
+
+  .socialList {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    list-style: none;
+    padding-left: 150px;
+    margin-top: -10px;
+  }
+}*/
