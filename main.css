@@ -2,50 +2,50 @@ html,
 body {
   font-family: "Roboto", sans-serif;
   justify-content: center;
-  margin: 0;
-  width: 480px;
+  margin: auto;
+  padding: 0%;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .header {
   background-color: #011827;
   display: flex;
-  height: 144px;
-  max-width: auto;
+  max-width: 100%;
 }
 
 .headPic {
-  height: 274px;
+  height: 17rem;
   max-width: 100%;
-  position: relative;
 }
 
 .myCover {
   max-width: 100%;
-  position: relative;
 }
 
 figcaption {
   align-content: center;
   color: white;
   display: flex;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: bold;
   font-weight: 700;
-  margin-left: 15px;
-  margin-top: 20px;
-  width: 110px;
+  margin-left: 1rem;
+  margin-top: 1.25rem;
+  width: 20%;
 }
 
 .logo {
-  height: 82px;
-  margin-top: 20px;
-  margin-left: 27px;
-  width: 128px;
+  height: 5rem;
+  margin-top: 1.25rem;
+  margin-left: 1.68rem;
+  width: 8rem;
+  padding-bottom: 2rem;
 }
 
 .menu {
   list-style: none;
-  margin-top: -20px;
+  margin-top: -1.25rem;
 }
 
 .playOne,
@@ -71,16 +71,16 @@ figcaption {
   align-items: center;
   background-color: #8ACFE5;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   display: inline-block;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
-  height: 66px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  height: 4rem;
+  margin-bottom: 1.87rem;
+  margin-top: 1.87rem;
   text-align: center;
-  width: 308px;
+  width: 70%;
 }
 
 .mobileOnline {
@@ -89,7 +89,7 @@ figcaption {
   color: #36769D;
   display: flex;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   justify-content: center;
   margin-left: auto;
@@ -99,20 +99,22 @@ figcaption {
 
 .userImg {
   float: left;
-  height: 73px;
-  margin: 5px;
-  margin-top: 25px;
-  width: 73px;
+  height: 5rem;
+  margin: 0.31rem;
+  margin-top: 1.56rem;
+  margin-left: 1.6rem;
+  width: 5rem;
 }
 
 .reviewOne {
   display: flex;
   flex-direction: column;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: italic;
   font-weight: 400;
-  height: 139px;
-  justify-content: left;
+  width: 60%;
+  margin-left: 2rem;
+  
 }
 
 .reviewTwo {
@@ -121,10 +123,10 @@ figcaption {
 
 .name {
   display: flex;
-  font-size: 18px;
+  font-size: 1.12rem;
   font-style: normal;
   font-weight: 400;
-  margin-top: -20px;
+  margin-top: -1.25rem;
 }
 
 .userImg2 {
@@ -132,7 +134,9 @@ figcaption {
 }
 
 .popular {
-  font-size: 32px;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem;
   font-weight: 400;
   text-align: center;
 }
@@ -144,14 +148,15 @@ figcaption {
 
 .scroll {
   display: flex;
-  gap: 30px;
+  gap: 1.87rem;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap; 
+  padding-right: 1rem;
 }
 
 .roomTitle {
-  font-size: 28px;
+  font-size: 1.60rem;
   font-weight: 400;
   text-align: left; 
 }
@@ -159,102 +164,107 @@ figcaption {
 .card {
   background-color: white;
   border: #011827;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
   flex-direction: column;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  width: 363px;
+  margin-bottom: 1.25rem;
+  margin-left: 0.62rem;
+  width: 364px;
 }
 
 .cardTwo {
-  background-color: white;
+ background-color: white;
   border: #011827;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
   flex-direction: column;
-  margin-bottom: 20px;
-  width: 363px;
+  margin-bottom: 1.25rem;
+  margin-left: 0.62rem;
+  width: 364px;
 }
 
 .cardThree {
-  background-color: white;
+ background-color: white;
   border: #011827;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.233);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
   flex-direction: column;
-  margin-bottom: 20px;
-  width: 363px;
+  margin-bottom: 1.25rem;
+  margin-left: 0.62rem;
+  width: 364px;
 }
 
 .star {
   align-items: center;
   float: left;
-  margin-left: 10px;
+  margin-left: 0.62rem;
 }
 
 .participants {
-  font-size: 14px;
+  font-size: 0.87rem;
   font-weight: 400;
-  text-align: left;
-  margin-left: 250px;
+  text-align: right;
+  margin-right: 0.5rem;
 }
 
 .roomInfo {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 400;
-  padding: 20px;
+  padding: 0.43rem;
+  margin: 0;
   text-align: justify;
+  
 }
 
 .btnDiv {
   display: flex;
   justify-content: end;
-  margin-bottom: 20px; 
-  margin-right: 20px;
+  margin-bottom: 1.25rem; 
+  margin-right: 1.25rem;
 }
 
 .cardBtn {
   background-color: #E3170A;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.4rem;
   color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 19px;
-  height: 44px;
-  width: 179px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 11.2rem;
   
 }
 
 .onsiteBtnTwo {
-  display: inline-block;
   align-items: center;
-  text-align: center;
   background-color: #8ACFE5;
-  font-family: "Roboto", sans-serif;
-  border-radius: 4px;
-  font-size: 24px;
-  font-weight: 700;
-  width: 308px;
-  height: 66px;
-  margin-bottom: 30px;
-  margin-top: 30px;
   border: none;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 4.13rem;
+  margin-bottom: 1.87rem;
+  margin-top: 1.87rem;
+  text-align: center;
+  width: 70%;
 }
 
 .mobileOnlineTwo {
-  display: flex;
-  justify-content: center;
-  color: #36769D;
   background-color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: auto;
-  margin-right: auto;
   border: none;
+  color: #36769D;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  margin-bottom: 1.875rem;
+  margin-right: auto;
+  margin-left: auto;
   text-decoration: underline;
-  margin-bottom: 30px;
 }
 
 .onlineBtnTwo {
@@ -262,147 +272,147 @@ figcaption {
 }
 
 .about {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 28px;
-  height: 500px;
   background-color: #011827;
+  font-size: 1.75rem;
   font-weight: 400;
+  margin-top: 1.875rem;
+  padding-bottom: 1.875rem;
+  text-align: center; 
 }
 
 .aboutText {
   color: white;
   font-style: normal;
   text-align: center;
-  padding-top: 40px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 1.56rem;
+  padding-right: 1.56rem;
+  padding-top: 2.5rem; 
 }
 
 .aboutBtn {
-  border-color: #8ACFE5;
-  color: #8ACFE5;
   background-color: #011827;
+  border-color: #8ACFE5;
+  border-radius: 0.25rem;
+  color: #8ACFE5;
   font-family: "Roboto", sans-serif;
-  margin-top: 20px;
-  width: 308px;
-  height: 66px;
-  border-radius: 4px;
-  font-size: 24px;
+  height: 4.12rem;
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  width: 70%;
 }
 
 .bookingImg {
+  height: 18.75rem;
   width: 100%;
-  height: 300px;
+  
 }
 
 .bookingHead {
   display: flex;
-  text-align: left;
-  font-size: 32px;
+  font-size: 1.7rem;
   font-weight: 700;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: left;
 }
 
 .bookingText {
   display: flex;
-  text-align: left;
   font-weight: 400;
-  font-size: 24px;
-  margin-left: 15px;
-  margin-right: 15px;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: left;
 }
 
 .bookingBtn {
-  display: block;
   align-items: center;
-  width: 308px;
-  height: 66px;
-  border: none;
   background-color: #E3170A;
+  border: none;
+  border-radius: 0.25rem;
   color: white;
-  border-radius: 4px;
+  display: block;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 50px;
-  margin-left: 15px;
+  height: 4.12rem;
+  margin-bottom: 3.12rem;
+  margin-left: 1.5rem;
+  width: 70%; 
 }
 
 .challengesImg {
+  height: 18.75rem;
   width: 100%;
-  height: 300;
 }
 
 .challengesHead {
   display: flex;
-  text-align: left;
-  font-size: 32px;
+  font-size: 1.7rem;
   font-weight: 700;
-  margin-left: 15px;
-  margin-right: 15px;
-
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: left;
 }
 
 .challengesText {
   display: flex;
-  text-align: left;
   font-weight: 400;
-  font-size: 24px;
-  margin-left: 15px;
-  margin-right: 15px;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: left;
 }
 
 .challengesBtn {
-  display: block;
   align-items: center;
-  width: 308px;
-  height: 66px;
-  border: none;
   background-color: #E3170A;
+  border: none;
+  border-radius: 0.25rem;
   color: white;
-  border-radius: 4px;
+  display: block;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 50px;
-  margin-left: 15px;
+  height: 4.12rem;
+  margin-bottom: 3.12rem;
+  margin-left: 1.5rem;
+  width: 70%;
 }
 
 footer {
+  align-content: center;
+  background-color: #011827;
   display: flex;
   flex-direction: column;
-  background-color: #011827;
-  align-content: center;
 }
 
 .footerHead {
   color: white;
+  font-size: 1.12rem;
   font-weight: 700;
-  font-size: 18px;
 }
 
 .footerText {
   color: white;
   font-weight: 400;
-  font-size: 18px;
-  width: 439px;
+  font-size: 1rem;
+  margin-left: 1.875rem;
   text-align: left;
-  margin-left: 30px;
+  width: 70%;
 }
 
 .siteMap {
   color: white;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 h4 {
   color: white;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.12rem;
   margin-left: 30px;
 }
 
@@ -413,67 +423,56 @@ h4 {
 .socials {
   color: white;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .socialList {
   list-style: none;
 }
 
-@media (min-width: 481px) {
+@media (min-width: 600px) {
 
   html,
   body {
-    width: 1280px;
-    margin: auto;
     justify-content: center;
-
+    margin: auto;
+    width: 1280px;
   }
-
-
 
   .mobileOnline,
   .mobileOnlineTwo {
     display: none;
   }
 
-  .logo {
-    width: 128px;
-    height: 82px;
-    margin-top: 26px;
-    margin-left: 27px;
-  }
-
   figcaption {
-    /* display: flex; */
-    justify-content: center;
-    /* color: white; */
     font-family: "Roboto", sans-serif;
+    font-size: 2.5rem;
     font-weight: 700;
-    font-size: 40px;
-    margin-top: 50px;
+    justify-content: center;
+    margin-top: 3.125rem;
     width: auto;
   }
 
   .header {
     background-color: #011827;
     font-family: "Roboto", sans-serif;
+    height: 12rem;
     width: auto;
-    height: 216px;
+    
   }
 
   .myCover {
-    width: 1280px;
-    height: 468px;
+    height: 24rem;
     object-fit: cover;
+    width: 1280px;
   }
 
   .menu {
     display: flex;
-    margin-top: -60px;
-    list-style: none;
+    gap: 6rem;
     justify-content: center;
-    gap: 100px;
+    list-style: none;
+    margin-top: -3rem; 
   }
 
   .playOne:hover,
@@ -484,163 +483,163 @@ h4 {
   }
 
   .playOne {
+    background-color: #011827;
+    border: none;
+    color: white;
     display: flex;
     font-family: "Roboto", sans-serif;
     font-style: bold;
-    font-size: 25px;
-    font-weight: 700;
-    border: none;
-    background-color: #011827;
-    color: white;
+    font-size: 1.3rem;
+    font-weight: 700; 
   }
 
   .playTwo {
+    background-color: #011827;
+    border: none;
+    color: white;
     display: flex;
     font-family: "Roboto", sans-serif;
     font-style: bold;
-    font-size: 25px;
-    font-weight: 700;
-    border: none;
-    background-color: #011827;
-    color: white;
+    font-size: 1.3rem;
+    font-weight: 700; 
   }
 
   .story {
+    background-color: #011827;
+    border: none;
+    color: white;
     display: flex;
     font-family: "Roboto", sans-serif;
     font-style: bold;
-    font-size: 25px;
-    font-weight: 700;
-    border: none;
-    background-color: #011827;
-    color: white;
+    font-size: 1.3rem;
+    font-weight: 700; 
   }
 
   .contact {
+    background-color: #011827;
+    border: none;
+    color: white;
     display: flex;
     font-family: "Roboto", sans-serif;
     font-style: bold;
-    font-size: 25px;
-    font-weight: 700;
-    border: none;
-    background-color: #011827;
-    color: white;
+    font-size: 1.3rem;
+    font-weight: 700; 
   }
 
   .btnsNav {
-    width: 1280px;
-    margin-top: -70px;
+    margin-top: -3.8rem;
     position: absolute;
+    width: 100%;
   }
 
   .btnList {
-    width: 1280px;
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
     justify-content: center;
     list-style: none;
-    flex-direction: row;
-    gap: 20px;
+    width: 1280px;
   }
 
   .onlineBtn {
-    display: block;
-    width: 308px;
-    height: 66px;
-    border: none;
     background-color: #E3170A;
+    border: none;
+    border-radius: 0.25rem;
     color: white;
-    border-radius: 4px;
+    display: block;
     font-family: "Roboto", sans-serif;
-    font-size: 22px;
+    font-size: 1.12rem;
     font-weight: 700;
+    height: 3.4rem;
+    width: 16rem;
   }
 
   .onsiteBtn {
-    display: block;
-    width: 308px;
-    height: 66px;
-    border: none;
     background-color: #8ACFE5;
-    border-radius: 4px;
+    border: none;
+    border-radius: 0.25rem;
+    display: block;
     font-family: "Roboto", sans-serif;
-    font-size: 22px;
+    font-size: 1.12rem;
     font-weight: 700;
+    height: 3.4rem;
+    width: 16rem;
   }
 
   .userImg {
     display: flex;
     margin: 5px;
-    width: 96px;
-    height: 96px;
+    width: 5rem;
+    height: 5rem;
   }
 
   .userImg2 {
     display: flex;
+    height: 5rem;
     margin: 5px;
+    width: 5rem;
   }
 
   .reviews {
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
+    margin: 5rem;
   }
 
   .reviewOne {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    height: 141px;
   }
 
   .reviewTwo {
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 400;
-    height: 141px;
-    margin-left: 10px;
+    justify-content: left;
+    width: 60%;
   }
 
-  .popular {
-    font-family: "Roboto", sans-serif;
-    font-size: 36px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-
+  
   .scroll {
     justify-content: center;
     width: 1280px;
   }
 
   .roomTitle {
-    margin-left: 10px;
+    margin-left: 0.6rem;
   }
 
   .participants {
     display: flex;
     justify-content: end;
-    margin-right: 15px;
+    margin-right: 0.9rem;
   }
 
   .roomInfo {
-    margin-left: 10px;
+    margin-left: 0.6rem;
   }
 
   .onlineBtnTwo {
-    display: block;
-    width: 308px;
-    height: 66px;
+   background-color: #E3170A;
     border: none;
-    background-color: #E3170A;
+    border-radius: 0.25rem;
     color: white;
-    border-radius: 5px;
+    display: block;
     font-family: "Roboto", sans-serif;
-    font-size: 22px;
+    font-size: 1.12rem;
     font-weight: 700;
-    margin-right: 20px;
+    height: 3.4rem;
+    width: 16rem;
+  }
+  .onsiteBtnTwo{
+    display: block;
+    font-size: 1.12rem;
+    height: 3.4rem;
+    width: 16rem;
   }
 
   .about {
@@ -657,65 +656,70 @@ h4 {
   }
 
   .booking {
-    height: 460px;
-    margin-top: 32px;
+    height: 28rem;
     margin-bottom: 0;
   }
 
   .bookingImg {
     flex-direction: row;
     float: left;
-    width: 640px;
-    height: 460px;
-    margin-right: 100px;
-
+    height: 24rem;
+    margin-right: 4rem;
+    width: 32rem;
   }
 
   .bookingHead {
     text-align: left;
-    padding-top: 50px;
-    width: 416px;
+    padding-top: 3rem;
+    width: 20rem;
 
   }
 
   .bookingText {
     display: flex;
-    width: 416px;
+    width: 20rem;
 
   }
-
+  .bookingBtn{
+    width: 15rem;
+  }
   .challengesHead {
-    padding-top: 50px;
-    width: 416px;
     margin: 0;
+    padding-top: 3rem;
+    width: 20rem;
   }
 
   .challenges {
-    margin-left: 50px;
-    height: 460px;
+    margin-left: 3rem;
     margin-top: 0;
+    height: 28rem;
   }
 
   .challengesImg {
     float: right;
-    width: 640px;
-    height: 460px;
+    height: 24rem;
     margin: 0;
+    width: 32rem;
+    
   }
 
   .challengesText {
-    width: 416px;
-    margin: 24px 0;
+    margin: 1.5rem 0;
+    width: 20rem;
   }
-
+  .challengesBtn{
+    margin: 0;
+    width: 15rem;
+    
+  }
   footer {
+    align-items: center;
+    border: 0;
     flex-direction: row;
     font-weight: 400;
+    height: 20rem;
+    margin-top: 5rem;
     width: auto;
-    height: 467px;
-    align-items: center;
-    border: 0px;
-    margin-top: 150px;
   }
 
   .footerAbout {
@@ -726,21 +730,22 @@ h4 {
 
   h4 {
     margin-bottom: 0;
-    margin-left: 5em;
+    margin-left: 4.9rem;
   }
 
   .follow {
-    margin-top: -16px;
+    margin-top: -1rem;
   }
 
   .footerText {
-    margin-right: 10em;
-    margin-left: 5em;
+    margin-right: 6rem;
+    margin-left: 5rem;
+    width: 20rem;
   }
 
   .siteList,
   .socialList {
-    margin-left: 3em;
+    margin-left: 3rem;
   }
 
 }
