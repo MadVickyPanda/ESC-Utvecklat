@@ -2,7 +2,7 @@ html,
 body {
   font-family: "Roboto", sans-serif;
   justify-content: center;
-  margin: auto;
+  margin: 0;
   padding: 0%;
   width: 100vw;
   overflow-x: hidden;
