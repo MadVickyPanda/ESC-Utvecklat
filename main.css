@@ -1,3 +1,5 @@
+@import url(hamburger.css);
+
 html,
 body {
   font-family: "Roboto", sans-serif;
@@ -474,7 +476,9 @@ h4 {
     list-style: none;
     margin-top: -3rem; 
   }
-
+  .hamburger-menu{
+    display: none;
+  }
   .playOne:hover,
   .playTwo:hover,
   .story:hover,
