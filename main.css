@@ -29,7 +29,7 @@ figcaption {
   align-content: center;
   color: white;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-style: bold;
   font-weight: 700;
   margin-left: 1rem;
@@ -38,10 +38,10 @@ figcaption {
 }
 
 .logo {
-  height: 5rem;
+  height: 4rem;
   margin-top: 1.25rem;
-  margin-left: 1.68rem;
-  width: 8rem;
+  margin-left: 1rem;
+  width: 6rem;
   padding-bottom: 2rem;
 }
 
