@@ -70,10 +70,11 @@ figcaption {
 }
 
 .onsiteBtn {
-  align-items: center;
+  align-content: center;
   background-color: #8ACFE5;
   border: none;
   border-radius: 0.25rem;
+  color: black;
   display: inline-block;
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
@@ -82,7 +83,8 @@ figcaption {
   margin-bottom: 1.87rem;
   margin-top: 1.87rem;
   text-align: center;
-  width: 70%;
+  text-decoration: none;
+  width: 70%; 
 }
 
 .mobileOnline {
@@ -96,7 +98,6 @@ figcaption {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  text-decoration: underline;
 }
 
 .userImg {
@@ -239,19 +240,21 @@ figcaption {
 }
 
 .onsiteBtnTwo {
-  align-items: center;
+  align-content: center;
   background-color: #8ACFE5;
   border: none;
   border-radius: 0.25rem;
+  color: black;
   display: inline-block;
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  height: 4.13rem;
+  height: 4rem;
   margin-bottom: 1.87rem;
   margin-top: 1.87rem;
   text-align: center;
-  width: 70%;
+  text-decoration: none;
+  width: 70%; 
 }
 
 .mobileOnlineTwo {
@@ -263,10 +266,8 @@ figcaption {
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
-  margin-bottom: 1.875rem;
-  margin-right: auto;
   margin-left: auto;
-  text-decoration: underline;
+  margin-right: auto;
 }
 
 .onlineBtnTwo {
@@ -553,7 +554,7 @@ h4 {
   }
 
   .onlineBtn {
-    
+    align-content: center;
     background-color: #E3170A;
     border: none;
     border-radius: 0.25rem;
@@ -563,18 +564,24 @@ h4 {
     font-size: 1.12rem;
     font-weight: 700;
     height: 3.4rem;
+    text-align: center;
+    text-decoration: none;
     width: 16rem;
   }
 
   .onsiteBtn {
+    align-content: center;
     background-color: #8ACFE5;
     border: none;
     border-radius: 0.25rem;
+    color: black;
     display: block;
     font-family: "Roboto", sans-serif;
     font-size: 1.12rem;
     font-weight: 700;
     height: 3.4rem;
+    text-align: center;
+    text-decoration: none;
     width: 16rem;
   }
 
@@ -636,7 +643,8 @@ h4 {
   }
 
   .onlineBtnTwo {
-   background-color: #E3170A;
+   align-content: center;
+    background-color: #E3170A;
     border: none;
     border-radius: 0.25rem;
     color: white;
@@ -645,6 +653,8 @@ h4 {
     font-size: 1.12rem;
     font-weight: 700;
     height: 3.4rem;
+    text-align: center;
+    text-decoration: none;
     width: 16rem;
   }
   .onsiteBtnTwo{
