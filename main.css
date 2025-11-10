@@ -497,7 +497,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
+    font-weight: 700;
+    text-decoration: none; 
   }
 
   .playTwo {
@@ -508,7 +509,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
+    font-weight: 700;
+    text-decoration: none;  
   }
 
   .story {
@@ -520,6 +522,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700; 
+    text-decoration: none; 
   }
 
   .contact {
@@ -531,6 +534,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700; 
+    text-decoration: none; 
   }
 
   .btnsNav {
@@ -549,6 +553,7 @@ h4 {
   }
 
   .onlineBtn {
+    
     background-color: #E3170A;
     border: none;
     border-radius: 0.25rem;
