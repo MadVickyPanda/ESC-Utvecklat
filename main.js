@@ -1,21 +1,19 @@
 const hamburger = document.getElementById('hamburger');
 const popupMenu = document.getElementById('popupMenu');
-const closeBtn = document.getElementById('closeBtn');
 const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('closeBtn');
 
 hamburger.addEventListener('click', () => {
+  popupMenu.classList.add('active');
   overlay.classList.add('active');
-  setTimeout(() => {
-    popupMenu.classList.add('active');
-  }, 90);
 });
 
-closeBtn.addEventListener('click', closeMenu);
-overlay.addEventListener('click', closeMenu);
-
-function closeMenu() {
+closeBtn.addEventListener('click', () => {
   popupMenu.classList.remove('active');
-  setTimeout(() => {
-    overlay.classList.remove('active');
-  }, 90); 
-}
+  overlay.classList.remove('active');
+});
+
+overlay.addEventListener('click', () => {
+  popupMenu.classList.remove('active');
+  overlay.classList.remove('active');
+});

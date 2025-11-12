@@ -67,6 +67,7 @@ figcaption {
   display: flex;
   flex-direction: column;
   list-style: none;
+  z-index: 99;
 }
 
 .onsiteBtn {
@@ -773,4 +774,5 @@ h4 {
     margin-left: 3rem;
   }
 
+  
 }
