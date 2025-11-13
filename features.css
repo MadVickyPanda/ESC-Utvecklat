@@ -51,8 +51,8 @@ figcaption {
 }
 
 .imageCard {
-    height: auto;
-    width: fit-content;
+      aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .scroll {
