@@ -51,8 +51,10 @@ figcaption {
 }
 
 .imageCard {
+    border-radius: 0.5rem;
     height: auto;
     width: fit-content;
+    
 }
 
 .scroll {
