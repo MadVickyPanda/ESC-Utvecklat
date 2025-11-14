@@ -1,3 +1,5 @@
+// Startsida
+
 const hamburger = document.getElementById('hamburger');
 const popupMenu = document.getElementById('popupMenu');
 const overlay = document.getElementById('overlay');
