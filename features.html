@@ -1,410 +1,193 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='features.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our challenges – Hacker Escape Rooms</title>
+  <link rel="stylesheet" href="features.css" />
+  <link rel="stylesheet" href="hamburger.css" />
 </head>
-
 <body>
-    <header>
-        <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
-            <figcaption>Hacker Escape Rooms</figcaption>
-        </div>
-        <div class="hamburgerMenu">
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
 
-            <div class="popupMenu" id="popupMenu">
-                <button class="closeBtn" id="closeBtn">&times;</button>
-                <ul class="navBtn">
-                    <li><a href="features.html">Play online</a></li>
-                    <li><a href="features.html">Play on-site</a></li>
-                    <li><a href="#">The story</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
+  <header class="header">
+    <img class="logo" src="img/images/Group 1.png" alt="logo" />
+    <figcaption>Hacker Escape Rooms</figcaption>
 
-            <div class="overlay" id="overlay"></div>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="features.html" class="playOne">Play online</a></li>
-                <li><a href="features.html" class="playTwo">Play on-site</a></li>
-                <li><a href="#" class="story">The story</a></li>
-                <li><a href="#" class="contact">Contact us</a></li>
-                <li><a href="index.html" class="home">Back to home page</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul class="menu">
+        <li><a href="features.html" class="playOne">Play online</a></li>
+        <li><a href="features.html" class="playTwo">Play on-site</a></li>
+        <li><a href="#" class="story">The story</a></li>
+        <li><a href="#" class="contact">Contact us</a></li>
+        <li><a href="index.html" class="home">Back to home page</a></li>
+      </ul>
+    </nav>
 
+    <div class="hamburgerMenu">
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <div class="popupMenu" id="popupMenu">
+      <button class="closeBtn" id="closeBtn">&times;</button>
+      <ul class="navBtn">
+        <li><a href="features.html">Play online</a></li>
+        <li><a href="features.html">Play on-site</a></li>
+        <li><a href="#">The story</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <main>
     <div class="headlineChallenges">
-        <h1>Our Challenges</h1>
+      <h1>Our challenges ▸ Hacker Escape Rooms</h1>
     </div>
 
+    <section class="filterWrapper">
+      <button id="toggleFilters" class="filterButton">Filter challenges</button>
 
-    <div class="filter">
-        <button class="filterBtn">Filter challenges</button>
+      <div id="filterPanel" class="filterPanel" hidden>
+        <div class="filterSection">
+          <h3>Type</h3>
+          <label>
+            <input type="checkbox" id="filterOnline" />
+            Online
+          </label>
+          <label>
+            <input type="checkbox" id="filterOnsite" />
+            On-site
+          </label>
+        </div>
+
+        <div class="filterSection">
+          <h3>Rating</h3>
+          <p>Min rating:</p>
+          <div id="minRatingWidget" class="ratingStars"></div>
+          <p>Max rating:</p>
+          <div id="maxRatingWidget" class="ratingStars"></div>
+        </div>
+
+        <div class="filterSection">
+          <h3>Tags</h3>
+          <div id="tagList" class="tagContainer"></div>
+        </div>
+
+        <div class="filterSection">
+          <h3>Search</h3>
+          <input
+            type="text"
+            id="searchText"
+            placeholder="Search in title or description"
+          />
+        </div>
+
+        <button id="applyFilters" class="applyButton">Apply filters</button>
+      </div>
+    </section>
+
+    <section class="allChallengesWrapper">
+      <p id="noMatchesMessage" class="noMatches" hidden>No matching challenges</p>
+      <div id="allChallengesGrid" class="cardGrid"></div>
+    </section>
+  </main>
+
+  <!-- Boknings-popup (samma används på index.html också) -->
+  <div id="bookingBackdrop" class="booking-backdrop" hidden>
+    <div class="booking-modal">
+      <button type="button" class="booking-close" id="bookingClose">×</button>
+
+      <div id="bookingStep1" class="booking-step">
+        <h2 id="bookingTitle">Book room</h2>
+        <div class="booking-fields">
+          <label>
+            Choose date
+            <input type="date" id="bookingDate" />
+          </label>
+        </div>
+        <div class="booking-actions">
+          <button type="button" class="booking-next" id="bookingNextToStep2">
+            Next
+          </button>
+        </div>
+        <div class="booking-error" id="bookingError1"></div>
+      </div>
+
+      <div id="bookingStep2" class="booking-step" hidden>
+        <h2>Your details</h2>
+        <div class="booking-fields">
+          <label>
+            Name
+            <input type="text" id="bookingName" />
+          </label>
+          <label>
+            Email
+            <input type="email" id="bookingEmail" />
+          </label>
+          <label>
+            Time
+            <select id="bookingTime"></select>
+          </label>
+          <label>
+            Participants
+            <select id="bookingParticipants"></select>
+          </label>
+        </div>
+        <div class="booking-actions">
+          <button type="button" class="booking-next" id="bookingNextToStep3">
+            Next
+          </button>
+        </div>
+        <div class="booking-error" id="bookingError2"></div>
+      </div>
+
+      <div id="bookingStep3" class="booking-step" hidden>
+        <h2>Booking confirmed</h2>
+        <p id="bookingSummary"></p>
+        <div class="booking-actions">
+          <button type="button" class="booking-close-btn" id="bookingCloseFinal">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 
+  <footer>
+    <div class="footerAbout">
+      <h4>[Esc] Hacker Escape Rooms</h4>
+      <p class="footerText">
+        Quodsi haberent magnalia inter potentiam et divitias,
+        et non illam quidem haec eo spectant haec quoque vos
+        omnino desit illud quo solo felicitatis libertatisque perficiuntur.
+      </p>
+    </div>
+    <nav class="siteMap">
+      <h4>Site Map</h4>
+      <ul class="siteList">
+        <li>The Story</li>
+        <li>Contact Us</li>
+        <li>Legal</li>
+        <li><a href="features.html" class="linkPlay">Play Online</a></li>
+        <li><a href="features.html" class="linkPlay">Play on-site</a></li>
+      </ul>
+    </nav>
+    <nav class="socials">
+      <h4 class="follow">Follow us on</h4>
+      <ul class="socialList">
+        <li>Facebook</li>
+        <li>Instagram</li>
+        <li>Twitter</li>
+      </ul>
+    </nav>
+  </footer>
 
-    <section class="scroll">
-        <!--Make links to booking on the buttons-->
-        <div class="card">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardTwo">
-            <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardThree">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="scroll">
-        <!--Make links to booking on the buttons-->
-        <div class="cardFour">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardFive">
-            <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardSix">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="scroll">
-        <!--Make links to booking on the buttons-->
-        <div class="cardSeven">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardEight">
-            <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardNine">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="scroll">
-        <!--Make links to booking on the buttons-->
-        <div class="cardTen">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardEleven">
-            <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardTwelve">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="scroll">
-        <!--Make links to booking on the buttons-->
-        <div class="cardThirteen">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardFourteen">
-            <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-        <div class="cardFifteen">
-            <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-            <div class="star">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 4.svg" width="23" height="26">
-                <img src="img\images\Star 5.svg" width="23" height="26">
-            </div>
-            <div class="container">
-                <h3 class="roomTitle">Title of room (on-site)</h3>
-                <p class="participants">2-6 participants</p>
-                <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                    Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                </p>
-                <div class="btnDiv">
-                    <button class="cardBtn">Book this room</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footerAbout">
-            <h4>[Esc] Hacker Escape Rooms</h4>
-            <p class="footerText">Quodsi haberent magnalia inter potentiam et divitias,
-                et non illam quidem haec eo spectant haec quoque vos
-                omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
-        </div>
-        <nav class="siteMap">
-            <h4>Site Map</h4>
-            <ul class="siteList">
-                <li>The Story</li>
-                <li>Contact Us</li>
-                <li>Legal</li>
-                <a href="features.html" class="linkPlay">Play Online</a></br>
-                <a href="features.html" class="linkPlay">Play on-site</a>
-            </ul>
-        </nav>
-        <nav class="socials">
-            <h4 class="follow">Follow us on</h4>
-            <ul class="socialList">
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Twitter</li>
-            </ul>
-        </nav>
-    </footer>
-    <script src='main.js'></script>
+  <script src="main.js"></script>
 </body>
-
 </html>

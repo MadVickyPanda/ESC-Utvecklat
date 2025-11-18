@@ -1,553 +1,306 @@
-@import url(hamburger.css);
-
 html,
 body {
-    font-family: "Roboto", sans-serif;
-    justify-content: center;
-    margin: 0;
-    padding: 0%;
-    width: 100vw;
-    overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
 }
 
 .header {
-    background-color: #011827;
-    display: flex;
-    max-width: 100%;
-}
-
-figcaption {
-    align-content: center;
-    color: white;
-    display: flex;
-    font-size: 1rem;
-    font-style: bold;
-    font-weight: 700;
-    margin-left: 1rem;
-    margin-top: 1.25rem;
-    width: 20%;
+  background-color: #011827;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
 }
 
 .logo {
-    height: 4rem;
-    margin-top: 1.25rem;
-    margin-left: 1rem;
-    width: 6rem;
-    padding-bottom: 2rem;
+  height: 4rem;
+  width: 6rem;
+  margin-right: 1rem;
+}
+
+figcaption {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .menu {
-    list-style: none;
-    margin-top: -1.25rem;
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  display: none;
 }
 
-.playOne,
-.playTwo,
-.story,
-.contact,
-.home {
-    display: none;
-    list-style: none;
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
-.imageCard {
-    border-radius: 0.5rem;
-    height: auto;
-    width: fit-content;
-    
-}
-
-.scroll {
-    display: flex;
-    flex-direction: row;
-    gap: 1.87rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding-right: 1rem;
-    margin-top: 2rem;
-}
-
-.roomTitle {
-    font-size: 1.60rem;
-    font-weight: 400;
-    text-align: left;
-    margin-bottom: 0;
-}
-
-.card {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTwo {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardThree {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFour {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFive {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardSix {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardSeven {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardEight {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardNine {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardEleven {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTwelve {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardThirteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFourteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFifteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.star {
-    display: flex;
-    align-items: center;
-    position: relative;
-    float: left;
-    margin-left: 0.62rem;
-    margin-top: -2rem;
-}
-
-.participants {
-    font-size: 0.87rem;
-    font-weight: 400;
-    margin-left: 1rem;
-}
-
-.roomInfo {
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.43rem;
-    margin: 0;
-    text-align: justify;
-
-}
-
-.btnDiv {
-    display: flex;
-    justify-content: end;
-    margin-bottom: 1.25rem;
-    margin-right: 1.25rem;
-}
-
-.cardBtn {
-    background-color: #E3170A;
-    border: none;
-    border-radius: 0.4rem;
-    color: white;
-    cursor: pointer;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 3rem;
-    width: 11.2rem;
-
-}
-
-.filter {
-    display: flex;
-    justify-content: center;
-}
-
-.filterBtn {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: white;
-    border: solid 0.1rem;
-    border-color: #8ACFE5;
-    border-radius: 0.25rem;
-    color: #8ACFE5;
-    cursor: pointer;
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 2rem;
-    text-align: center;
-    text-decoration: none;
-    width: 10rem;
+.menu li + li {
+  margin-left: 2.5rem;
 }
 
 .headlineChallenges {
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    justify-content: center;
-    margin-top: 3rem;
+  max-width: 900px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+}
+
+.headlineChallenges h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.filterWrapper {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.filterButton {
+  display: inline-block;
+  background-color: #e3170a;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filterPanel {
+  margin-top: 1rem;
+  background: #ffffff;
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.filterSection {
+  margin-bottom: 1rem;
+}
+
+.filterSection h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.filterSection label {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+.ratingStars {
+  display: flex;
+  gap: 0.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.star-icon {
+  color: #ccc;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.star-icon.filled {
+  color: #f5b400;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag-pill {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #e0e0e0;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tag-pill.active {
+  background: #8acfe5;
+}
+
+#searchText {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+.applyButton {
+  margin-top: 0.5rem;
+  background-color: #36769d;
+  color: #fff;
+  padding: 0.5rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.allChallengesWrapper {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.noMatches {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.challenge-card {
+  flex: 0 0 280px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+.challenge-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.challenge-body {
+  padding: 0.8rem 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.challenge-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.challenge-meta {
+  font-size: 0.8rem;
+  color: #666666;
+}
+
+.challenge-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.challenge-rating {
+  font-size: 0.8rem;
+  color: #e3170a;
+}
+
+.challenge-book-btn {
+  margin-top: 0.5rem;
+  align-self: flex-end;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #e3170a;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 footer {
-    align-content: center;
-    background-color: #011827;
-    display: flex;
-    flex-direction: column;
-}
-
-.footerHead {
-    color: white;
-    font-size: 1.12rem;
-    font-weight: 700;
+  background-color: #011827;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 2.5rem;
+  color: white;
 }
 
 .footerText {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-    margin-left: 1.875rem;
-    text-align: left;
-    width: 70%;
+  font-size: 0.95rem;
+  margin-left: 0;
+  width: 100%;
+  max-width: 20rem;
 }
 
-.siteMap {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
+.siteMap,
+.socials {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
 }
 
 h4 {
-    color: white;
-    font-weight: 700;
-    font-size: 1.12rem;
-    margin-left: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
 }
 
-.siteList {
-    list-style: none;
-}
-
-.socials {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-}
-
+.siteList,
 .socialList {
-    list-style: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .linkPlay {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-@media (min-width: 600px) {
+.socialList li + li,
+.siteList li + li {
+  margin-top: 0.2rem;
+}
 
-    html,
-    body {
-        justify-content: center;
-        margin: auto;
-        width: 1280px;
-    }
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+  }
 
-    .header {
-        background-color: #011827;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        height: 12rem;
-        max-width: 100%;
-        width: auto;
-    }
+  .hamburgerMenu {
+    display: none;
+  }
 
-    .logo {
-        height: 4rem;
-        margin-top: 1.25rem;
-        margin-left: 1rem;
-        width: 6rem;
-        padding-bottom: 2rem;
-    }
+  .popupMenu {
+    display: none;
+  }
 
-    figcaption {
-        align-content: center;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-size: 2.5rem;
-        font-style: bold;
-        font-weight: 700;
-        margin-left: 1rem;
-        margin-top: 2rem;
-        /* justify-content: center; */
-        width: auto;
-    }
+  .headlineChallenges h1 {
+    font-size: 2rem;
+  }
 
-    .menu {
-        display: flex;
-        gap: 6rem;
-        justify-content: center;
-        list-style: none;
-        margin-top: -3rem;
-        margin-right: 1rem;
-    }
+  footer {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-    .hamburgerMenu {
-        display: none;
-    }
-
-    .popupMenu {
-        display: none;
-    }
-
-    .playOne:hover,
-    .playTwo:hover,
-    .story:hover,
-    .contact:hover,
-    .home:hover {
-        color: #8ACFE5;
-    }
-
-    .playOne {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .playTwo {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .story {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .contact {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .home {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .popular {
-        margin-top: -6rem;
-    }
-
-    .scroll {
-        justify-content: center;
-        width: 1280px;
-    }
-
-    .roomTitle {
-        margin-left: 0.6rem;
-    }
-
-    .roomInfo {
-        margin-left: 0.6rem;
-    }
-
-    footer {
-        align-items: center;
-        border: 0;
-        flex-direction: row;
-        font-weight: 400;
-        height: 20rem;
-        margin-top: 5rem;
-        width: auto;
-    }
-
-    .footerAbout {
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    h4 {
-        margin-bottom: 0;
-        margin-left: 4.9rem;
-    }
-
-    .follow {
-        margin-top: -1rem;
-    }
-
-    .footerText {
-        margin-right: 6rem;
-        margin-left: 5rem;
-        width: 20rem;
-    }
-
-    .siteList,
-    .socialList {
-        margin-left: 3rem;
-    }
-
+  .footerAbout {
+    max-width: 22rem;
+  }
 }

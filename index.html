@@ -1,221 +1,133 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ESC Hacker escape room</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacker Escape Rooms</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="hamburger.css" />
 </head>
-<!-- STARTSIDA -->
+
 <body>
 
-    <header>
-        <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
-            <figcaption>Hacker Escape Rooms</figcaption>
+<header class="header">
+    <img class="logo" src="img/images/Group 1.png" alt="logo" />
+    <figcaption>Hacker Escape Rooms</figcaption>
+
+    <nav class="menu">
+      <a href="#">Play online</a>
+      <a href="#">Play on-site</a>
+      <a href="#">The story</a>
+      <a href="#">Contact us</a>
+    </nav>
+
+    <div class="hamburgerMenu">
+        <div class="hamburger" id="hamburger">
+          <div class="barx"></div>
+          <div class="barx"></div>
+          <div class="barx"></div>
         </div>
-        <div class="hamburgerMenu">
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+    </div>
 
-            <div class="popupMenu" id="popupMenu">
-                <button class="closeBtn" id="closeBtn">&times;</button>
-                <ul class="navBtn">
-                    <li><a href="features.html">Play online</a></li>
-                    <li><a href="features.html">Play on-site</a></li>
-                    <li><a href="#">The story</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
+    <div class="popupMenu" id="popupMenu">
+      <button class="closeBtn" id="closeBtn">&times;</button>
+      <ul class="navbtn">
+        <li><a href="#">Play online</a></li>
+        <li><a href="#">Play on-site</a></li>
+        <li><a href="#">The story</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
 
-            <div class="overlay" id="overlay"></div>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="features.html" class="playOne">Play online</a></li>
-                <li><a href="features.html" class="playTwo">Play on-site</a></li>
-                <li><a href="#" class="story">The story</a></li>
-                <li><a href="#" class="contact">Contact us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="overlay" id="overlay"></div>
+</header>
 
-    <main>
-        <img src="img\images\hacker.png" alt="hacker sitting by its computer" class="myCover">
+<section class="topSection">
+  <img class="homePic" src="img/images/image 5.png" alt="hacker" />
 
-        <section class="btnsNav">
-            <div class="btnList">
-                <a href="features.html" class="onlineBtn">Online challenges</a>
-                <a href="features.html" class="onsiteBtn">On-site challenges</a>
-                <a href="features.html" class="mobileOnline">Online challenges</a>
+  <div class="topButtons">
+    <button class="orangeBTN">Online challenges</button>
+    <button class="blueBTN">On-site challenges</button>
+  </div>
+</section>
 
-        </section>
+<section class="popularWrapper">
+  <h2 class="Popular">Popular challenges right now</h2>
+  <div id="popularChallenges" class="cardGrid"></div>
+</section>
 
-        </nav>
-        <section class="reviews">
-            <img src="img\images\image 3.png" alt="Portrait of John Doe" width="96" height="96" class="userImg">
-            <div class="reviewOne">
-                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried
-                    it
-                <p class="name">John Doe, visited us in September 2021</p>
-                </p>
-            </div>
-            <img src="img\images\image 3.png" alt="Portrait of John Doe" width="96" height="96" class="userImg2">
-            <div class="reviewTwo">
-                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried
-                    it
-                <p class="name">John Doe, visited us in September 2021</p>
-                </p>
-            </div>
-        </section>
-        <div class="popular">
-            <p>Popular challenges right now</p>
-        </div>
-        <section class="scroll">
-            <!--Make links to booking on the buttons-->
-            <div class="card">
-                <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-                <div class="container">
-                    <h3 class="roomTitle">Title of room (on-site)</h3>
-                    <div class="star">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 5.svg" width="23" height="26">
-                    </div>
-                    <p class="participants">2-6 participants</p>
-                    <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                        Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                    </p>
-                    <div class="btnDiv">
-                        <button class="cardBtn">Book this room</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cardTwo">
-                <img src="img\images\image 5.png" width="800" height="500" class="imageCard">
-                <div class="container">
-                    <h3 class="roomTitle">Title of room (on-site)</h3>
-                    <div class="star">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 5.svg" width="23" height="26">
+<section class="middleSection">
+  <p>
+    Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo
+    spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque
+    perficiuntur.
+  </p>
+  <button class="readBTN">Read the full story</button>
+</section>
 
-                    </div>
-                    <p class="participants">2-6 participants</p>
-                    <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                        Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                    </p>
-                    <div class="btnDiv">
-                        <button class="cardBtn">Book this room</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cardThree">
-                <img src="img\images\image 5.png" width="480" height="500" class="imageCard">
-                <div class="container">
-                    <h3 class="roomTitle">Title of room (on-site)</h3>
-                    <div class="star">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 4.svg" width="23" height="26">
-                        <img src="img\images\Star 5.svg" width="23" height="26">
-                    </div>
-                    <p class="participants">2-6 participants</p>
-                    <p class="roomInfo">Praeterea, ex culpa non invenies</br> unum aut non accusatis unum.</br>
-                        Et nihil inuitam. Nemo nocere tibi erit,</br> et non inimicos, et
-                    </p>
-                    <div class="btnDiv">
-                        <button class="cardBtn">Book this room</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="bottomSection">
+   <img class="galleryPic" src="img/images/image 4.png" alt=""/>
+   <img class="galleryPic" src="img/images/image 3.png" alt=""/>
+</section>
 
-        <section>
-            <div class="btnList">
-                <a href="features.html" class="onlineBtnTwo">Online challenges</a>
-                <a href="features.html" class="onsiteBtnTwo">On-site challenges</a>
-                <a href="features.html" class="mobileOnlineTwo">Online challenges</a>
-            </div>
-        </section>
+<div id="bookingBackdrop" class="booking-backdrop" hidden>
+  <div class="booking-modal">
+    <button type="button" class="booking-close" id="bookingClose">&times;</button>
 
-        <section class="about">
-            <p class="aboutText">Quodsi haberent magnalia inter potentiam et</br> divitias,
-                et non illam quidem haec eo spectant</br> haec quoque vos
-                omnino desit illud quo solo</br> felicitatis libertatisque perficiuntur.</p>
-            <button class="aboutBtn">Read the full story</button>
-        </section>
+    <div id="bookingStep1" class="booking-step">
+      <h2>Book room</h2>
+      <p id="bookingRoomTitle"></p>
+      <div class="booking-fields">
+        <label>
+          Choose date:
+          <input type="date" id="bookingDate" />
+        </label>
+      </div>
+      <div class="booking-error" id="bookingError1"></div>
+      <div class="booking-actions">
+        <button type="button" class="booking-next" id="bookingNext1">Next</button>
+      </div>
+    </div>
 
-        <section>
-            <article class="booking">
-                <img src="img\images\nesa-by-makers-IgUR1iX0mqM-unsplash 1.png" width="480" height="440"
-                    class="bookingImg">
-                <p class="bookingHead">Play with your friends or build your team stronger at work</p>
-                <p class="bookingText">
-                    Praeterea, ex culpa non invenies unum aut non accusatis unum.
-                    Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-                </p>
-                <!-- Cange to booking?-->
-                <button class="bookingBtn" onclick="location.href='features.html'">Book on-site today</button>
+    <div id="bookingStep2" class="booking-step" hidden>
+      <h2>Book room</h2>
+      <p id="bookingSummaryStep2"></p>
+      <div class="booking-fields">
+        <label>
+          Name
+          <input type="text" id="bookingName" />
+        </label>
+        <label>
+          Email
+          <input type="email" id="bookingEmail" />
+        </label>
+        <label>
+          Time
+          <select id="bookingTime"></select>
+        </label>
+        <label>
+          Participants
+          <select id="bookingParticipants"></select>
+        </label>
+      </div>
+      <div class="booking-error" id="bookingError2"></div>
+      <div class="booking-actions">
+        <button type="button" class="booking-next" id="bookingNext2">Next</button>
+      </div>
+    </div>
 
-            </article>
+    <div id="bookingStep3" class="booking-step" hidden>
+      <h2>Booking confirmed</h2>
+      <p id="bookingThankYou"></p>
+      <div class="booking-actions">
+        <button type="button" class="booking-close-btn" id="bookingCloseFinal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <article class="challenges">
-                <img src="img\images\kelly-sikkema-YK0HPwWDJ1I-unsplash 1.png" width="480" height="440"
-                    class="challengesImg">
-                <p class="challengesHead">Play online or visit our venue for one of our 25 escape rooms</p>
-                <p class="challengesText">
-                    Praeterea, ex culpa non invenies unum aut non accusatis unum.
-                    Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-                </p>
-                <button class="challengesBtn" onclick="location.href='features.html'">See all challenges</button>
-            </article>
-        </section>
-    </main>
+<script src="main.js"></script>
 
-    <footer>
-        <div class="footerAbout">
-            <h4>[Esc] Hacker Escape Rooms</h4>
-            <p class="footerText">Quodsi haberent magnalia inter potentiam et divitias,
-                et non illam quidem haec eo spectant haec quoque vos
-                omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
-        </div>
-        <nav class="siteMap">
-            <h4>Site Map</h4>
-            <ul class="siteList">
-                <li>The Story</li>
-                <li>Contact Us</li>
-                <li>Legal</li>
-                <a href="features.html" class="linkPlay">Play Online</a></br>
-                <a href="features.html" class="linkPlay">Play on-site</a>
-            </ul>
-        </nav>
-        <nav class="socials">
-            <h4 class="follow">Follow us on</h4>
-            <ul class="socialList">
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Twitter</li>
-            </ul>
-        </nav>
-    </footer>
-
-    <script src='main.js'></script>
 </body>
-
 </html>
