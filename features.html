@@ -32,9 +32,66 @@
         <h1>Our Challenges</h1>
     </div>
 
-    <div class="filter">
-        <button class="filterBtn">Filter challenges</button>
+    <div class="filterbutton">
+        <button class="filterBtn" onclick="document.querySelector('link').href='filter.css';">Filter challenges</button>
     </div>
+
+    <div class="containerfilter">
+    <h2>Filter challanges
+     <em><img src="close-button.png" class="close" onclick="document.querySelector('link').href='challenges.css';"></em></h2>
+   
+    <section class="filter"> 
+
+         <div class="typecheckbox"> 
+              
+        <h3 class="bytype">By type</h3>
+        <div class="checkbox">
+            <input type="checkbox" id="online">
+            <label for = "online">Include online challanges</label><br>
+             <input type="checkbox" id="onsite">
+            <label for = "onsite">Include on-site challanges</label>
+        </div></div>
+        <div class="rating">
+            <h3>By rating</h3>
+            <div class="starrating1">
+                 <span id="ratingX">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 </span>
+                <em>to</em> 
+                 <span id="ratingY">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 <img src="img/images/Star 5.svg" width="23" height="26">
+                 
+                 </span>
+        </div>
+        </div> 
+         <div class="tags">
+            <h3>By tags</h3>
+            <div class="typetags1">
+            <input type="text" id="web" value="web" width="50"> 
+            <input type="text" id="linux" value="Linux" width="60"> 
+            <input type="text" id= "cryptography" value="Cryptography" width="70">    
+            <input type="text" id="coding" value="Coding" width="60"> 
+            </div>
+             <div class="typetags2">
+            <input type="text" id="someother" value="Some other tag" width="80"> 
+            <input type="text" id="finaltag" value="A final tag" width="70">   
+             </div>
+            </div>  
+             <div class="typingtext">
+            <h3>Or type to search for keyward</h3>    
+            <input type="text" id="typing" value="Start typing to filter">   
+            </div>      
+    </section>  
+    </div>
+    
       <div id="cards-container">
   </div>
 
