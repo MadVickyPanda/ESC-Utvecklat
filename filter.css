@@ -1,0 +1,118 @@
+@import url(challenges.css);
+body{
+    justify-content: center;
+}
+.filterbutton{
+    display: none;
+}
+.filter{
+   display: grid;
+    grid-template-columns: 33% 33% 33%;
+     grid-template-rows: auto ;
+     margin-right: 50px;
+     width: 1000px;
+}
+.containerfilter{
+    display: block;
+    align-content: center;
+    background-color: white;
+    border: #011827;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
+    width: 1210px;
+    justify-content: center;
+    margin-left: 2rem;
+}
+h2{
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+ .bytype{
+    margin-left: 20px;
+}
+.checkbox{
+    margin-left: 20px;
+}
+.close {
+    background-color: white;
+     float: right;
+     top: 20px;
+    right: 30px;
+    margin-right: 20px;
+   padding-top: 0px;
+      width: 20px;
+    height: 20px;  
+}
+.rating{
+    align-content: center;
+}
+.starrating1 em {
+margin-left: 10px;
+margin-right: 10px;
+font-family: "Roboto";
+ font-style: bold;
+
+}
+
+.typetags1{
+    margin-bottom: 5px;
+}
+
+#web{
+        border-radius: 17px;
+      width: 30px;
+      text-align: center;
+      margin-right: 10px;
+      background-color: lightgrey;
+}
+#linux{
+     width: 50px;
+      border-radius: 17px;
+      margin-right: 5px;
+      text-align: center;
+}
+#cryptography{
+     width: 70px;
+     border-radius: 17px;
+      margin-right: 5px;
+       background-color: lightgrey;
+       text-align: center;
+}
+#coding{
+     width: 60px;
+     border-radius: 17px;
+     text-align: center;
+}
+#finaltag{
+     width: 60px;
+     border-radius: 17px;
+      text-align: center;
+}
+#someother{
+     width: 100px;
+     border-radius: 17px;
+     margin-right: 10px; 
+     text-align: center;
+}
+.typingtext{
+ justify-content: center;
+ grid-row: 2/3;
+ grid-column: 2/3;
+ margin-bottom: 50px;
+ margin-top: 50px;
+}
+.tags{
+    margin-left: 100px;
+}
+.typetags1{
+ display: flex;
+}
+.typetags2{
+ display: flex;
+}
+#typing{
+    width: 300px;
+    height: 30px;
+}
