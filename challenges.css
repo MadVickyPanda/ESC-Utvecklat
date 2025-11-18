@@ -1,48 +1,47 @@
-html,
+/* html,
 body {
-    justify-content: center;
-    margin: auto;
-    width: 1280px;
+  justify-content: center;
+  margin: auto;
+  width: 1280px;
 }
 
 .header {
-    background-color: #011827;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    height: 12rem;
-    max-width: 100%;
-    width: auto;
+  background-color: #011827;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  height: 12rem;
+  max-width: 100%;
+  width: auto;
 }
 
 .logo {
-    height: 4rem;
-    margin-top: 1.25rem;
-    margin-left: 1rem;
-    width: 6rem;
-    padding-bottom: 2rem;
+  height: 4rem;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  width: 6rem;
+  padding-bottom: 2rem;
 }
 
 figcaption {
-    align-content: center;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-size: 2.5rem;
-    font-style: bold;
-    font-weight: 700;
-    margin-left: 1rem;
-    margin-top: 2rem;
-    /* justify-content: center; */
-    width: auto;
+  align-content: center;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  font-style: bold;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  width: auto;
 }
 
 .menu {
-    display: flex;
-    gap: 6rem;
-    justify-content: center;
-    list-style: none;
-    margin-top: -3rem;
-    margin-right: 1rem;
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  list-style: none;
+  margin-top: -3rem;
+  margin-right: 1rem;
 }
 
 .playOne:hover,
@@ -50,102 +49,100 @@ figcaption {
 .story:hover,
 .contact:hover,
 .home:hover {
-    color: #8ACFE5;
+  color: #8acfe5;
 }
 
 .playOne {
-    background-color: #011827;
-    border: none;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .playTwo {
-    background-color: #011827;
-    border: none;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .story {
-    background-color: #011827;
-    border: none;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .contact {
-    background-color: #011827;
-    border: none;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .home {
-    background-color: #011827;
-    border: none;
-    color: white;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .headlineChallenges {
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    justify-content: center;
-    margin-top: 3rem;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .filter {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .filterBtn {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: white;
-    border: solid 0.1rem;
-    border-color: #8ACFE5;
-    border-radius: 0.25rem;
-    color: #8ACFE5;
-    cursor: pointer;
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 2rem;
-    text-align: center;
-    text-decoration: none;
-    width: 10rem;
-
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  border: solid 0.1rem;
+  border-color: #8acfe5;
+  border-radius: 0.25rem;
+  color: #8acfe5;
+  cursor: pointer;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 10rem;
 }
 
 .card {
@@ -160,7 +157,8 @@ figcaption {
   max-width: 364px;
 }
 
-.cardTwo, .cardThree {
+.cardTwo,
+.cardThree {
   background-color: white;
   border: #011827;
   border-radius: 0.5rem;
@@ -171,57 +169,56 @@ figcaption {
   width: 100%;
   max-width: 364px;
 }
-    
-    .roomTitle {
-      font-size: 1.60rem;
-      font-weight: 400;
-      text-align: left;
-    }
-    .star {
-      align-items: center;
-      float: left;
-      margin-left: 0.62rem;
-    }
 
-    .participants {
-      font-size: 0.87rem;
-      font-weight: 400;
-      text-align: right;
-      margin-right: 0.5rem;
-    }
+.roomTitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+}
+.star {
+  align-items: center;
+  float: left;
+  margin-left: 0.62rem;
+}
 
-    .roomInfo {
-      font-size: 1rem;
-      font-weight: 400;
-      padding: 0.43rem;
-      margin: 0;
-      text-align: justify;
-    }
+.participants {
+  font-size: 0.87rem;
+  font-weight: 400;
+  text-align: right;
+  margin-right: 0.5rem;
+}
 
-    .btnDiv {
-      display: flex;
-      justify-content: end;
-      margin-bottom: 1.25rem;
-      margin-right: 1.25rem;
-    }
+.roomInfo {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.43rem;
+  margin: 0;
+  text-align: justify;
+}
 
-    .cardBtn {
-      background-color: #E3170A;
-      border: none;
-      border-radius: 0.4rem;
-      color: white;
-      cursor: pointer;
-      font-family: "Roboto", sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      height: 3rem;
-      width: 11.2rem;
-    }
+.btnDiv {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1.25rem;
+  margin-right: 1.25rem;
+}
 
-    .imageCard {
+.cardBtn {
+  background-color: #e3170a;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 11.2rem;
+}
+
+.imageCard {
   aspect-ratio: 1/1;
   object-fit: cover;
-
 }
 
 .scroll {
@@ -229,8 +226,197 @@ figcaption {
   gap: 1.87rem;
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   padding-right: 1rem;
+} */
+
+html,
+body {
+  justify-content: center;
+  margin: auto;
+  width: 1280px;
 }
 
+.header {
+  background-color: #011827;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  height: 12rem;
+  max-width: 100%;
+  width: auto;
+}
 
+.logo {
+  height: 4rem;
+  margin-top: 1.25rem;
+  margin-left: 1rem;
+  width: 6rem;
+  padding-bottom: 2rem;
+}
+
+figcaption {
+  align-content: center;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  font-style: bold;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  list-style: none;
+  margin-top: -3rem;
+  margin-right: 1rem;
+}
+
+.playOne:hover,
+.playTwo:hover,
+.story:hover,
+.contact:hover,
+.home:hover {
+  color: #8acfe5;
+}
+
+.playOne,
+.playTwo,
+.story,
+.contact,
+.home {
+  background-color: #011827;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.headlineChallenges {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filterBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  border: solid 0.1rem #8acfe5;
+  border-radius: 0.25rem;
+  color: #8acfe5;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2rem;
+  text-align: center;
+  width: 10rem;
+}
+
+/* ============================================================
+   ==========     GRID FÖR ALLA KORT (NYTILLAGT)    ============
+   ============================================================ */
+
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* ============================================================
+   ======================   CARDS   ============================
+   ============================================================ */
+
+.card,
+.cardTwo,
+.cardThree {
+  background-color: white;
+  border: #011827;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* FIX: Gör bilderna smaller & proportionerliga */
+.imageCard {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.roomTitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.participants {
+  font-size: 0.87rem;
+  font-weight: 400;
+  text-align: right;
+  margin-right: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.roomInfo {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.6rem;
+  margin: 0;
+  text-align: justify;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.cardBtn {
+  background-color: #e3170a;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 11.2rem;
+}
