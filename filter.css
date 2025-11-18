@@ -13,8 +13,7 @@ body {
     display: grid;
     grid-template-columns: 35% 35% 35%;
     grid-template-rows: auto;
-    /* margin-right: 50px; */
-    width: 80vw;
+    width: 1000px;
 }
 
 .containerfilter {
