@@ -1,198 +1,133 @@
-// Startsida
+import { fetchChallenges } from "./API.js";
 
-const hamburger = document.getElementById('hamburger');
-const popupMenu = document.getElementById('popupMenu');
-const overlay = document.getElementById('overlay');
-const closeBtn = document.getElementById('closeBtn');
-let topThreeChallenges = [];
+const hamburger = document.getElementById("hamburger");
+const popupMenu = document.getElementById("popupMenu");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+const cardsContainer = document.getElementById("cards-container");
 
-fetch('challenges.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    const cardsContainer = document.getElementById('cards-container');
-    cardsContainer.style.display = 'grid';
-    cardsContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-    cardsContainer.style.gap = '1.25rem';
-    cardsContainer.style.padding = '1rem';
-    cardsContainer.style.justifyItems = 'center';
-    // topThreeChallenges = data.challenges.sort((a, b) => b.rating - a.rating).slice(0, 3);
-    // console.log(topThreeChallenges);
-    function createCard(data) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.dataset.id = data.id;
-      card.dataset.type = data.type;
-      card.dataset.title = data.title;
-      card.dataset.description = data.description;
-      card.dataset.minParticipants = data.minParticipants;
-      card.dataset.maxParticipants = data.maxParticipants;
-      card.dataset.rating = data.rating;
-      card.dataset.labels = data.labels;
-      const cardImage = document.createElement('img');
-      cardImage.src = '/img/images/hacker.png';
-      cardImage.alt = `Image for ${data.title}`;
-      cardImage.classList.add('imageCard');
+let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
 
-      const container = document.createElement('div');
-      container.classList.add('container');
+//Startar ''applikationen'' vid webbsidans laddning
+function startApp() {
+  loadChallenges();
+}
 
-      const cardTitle = document.createElement('h3');
-      cardTitle.classList.add('roomTitle');
-      cardTitle.textContent = `${data.title} (${data.type})`;
+//laddar challenges från funktionen 'fetchChallenges' se "import"
+function loadChallenges() {
+  fetchChallenges()
+    .then((challenges) => {
+      allChallenges = challenges; // spara allt i en array
+      displayCards(allChallenges); //skickar data till display funtionen
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+    });
+}
 
-      const starContainer = document.createElement('div');
-      starContainer.classList.add('star');
-      for (let i = 0; i < 5; i++) {
-        const starImage = document.createElement('img');
-        starImage.src = i < data.rating ? 'img/images/Star 4.svg' : 'img/images/Star 5.svg';
-        starImage.width = 23;
-        starImage.height = 26;
-        starContainer.appendChild(starImage);
-      }
+//DISPLAY FUNKTION
+function displayCards(challengesArray) {
+  cardsContainer.innerHTML = ""; // tömmer container innan det visas allt
 
-      const participants = document.createElement('p');
-      participants.classList.add('participants');
-      if (data.minParticipants === data.maxParticipants) {
-        participants.textContent = `${data.maxParticipants} participants`;
-      } else {
-        participants.textContent = `${data.minParticipants}-${data.maxParticipants} participants`;
-      }
+  challengesArray.forEach((challenge) => {
+    const card = createCard(challenge); //skapa varje kort
+    cardsContainer.appendChild(card);
+  });
+}
 
-      const roomInfo = document.createElement('p');
-      roomInfo.classList.add('roomInfo');
-      roomInfo.innerHTML = `${data.description}`;
+//SKAPA KORT FUNKTION
+function createCard(data) {
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-      const btnDiv = document.createElement('div');
-      btnDiv.classList.add('btnDiv');
-      const bookButton = document.createElement('button');
-      bookButton.classList.add('cardBtn');
-      bookButton.textContent = 'Book this room';
-      btnDiv.appendChild(bookButton);
+  card.dataset.id = data.id;
+  card.dataset.type = data.type;
+  card.dataset.title = data.title;
+  card.dataset.description = data.description;
+  card.dataset.minParticipants = data.minParticipants;
+  card.dataset.maxParticipants = data.maxParticipants;
+  card.dataset.rating = data.rating;
+  card.dataset.labels = data.labels;
 
-      container.appendChild(cardTitle);
-      container.appendChild(starContainer);
-      container.appendChild(participants);
-      container.appendChild(roomInfo);
-      container.appendChild(btnDiv);
+  const cardImage = document.createElement("img");
+  cardImage.src = data.image || "/img/images/hacker.png";
+  cardImage.alt = `Image for ${data.title}`;
+  cardImage.classList.add("imageCard");
 
-      card.appendChild(cardImage);
-      card.appendChild(container);
+  const container = document.createElement("div");
+  container.classList.add("container");
 
-      cardsContainer.appendChild(card);
-    }
+  const cardTitle = document.createElement("h3");
+  cardTitle.classList.add("roomTitle");
+  cardTitle.textContent = `${data.title} (${data.type})`;
 
-    data.challenges.forEach(createCard);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  //funktion specifikt för rating (kanske kan underlätta)
+  const starContainer = createStarContainer(Number(data.rating) || 0);
+
+  const participants = document.createElement("p");
+  participants.classList.add("participants");
+  participants.textContent =
+    data.minParticipants === data.maxParticipants
+      ? `${data.maxParticipants} participants`
+      : `${data.minParticipants}-${data.maxParticipants} participants`;
+
+  const roomInfo = document.createElement("p");
+  roomInfo.classList.add("roomInfo");
+  roomInfo.innerHTML = data.description;
+
+  const btnDiv = document.createElement("div");
+  btnDiv.classList.add("btnDiv");
+
+  const bookButton = document.createElement("button");
+  bookButton.classList.add("cardBtn");
+  bookButton.textContent = "Book this room";
+
+  btnDiv.appendChild(bookButton);
+  container.appendChild(cardTitle);
+  container.appendChild(starContainer);
+  container.appendChild(participants);
+  container.appendChild(roomInfo);
+  container.appendChild(btnDiv);
+
+  card.appendChild(cardImage);
+  card.appendChild(container);
+
+  return card;
+}
+
+// FUNKTION specifikt för rating-stars
+function createStarContainer(rating) {
+  const starContainer = document.createElement("div");
+  starContainer.classList.add("star");
+
+  for (let i = 0; i < 5; i++) {
+    const starImage = document.createElement("img");
+    starImage.src =
+      i < rating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
+    starImage.width = 23;
+    starImage.height = 26;
+    starContainer.appendChild(starImage);
+  }
+
+  return starContainer;
+}
+
+if (hamburger && popupMenu && overlay && closeBtn) {
+  hamburger.addEventListener("click", () => {
+    popupMenu.classList.add("active");
+    overlay.classList.add("active");
   });
 
-hamburger.addEventListener('click', () => {
-  popupMenu.classList.add('active');
-  overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  popupMenu.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-  popupMenu.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-fetch('challenges.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    const cardsContainer = document.getElementById('cards-container');
-    cardsContainer.style.display = 'grid';
-    cardsContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-    cardsContainer.style.gap = '1.25rem';
-    cardsContainer.style.padding = '1rem';
-    cardsContainer.style.justifyItems = 'center';
-    // topThreeChallenges = data.challenges.sort((a, b) => b.rating - a.rating).slice(0, 3);
-    // console.log(topThreeChallenges);
-    function createCard(data) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.dataset.id = data.id;
-      card.dataset.type = data.type;
-      card.dataset.title = data.title;
-      card.dataset.description = data.description;
-      card.dataset.minParticipants = data.minParticipants;
-      card.dataset.maxParticipants = data.maxParticipants;
-      card.dataset.rating = data.rating;
-      card.dataset.labels = data.labels.join(','); 
-      const cardImage = document.createElement('img');
-      cardImage.src = '/img/images/hacker.png';
-      cardImage.alt = `Image for ${data.title}`;
-      cardImage.classList.add('imageCard');
-
-      const container = document.createElement('div');
-      container.classList.add('container');
-
-      const cardTitle = document.createElement('h3');
-      cardTitle.classList.add('roomTitle');
-      cardTitle.textContent = `${data.title} (${data.type})`;
-
-      const starContainer = document.createElement('div');
-      starContainer.classList.add('star');
-      for (let i = 0; i < 5; i++) {
-        const starImage = document.createElement('img');
-        starImage.src = i < data.rating ? 'img/images/Star 4.svg' : 'img/images/Star 5.svg';
-        starImage.width = 23;
-        starImage.height = 26;
-        starContainer.appendChild(starImage);
-      }
-
-      const participants = document.createElement('p');
-      participants.classList.add('participants');
-      if (data.minParticipants === data.maxParticipants) {
-        participants.textContent = `${data.maxParticipants} participants`;
-      } else {
-        participants.textContent = `${data.minParticipants}-${data.maxParticipants} participants`;
-      }
-
-      const roomInfo = document.createElement('p');
-      roomInfo.classList.add('roomInfo');
-      roomInfo.innerHTML = `${data.description}`;
-
-      const btnDiv = document.createElement('div');
-      btnDiv.classList.add('btnDiv');
-      const bookButton = document.createElement('button');
-      bookButton.classList.add('cardBtn');
-      bookButton.textContent = 'Book this room';
-      btnDiv.appendChild(bookButton);
-
-      container.appendChild(cardTitle);
-      container.appendChild(starContainer);
-      container.appendChild(participants);
-      container.appendChild(roomInfo);
-      container.appendChild(btnDiv);
-
-      card.appendChild(cardImage);
-      card.appendChild(container);
-
-      cardsContainer.appendChild(card);
-    }
-
-    data.challenges.forEach(createCard);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  closeBtn.addEventListener("click", () => {
+    popupMenu.classList.remove("active");
+    overlay.classList.remove("active");
   });
 
-  // Filter
+  overlay.addEventListener("click", () => {
+    popupMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+}
 
-  
+startApp();
