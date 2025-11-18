@@ -80,10 +80,12 @@ figcaption {
   display: flex;
   justify-content: center;
 }
-
-.filterBtn {
+.filterbutton{
   display: flex;
   justify-content: center;
+}
+.filterBtn {
+  
   align-content: center;
   background-color: white;
   border: solid 0.1rem #8acfe5;
@@ -97,7 +99,9 @@ figcaption {
   text-align: center;
   width: 10rem;
 }
-
+.containerfilter{
+  display: none;
+}
 /* ============================================================
    ==========     GRID FÖR ALLA KORT (NYTILLAGT)    ============
    ============================================================ */
