@@ -133,7 +133,7 @@ fetch('challenges.json')
       card.dataset.minParticipants = data.minParticipants;
       card.dataset.maxParticipants = data.maxParticipants;
       card.dataset.rating = data.rating;
-      card.dataset.labels = data.labels;
+      card.dataset.labels = data.labels.join(','); 
       const cardImage = document.createElement('img');
       cardImage.src = '/img/images/hacker.png';
       cardImage.alt = `Image for ${data.title}`;
@@ -192,3 +192,7 @@ fetch('challenges.json')
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
   });
+
+  // Filter
+
+  
