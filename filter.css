@@ -69,17 +69,15 @@ h2 {
 
 .typetags1 {
     margin-bottom: 5px;
-    font-family: "Roboto", sans-serif;    
+    font-family: "Roboto", sans-serif;
 }
 
-#web:active, 
-#linux:active,
-#cryptography:active,
-#coding:active,
-#someother:active,
-#finaltag:active{
+.tags button.active {
     background-color: #8ACFE5;
+    color: white;
+    border-color: #8ACFE5;
 }
+
 #web {
     border: 0.1rem #8ACFE5;
     border-style: solid;
@@ -87,7 +85,7 @@ h2 {
     padding: 0.2rem;
     text-align: center;
     text-decoration: none;
-    color: #011827; 
+    color: #011827;
 }
 
 #linux {
@@ -113,7 +111,8 @@ h2 {
 #coding {
     border: 0.1rem #8ACFE5;
     border-style: solid;
-    border-radius: 1rem;;
+    border-radius: 1rem;
+    ;
     padding: 0.2rem;
     text-align: center;
     text-decoration: none;

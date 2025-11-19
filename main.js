@@ -131,3 +131,45 @@ if (hamburger && popupMenu && overlay && closeBtn) {
 }
 
 startApp();
+
+//Kod för Filtrering med tags 
+const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
+let activeTags = [];
+
+// Click events för tag buttons
+tagIds.forEach((tagId) => {
+  const btn = document.getElementById(tagId);
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      btn.classList.toggle("active"); // toggle button style
+
+      // Uppdaterad lista av aktiva taggar
+      activeTags = tagIds
+        .filter((id) => {
+          const b = document.getElementById(id);
+          return b && b.classList.contains("active");
+        })
+        .map((tag) => tag.toLowerCase());
+
+      filterChallengesByTags(); 
+    });
+  }
+});
+
+// Funktion för att filtrera challenges baserad på activa tags 
+function filterChallengesByTags() {
+  if (activeTags.length === 0) {
+    displayCards(allChallenges); // Visa alla om ingen tagg är aktiverad
+    return;
+  }
+
+  const filtered = allChallenges.filter((challenge) => {
+    let labels = challenge.labels || [];
+    const labelsLower = labels.map((l) => l.toLowerCase());
+    // Challenge måste innehålla alla aktiva taggar
+    return activeTags.every((tag) => labelsLower.includes(tag));
+  });
+
+  displayCards(filtered); 
+}
