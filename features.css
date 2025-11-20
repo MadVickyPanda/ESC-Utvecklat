@@ -1,555 +1,164 @@
-@import url(hamburger.css);
-
-html,
-body {
-    font-family: "Roboto", sans-serif;
-    justify-content: center;
-    margin: 0;
-    padding: 0%;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-.header {
-    background-color: #011827;
-    display: flex;
-    max-width: 100%;
-}
-
-figcaption {
-    align-content: center;
-    color: white;
-    display: flex;
-    font-size: 1rem;
-    font-style: bold;
-    font-weight: 700;
-    margin-left: 1rem;
-    margin-top: 1.25rem;
-    width: 20%;
-}
-
-.logo {
-    height: 4rem;
-    margin-top: 1.25rem;
-    margin-left: 1rem;
-    width: 6rem;
-    padding-bottom: 2rem;
-}
-
-.menu {
-    list-style: none;
-    margin-top: -1.25rem;
-}
-
-.playOne,
-.playTwo,
-.story,
-.contact,
-.home {
-    display: none;
-    list-style: none;
-}
-
-.imageCard {
-      aspect-ratio: 1/1;
-  object-fit: cover;
-    border-radius: 0.5rem;
-    height: auto;
-    width: fit-content;
-    
-}
-
-.scroll {
-    display: flex;
-    flex-direction: row;
-    gap: 1.87rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding-right: 1rem;
-    margin-top: 2rem;
-}
-
-.roomTitle {
-    font-size: 1.60rem;
-    font-weight: 400;
-    text-align: left;
-    margin-bottom: 0;
-}
-
-.card {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTwo {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardThree {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFour {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFive {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardSix {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardSeven {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardEight {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardNine {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardEleven {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardTwelve {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardThirteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFourteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.cardFifteen {
-    background-color: white;
-    border: #011827;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
-    flex-direction: column;
-    margin-bottom: 1.25rem;
-    margin-left: 0.62rem;
-    width: 364px;
-}
-
-.star {
-    display: flex;
-    align-items: center;
-    position: relative;
-    float: left;
-    margin-left: 0.62rem;
-    margin-top: -2rem;
-}
-
-.participants {
-    font-size: 0.87rem;
-    font-weight: 400;
-    margin-left: 1rem;
-}
-
-.roomInfo {
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.43rem;
-    margin: 0;
-    text-align: justify;
-
-}
-
-.btnDiv {
-    display: flex;
-    justify-content: end;
-    margin-bottom: 1.25rem;
-    margin-right: 1.25rem;
-}
-
-.cardBtn {
-    background-color: #E3170A;
-    border: none;
-    border-radius: 0.4rem;
-    color: white;
-    cursor: pointer;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 3rem;
-    width: 11.2rem;
-
-}
-
-.filter {
-    display: flex;
-    justify-content: center;
-}
-
-.filterBtn {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: white;
-    border: solid 0.1rem;
-    border-color: #8ACFE5;
-    border-radius: 0.25rem;
-    color: #8ACFE5;
-    cursor: pointer;
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 2rem;
-    text-align: center;
-    text-decoration: none;
-    width: 10rem;
-}
-
-.headlineChallenges {
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    font-style: bold;
-    justify-content: center;
-    margin-top: 3rem;
-}
-
-footer {
-    align-content: center;
-    background-color: #011827;
-    display: flex;
-    flex-direction: column;
-}
-
-.footerHead {
-    color: white;
-    font-size: 1.12rem;
-    font-weight: 700;
-}
-
-.footerText {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-    margin-left: 1.875rem;
-    text-align: left;
-    width: 70%;
-}
-
-.siteMap {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-h4 {
-    color: white;
-    font-weight: 700;
-    font-size: 1.12rem;
-    margin-left: 30px;
-}
-
-.siteList {
-    list-style: none;
-}
-
-.socials {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-.socialList {
-    list-style: none;
-}
-
-.linkPlay {
-    color: white;
-    text-decoration: none;
-}
-
-@media (min-width: 600px) {
-
-    html,
-    body {
-        justify-content: center;
-        margin: auto;
-        width: 1280px;
-    }
-
-    .header {
-        background-color: #011827;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        height: 12rem;
-        max-width: 100%;
-        width: auto;
-    }
-
-    .logo {
-        height: 4rem;
-        margin-top: 1.25rem;
-        margin-left: 1rem;
-        width: 6rem;
-        padding-bottom: 2rem;
-    }
-
-    figcaption {
-        align-content: center;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-size: 2.5rem;
-        font-style: bold;
-        font-weight: 700;
-        margin-left: 1rem;
-        margin-top: 2rem;
-        /* justify-content: center; */
-        width: auto;
-    }
-
-    .menu {
-        display: flex;
-        gap: 6rem;
-        justify-content: center;
-        list-style: none;
-        margin-top: -3rem;
-        margin-right: 1rem;
-    }
-
-    .hamburgerMenu {
-        display: none;
-    }
-
-    .popupMenu {
-        display: none;
-    }
-
-    .playOne:hover,
-    .playTwo:hover,
-    .story:hover,
-    .contact:hover,
-    .home:hover {
-        color: #8ACFE5;
-    }
-
-    .playOne {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .playTwo {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .story {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .contact {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .home {
-        background-color: #011827;
-        border: none;
-        color: white;
-        display: flex;
-        font-family: "Roboto", sans-serif;
-        font-style: bold;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .popular {
-        margin-top: -6rem;
-    }
-
-    .scroll {
-        justify-content: center;
-        width: 1280px;
-    }
-
-    .roomTitle {
-        margin-left: 0.6rem;
-    }
-
-    .roomInfo {
-        margin-left: 0.6rem;
-    }
-
-    footer {
-        align-items: center;
-        border: 0;
-        flex-direction: row;
-        font-weight: 400;
-        height: 20rem;
-        margin-top: 5rem;
-        width: auto;
-    }
-
-    .footerAbout {
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    h4 {
-        margin-bottom: 0;
-        margin-left: 4.9rem;
-    }
-
-    .follow {
-        margin-top: -1rem;
-    }
-
-    .footerText {
-        margin-right: 6rem;
-        margin-left: 5rem;
-        width: 20rem;
-    }
-
-    .siteList,
-    .socialList {
-        margin-left: 3rem;
-    }
-
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Our challenges – ESC Hacker escape room</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
+      <figcaption>Hacker Escape Rooms</figcaption>
+    </div>
+
+    <div class="hamburgerMenu">
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="popupMenu" id="popupMenu">
+        <button class="closeBtn" id="closeBtn">&times;</button>
+        <ul class="navBtn">
+          <li><a href="features.html">Play online</a></li>
+          <li><a href="features.html">Play on-site</a></li>
+          <li><a href="#">The story</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="index.html">Back to home page</a></li>
+        </ul>
+      </div>
+
+      <div class="overlay" id="overlay"></div>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="features.html" class="playOne">Play online</a></li>
+        <li><a href="features.html" class="playTwo">Play on-site</a></li>
+        <li><a href="#" class="story">The story</a></li>
+        <li><a href="#" class="contact">Contact us</a></li>
+        <li><a href="index.html" class="home">Back to home page</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="popular">
+      <p>Our challenges</p>
+    </section>
+
+    <section class="btnList" style="margin-top: 1rem; margin-bottom: 1rem">
+      <button id="web">Web</button>
+      <button id="linux">Linux</button>
+      <button id="cryptography">Cryptography</button>
+      <button id="coding">Coding</button>
+      <button id="someother">Some Other</button>
+      <button id="finaltag">Final Tag</button>
+    </section>
+
+    <section id="cards-container" class="scroll"></section>
+
+    <div id="bookingBackdrop" class="booking-backdrop" hidden>
+      <div class="booking-modal">
+        <button type="button" class="booking-close" id="bookingClose">&times;</button>
+
+        <div id="bookingStep1" class="booking-step">
+          <h2>Book room</h2>
+          <p id="bookingRoomTitle"></p>
+          <div class="booking-fields">
+            <label>
+              Choose date:
+              <input type="date" id="bookingDate" />
+            </label>
+          </div>
+          <div class="booking-error" id="bookingError1"></div>
+          <div class="booking-actions">
+            <button type="button" class="booking-next" id="bookingNext1">Next</button>
+          </div>
+        </div>
+
+        <div id="bookingStep2" class="booking-step" hidden>
+          <h2>Your details</h2>
+          <p id="bookingSummaryStep2"></p>
+          <div class="booking-fields">
+            <label>Name <input type="text" id="bookingName" /></label>
+            <label>Email <input type="email" id="bookingEmail" /></label>
+            <label>
+              Time
+              <select id="bookingTime">
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+              </select>
+            </label>
+            <label>
+              Participants
+              <select id="bookingParticipants">
+                <option value="2">2 participants</option>
+                <option value="3">3 participants</option>
+                <option value="4">4 participants</option>
+                <option value="5">5 participants</option>
+                <option value="6">6 participants</option>
+              </select>
+            </label>
+          </div>
+          <div class="booking-error" id="bookingError2"></div>
+          <div class="booking-actions">
+            <button type="button" class="booking-next" id="bookingNext2">Next</button>
+          </div>
+        </div>
+
+        <div id="bookingStep3" class="booking-step" hidden>
+          <h2>Booking confirmed</h2>
+          <p id="bookingThankYou"></p>
+          <div class="booking-actions">
+            <button type="button" class="booking-close-btn" id="bookingCloseFinal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footerAbout">
+      <h4>[Esc] Hacker Escape Rooms</h4>
+      <p class="footerText">
+        Quodsi haberent magnalia inter potentiam et divitias,
+        et non illam quidem haec eo spectant haec quoque vos
+        omnino desit illud quo solo felicitatis libertatisque perficiuntur.
+      </p>
+    </div>
+
+    <nav class="siteMap">
+      <h4>Site Map</h4>
+      <ul class="siteList">
+        <li>The Story</li>
+        <li>Contact Us</li>
+        <li>Legal</li>
+        <li>Play Online</li>
+        <li>Play on-site</li>
+      </ul>
+    </nav>
+
+    <nav class="socials">
+      <h4 class="follow">Follow us on</h4>
+      <ul class="socialList">
+        <li>Facebook</li>
+        <li>Instagram</li>
+        <li>Twitter</li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

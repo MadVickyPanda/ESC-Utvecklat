@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Our Challenges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="challenges.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
+            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC">
             <figcaption>Hacker Escape Rooms</figcaption>
         </div>
         <nav>
@@ -35,19 +35,19 @@
     </div>
 
     <div class="filterbutton">
-        <button class="filterBtn" onclick="document.querySelector('link').href='filter.css';">Filter challenges</button>
+        <button class="filterBtn" onclick="document.querySelector('link[rel=stylesheet]').href='filter.css';">
+            Filter challenges
+        </button>
     </div>
 
     <div class="containerfilter">
         <h2>Filter challanges
             <em><img src="close-button.png" class="close"
-                    onclick="document.querySelector('link').href='challenges.css';"></em>
+                    onclick="document.querySelector('link[rel=stylesheet]').href='challenges.css';"></em>
         </h2>
 
         <section class="filter">
-
             <div class="typecheckbox">
-
                 <h3 class="bytype">By type</h3>
                 <div class="checkbox">
                     <input type="checkbox" id="online">
@@ -56,6 +56,7 @@
                     <label for="onsite">Include on-site challanges</label>
                 </div>
             </div>
+
             <div class="rating">
                 <h3>By rating</h3>
                 <div class="starrating1">
@@ -73,10 +74,10 @@
                         <img src="img/images/Star 5.svg" width="23" height="26">
                         <img src="img/images/Star 5.svg" width="23" height="26">
                         <img src="img/images/Star 5.svg" width="23" height="26">
-
                     </span>
                 </div>
             </div>
+
             <div class="tags">
                 <h3>By tags</h3>
                 <div class="typetags1">
@@ -88,9 +89,9 @@
                 <div class="typetags2">
                     <button id="someother">Some oher tag</button>
                     <button id="finaltag">A final tag</button>
-                    
                 </div>
             </div>
+
             <div class="typingtext">
                 <h3>Or type to search for keyward</h3>
                 <input type="text" id="typing" value="Start typing to filter">
@@ -98,13 +99,79 @@
         </section>
     </div>
 
-    
-    <div id="cards-container" class="scroll">
+    <div id="cards-container" class="scroll"></div>
 
+    <div id="booking-modal" class="booking-modal hidden">
+        <div class="booking-modal__backdrop"></div>
+
+        <div class="booking-modal__content">
+            <button id="booking-close" class="booking-modal__close" aria-label="Close booking">
+                ×
+            </button>
+
+            <div id="booking-step-1" class="booking-step">
+                <h2>Book challenge</h2>
+                <p id="booking-challenge-title"></p>
+
+                <label class="booking-label">
+                    Choose date:
+                    <input type="date" id="booking-date" required>
+                </label>
+
+                <button id="booking-next-1" class="booking-btn booking-btn--primary">
+                    Show available times
+                </button>
+
+                <p id="booking-step-1-error" class="booking-error"></p>
+            </div>
+
+            <div id="booking-step-2" class="booking-step hidden">
+                <h2>Booking details</h2>
+
+                <label class="booking-label">
+                    Time:
+                    <select id="booking-time"></select>
+                </label>
+
+                <label class="booking-label">
+                    Participants:
+                    <select id="booking-participants"></select>
+                </label>
+
+                <label class="booking-label">
+                    Name:
+                    <input type="text" id="booking-name" required>
+                </label>
+
+                <label class="booking-label">
+                    Email:
+                    <input type="email" id="booking-email" required>
+                </label>
+
+                <div class="booking-actions">
+                    <button id="booking-back-2" class="booking-btn booking-btn--ghost">
+                        Back
+                    </button>
+                    <button id="booking-next-2" class="booking-btn booking-btn--primary">
+                        Confirm booking
+                    </button>
+                </div>
+
+                <p id="booking-step-2-error" class="booking-error"></p>
+            </div>
+
+            <div id="booking-step-3" class="booking-step hidden">
+                <h2>Thank you!</h2>
+                <p>Your booking has been registered.</p>
+
+                <button id="booking-close-3" class="booking-btn booking-btn--primary">
+                    Close
+                </button>
+            </div>
+        </div>
     </div>
 
-    <script src='main.js' type="module"></script>
-    
+    <script src="main.js"></script>
 </body>
 
 </html>

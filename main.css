@@ -85,7 +85,7 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
 
 .mobileOnline {
@@ -118,7 +118,6 @@ figcaption {
   font-weight: 400;
   width: 60%;
   margin-left: 2rem;
-  
 }
 
 .reviewTwo {
@@ -155,14 +154,14 @@ figcaption {
   gap: 1.87rem;
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   padding-right: 1rem;
 }
 
 .roomTitle {
-  font-size: 1.60rem;
+  font-size: 1.6rem;
   font-weight: 400;
-  text-align: left; 
+  text-align: left;
 }
 
 .card {
@@ -177,7 +176,7 @@ figcaption {
 }
 
 .cardTwo {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -188,7 +187,7 @@ figcaption {
 }
 
 .cardThree {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -217,18 +216,17 @@ figcaption {
   padding: 0.43rem;
   margin: 0;
   text-align: justify;
-  
 }
 
 .btnDiv {
   display: flex;
-  justify-content: end;
-  margin-bottom: 1.25rem; 
+  justify-content: flex-end;
+  margin-bottom: 1.25rem;
   margin-right: 1.25rem;
 }
 
 .cardBtn {
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.4rem;
   color: white;
@@ -238,12 +236,11 @@ figcaption {
   font-weight: 700;
   height: 3rem;
   width: 11.2rem;
-  
 }
 
 .onsiteBtnTwo {
   align-content: center;
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   border: none;
   border-radius: 0.25rem;
   color: black;
@@ -256,13 +253,13 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
 
 .mobileOnlineTwo {
   background-color: white;
   border: none;
-  color: #36769D;
+  color: #36769d;
   display: flex;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -282,7 +279,7 @@ figcaption {
   font-weight: 400;
   margin-top: 1.875rem;
   padding-bottom: 1.875rem;
-  text-align: center; 
+  text-align: center;
 }
 
 .aboutText {
@@ -291,14 +288,14 @@ figcaption {
   text-align: center;
   padding-left: 1.56rem;
   padding-right: 1.56rem;
-  padding-top: 2.5rem; 
+  padding-top: 2.5rem;
 }
 
 .aboutBtn {
   background-color: #011827;
-  border-color: #8ACFE5;
+  border-color: #8acfe5;
   border-radius: 0.25rem;
-  color: #8ACFE5;
+  color: #8acfe5;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   height: 4.12rem;
@@ -311,7 +308,6 @@ figcaption {
 .bookingImg {
   height: 18.75rem;
   width: 100%;
-  
 }
 
 .bookingHead {
@@ -334,7 +330,7 @@ figcaption {
 
 .bookingBtn {
   align-items: center;
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.25rem;
   color: white;
@@ -346,7 +342,7 @@ figcaption {
   height: 4.12rem;
   margin-bottom: 3.12rem;
   margin-left: 1.5rem;
-  width: 70%; 
+  width: 70%;
 }
 
 .challengesImg {
@@ -374,7 +370,7 @@ figcaption {
 
 .challengesBtn {
   align-items: center;
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.25rem;
   color: white;
@@ -439,7 +435,6 @@ h4 {
 }
 
 @media (min-width: 600px) {
-
   html,
   body {
     justify-content: center;
@@ -466,7 +461,6 @@ h4 {
     font-family: "Roboto", sans-serif;
     height: 12rem;
     width: auto;
-    
   }
 
   .myCover {
@@ -480,19 +474,19 @@ h4 {
     gap: 6rem;
     justify-content: center;
     list-style: none;
-    margin-top: -3rem; 
+    margin-top: -3rem;
   }
-  .hamburgerMenu{
+  .hamburgerMenu {
     display: none;
   }
-  .popupMenu{
+  .popupMenu {
     display: none;
   }
   .playOne:hover,
   .playTwo:hover,
   .story:hover,
   .contact:hover {
-    color: #8ACFE5;
+    color: #8acfe5;
   }
 
   .playOne {
@@ -504,7 +498,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   .playTwo {
@@ -516,7 +510,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   .story {
@@ -527,8 +521,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .contact {
@@ -539,8 +533,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .btnsNav {
@@ -560,7 +554,7 @@ h4 {
 
   .onlineBtn {
     align-content: center;
-    background-color: #E3170A;
+    background-color: #e3170a;
     border: none;
     border-radius: 0.25rem;
     color: white;
@@ -576,7 +570,7 @@ h4 {
 
   .onsiteBtn {
     align-content: center;
-    background-color: #8ACFE5;
+    background-color: #8acfe5;
     border: none;
     border-radius: 0.25rem;
     color: black;
@@ -626,11 +620,11 @@ h4 {
     justify-content: left;
     width: 60%;
   }
-  
-  .popular{
+
+  .popular {
     margin-top: -6rem;
   }
-  
+
   .scroll {
     justify-content: center;
     width: 1280px;
@@ -642,7 +636,7 @@ h4 {
 
   .participants {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 0.9rem;
   }
 
@@ -652,7 +646,7 @@ h4 {
 
   .onlineBtnTwo {
     align-content: center;
-    background-color: #E3170A;
+    background-color: #e3170a;
     border: none;
     border-radius: 0.25rem;
     color: white;
@@ -665,7 +659,7 @@ h4 {
     text-decoration: none;
     width: 16rem;
   }
-  .onsiteBtnTwo{
+  .onsiteBtnTwo {
     display: block;
     font-size: 1.12rem;
     height: 3.4rem;
@@ -702,15 +696,13 @@ h4 {
     text-align: left;
     padding-top: 3rem;
     width: 20rem;
-
   }
 
   .bookingText {
     display: flex;
     width: 20rem;
-
   }
-  .bookingBtn{
+  .bookingBtn {
     width: 15rem;
   }
   .challengesHead {
@@ -730,17 +722,15 @@ h4 {
     height: 24rem;
     margin: 0;
     width: 32rem;
-    
   }
 
   .challengesText {
     margin: 1.5rem 0;
     width: 20rem;
   }
-  .challengesBtn{
+  .challengesBtn {
     margin: 0;
     width: 15rem;
-    
   }
   footer {
     align-items: center;
@@ -755,7 +745,6 @@ h4 {
   .footerAbout {
     display: flex;
     flex-direction: column;
-
   }
 
   h4 {
@@ -777,6 +766,109 @@ h4 {
   .socialList {
     margin-left: 3rem;
   }
+}
 
-  
+/* ===========================
+   BOOKING MODAL
+   =========================== */
+
+.booking-modal.hidden {
+  display: none;
+}
+
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  font-family: inherit;
+}
+
+.booking-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.booking-modal__content {
+  position: relative;
+  max-width: 420px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.booking-modal__close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.booking-step {
+  display: block;
+}
+
+.booking-step.hidden {
+  display: none;
+}
+
+.booking-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.booking-label input,
+.booking-label select {
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font: inherit;
+}
+
+.booking-error {
+  color: #c53030;
+  margin-top: 0.5rem;
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.booking-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.booking-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.booking-btn--primary {
+  background-color: #222;
+  color: #fff;
+}
+
+.booking-btn--primary:hover {
+  opacity: 0.9;
+}
+
+.booking-btn--ghost {
+  background: transparent;
+  border: 1px solid #ccc;
+}
+
+.booking-btn--ghost:hover {
+  background: #f5f5f5;
 }
