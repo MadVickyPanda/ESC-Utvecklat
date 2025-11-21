@@ -5,6 +5,7 @@ const popupMenu = document.getElementById("popupMenu");
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const cardsContainer = document.getElementById("cards-container");
+const topThreeContainer = document.getElementById("top-three");
 
 let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
 
@@ -18,12 +19,31 @@ function loadChallenges() {
   fetchChallenges()
     .then((challenges) => {
       allChallenges = challenges; // spara allt i en array
-      displayCards(allChallenges); //skickar data till display funtionen
+
+      if (topThreeContainer) {
+        displayTopThree(allChallenges);
+      }
+      if (cardsContainer) {
+        displayCards(allChallenges); //skickar data till display funtionen  
+      }
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
       cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
     });
+}
+
+function displayTopThree(challengesArray) {
+  const topThreeContainer = document.getElementById("top-three");
+
+  const topThreeChallenges = challengesArray.sort((a,b) => b.rating - a.rating).slice(0,3);
+
+  topThreeContainer.innerHTML = "";
+
+  topThreeChallenges.forEach((challenge) => {
+    const card = createCard(challenge);
+    topThreeContainer.appendChild(card);
+  });
 }
 
 //DISPLAY FUNKTION
@@ -130,7 +150,9 @@ if (hamburger && popupMenu && overlay && closeBtn) {
   });
 }
 
-startApp();
+document.addEventListener("DOMContentLoaded", function () {
+  startApp(); 
+});
 
 //Kod för Filtrering med tags 
 const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
