@@ -173,3 +173,37 @@ function filterChallengesByTags() {
 
   displayCards(filtered); 
 }
+// -----------------------
+// Rating widget init
+// -----------------------
+document.addEventListener("DOMContentLoaded", () => {
+  // render / init existing rating widgets on the page
+  document.querySelectorAll('.rating-stars').forEach(el => {
+    const ratingValue = Number(el.dataset.rating) || 0;
+    const interactive = el.dataset.interactive === 'true';
+
+    // use the public API from rating.js
+    // If you used the earlier variant which exposes Rating.render/create, adapt names accordingly.
+    if (window.Rating && typeof window.Rating.render === 'function') {
+      // render static stars first
+      window.Rating.render(el, ratingValue);
+    } else if (typeof window.Rating === 'object' && typeof window.Rating.renderStars === 'function') {
+      // fallback for older API name
+      el.innerHTML = window.Rating.renderStars(ratingValue);
+    }
+
+    // if the element is marked interactive, make it interactive
+    if (interactive) {
+      if (window.Rating && typeof window.Rating.makeInteractive === 'function') {
+        window.Rating.makeInteractive(el, ratingValue);
+      } else if (window.Rating && typeof window.Rating.createRatingWidget === 'function') {
+        // older API fallback
+        window.Rating.createRatingWidget(el, ratingValue, {
+          onChange: (newRating) => {
+            console.log('rating changed:', newRating);
+          }
+        });
+      }
+    }
+  });
+});
