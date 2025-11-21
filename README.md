@@ -1,31 +1,8 @@
-Grupp 1
+Grupp 1 Mötes anteckningar möte 12/11-25 Escape room project JS/JSON 
 
-
-möte 1 Måndag 10/11
-Planering av grupparbete, ESC-sidan 
-1.Hur planerar ni att dela upp arbetet? 
-
-Vi kommer att samarbeta och dela upp uppgifterna rättvist. Så att alla har lika mycket att göra på ett ungefär och att det inte blir att en person som får jättesvåra grejer och en annan får jättelätta grejer. Vi delar upp mer exakt efter lektionen på onsdag 
-
-2.När ska ni ha gruppmöten? Bestäm alla datum redan nu 
-
-Möten fredagar kl:12 
-
-3.Hur sköter ni kommunikationen mellan möten? 
-
-Mellan möten har vi en chatt/rum på teams, där vi kan chatta och där kan vi ha workshops.  
-
-Samt en gruppchat på itsLearning. 
-
-4.Vems befintliga kod ska ni utgå ifrån? 
-
-Vi har satt deadline till 20.00 tisdag 10/11 om att skicka sina Github pages med uppgiften så vi kan kika på varandras startsida samt säga om man kan tänka sig att vi använder dennas startsida. För mig är det ok om ni vill använda min kod, men är helt fine med om vi tar någon annans startsida.  
-
-
-Möte 2 Onsdag 12/11 Escape room project JS/JSON 
 Dela upp arbetet 
 
-Grund Sida och Css grund
+Grund Sida och Css 
 Viktoria 
 
 Moment: Ladda challenge-data från API 
@@ -39,5 +16,54 @@ Viktoria
 Ghudsan 
 Nemanja 
 
+Sedan hjälpas åt med varje moment när det behövs.  
 
--Sedan hjälpas åt med varje moment när det behövs.  
+
+Mötes-anteckningar  18/11-25 
+
+Strukturera upp koden för best practice, filter har en egen JS, API kommer att läggas på en egen och sedan ropas på.  
+Lenson: API och hur korten displays 
+Nemanja: By rating och by type. 
+Ghudsan: Filter by keywords.  
+
+ 
+
+Alla: Se video om GitHub! 
+
+Alla Ska hålla kontakten bättre och säga vad de gör. För att undvika missförstånd och att två personer jobbar på exakt samma sak.  
+Kom ihåg att alla ska reviewa en pull request, det är en del av uppgiften. Därför har Viktoria lagt in att man kan inte merga fören någon kollat och kommenterat.  
+
+ 
+
+Färdigt: 
+Etiketter 
+Ladda challenges 
+
+Kvar att göra: 
+Topp 3 challenges på startsidan 
+Mindre HTML och CSS ändringar till challenges 
+Filter by rating, by type 
+Search for keywords 
+
+Iman jobbar på med booking. Det går bra, ska säga till om hon behöver hjälp.  
+ 
+Va försiktiga så ni inte comittar direkt till repot, så det måste ligga i en egen branch för att kunna göra en pull request och inte pusha direkt till main. Gör en git pull innan ni börjar jobba för att få den uppdaterade koden. Bättre att göra pull requests lite oftare än typ en gång när man är klar.  
+
+ 
+Git checkout för att kunna kolla in någon annans branch. Instruktioner skickas i chatten.  
+Nästa möte fredag 21/11 kl 12.00 
+
+ 
+Möte fredag 21/11  
+
+Hur har vi resonerat i våra teknikval och hur har vi valt att strukturera vår kod? 
+Diskuteras via chatt.  
+
+Hur ligger vi till?  
+
+Ghudsan är inte riktigt färdig 
+Nemanja jobbar på stjärnorna.  
+Viktoria ska lägga till fler ettiketter efter vad som finns i api 
+Kristoffer jobbar med de 3 korten på startsidan, skickar pullrequest idag.  
+Imans booking ser jättebra ut, men vi måste lösa konflikterna. Hon gör en synko och gör booking efter senaste versionen va koden.  
+Möte ska bokas in nästa vecka också, tids bestäms på måndag.  
