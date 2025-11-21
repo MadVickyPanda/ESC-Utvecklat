@@ -33,7 +33,7 @@ function loadChallenges() {
     });
 }
 
-function displayTopThree(challengesArray {
+function displayTopThree(challengesArray) {
   const topThreeContainer = document.getElementById("top-three");
 
   const topThreeChallenges = challengesArray.sort((a,b) => b.rating - a.rating).slice(0,3);
