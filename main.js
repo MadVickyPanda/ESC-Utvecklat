@@ -5,28 +5,61 @@ const popupMenu = document.getElementById("popupMenu");
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const cardsContainer = document.getElementById("cards-container");
+const topThreeContainer = document.getElementById("top-three");
 
 let allChallenges = [];
+const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
+let activeTags = [];
 
+// ----- STARTA APPEN -----
 function startApp() {
   loadChallenges();
 }
 
+// ----- HÄMTA DATA FRÅN API -----
 function loadChallenges() {
   fetchChallenges()
     .then((challenges) => {
-      allChallenges = challenges;
-      displayCards(allChallenges);
+      allChallenges = challenges; // spara allt i en array
+
+      // För index.html – topp 3 rum
+      if (topThreeContainer) {
+        displayTopThree(allChallenges);
+      }
+
+      // För features.html – alla kort
+      if (cardsContainer) {
+        displayCards(allChallenges);
+      }
     })
     .catch((error) => {
+      console.error("Error loading challenges:", error);
       if (cardsContainer) {
         cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
       }
     });
 }
 
+// ----- VISA TOPP 3 PÅ FÖRSTASIDAN -----
+function displayTopThree(challengesArray) {
+  if (!topThreeContainer) return;
+
+  const topThreeChallenges = [...challengesArray]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 3);
+
+  topThreeContainer.innerHTML = "";
+
+  topThreeChallenges.forEach((challenge) => {
+    const card = createCard(challenge);
+    topThreeContainer.appendChild(card);
+  });
+}
+
+// ----- VISA KORT (FEATURES-SIDAN) -----
 function displayCards(challengesArray) {
   if (!cardsContainer) return;
+
   cardsContainer.innerHTML = "";
   challengesArray.forEach((challenge) => {
     const card = createCard(challenge);
@@ -34,6 +67,7 @@ function displayCards(challengesArray) {
   });
 }
 
+// ----- SKAPA ETT KORT -----
 function createCard(data) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -78,6 +112,8 @@ function createCard(data) {
   const bookButton = document.createElement("button");
   bookButton.classList.add("cardBtn");
   bookButton.textContent = "Book this room";
+
+  // När man klickar -> scrolla till bokningsdelen på index.html
   bookButton.addEventListener("click", () => {
     window.location.href = "index.html#booking";
   });
@@ -95,6 +131,7 @@ function createCard(data) {
   return card;
 }
 
+// ----- STJÄRNOR -----
 function createStarContainer(rating) {
   const starContainer = document.createElement("div");
   starContainer.classList.add("star");
@@ -111,6 +148,7 @@ function createStarContainer(rating) {
   return starContainer;
 }
 
+// ----- HAMBURGERMENY -----
 if (hamburger && popupMenu && overlay && closeBtn) {
   hamburger.addEventListener("click", () => {
     popupMenu.classList.add("active");
@@ -128,13 +166,12 @@ if (hamburger && popupMenu && overlay && closeBtn) {
   });
 }
 
-if (cardsContainer) {
+// ----- STARTA NÄR SIDAN LADDATS -----
+document.addEventListener("DOMContentLoaded", function () {
   startApp();
-}
+});
 
-const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
-let activeTags = [];
-
+// ----- TAGGFILTER -----
 tagIds.forEach((tagId) => {
   const btn = document.getElementById(tagId);
   if (btn) {
@@ -171,6 +208,7 @@ function filterChallengesByTags() {
   displayCards(filtered);
 }
 
+// ----- EV. STATISKA KNAPPAR (om några finns i HTML) -----
 const staticBookButtons = document.querySelectorAll(".cardBtn");
 staticBookButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
