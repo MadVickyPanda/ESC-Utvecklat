@@ -6,37 +6,34 @@ const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const cardsContainer = document.getElementById("cards-container");
 
-let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
+let allChallenges = [];
 
-//Startar ''applikationen'' vid webbsidans laddning
 function startApp() {
   loadChallenges();
 }
 
-//laddar challenges från funktionen 'fetchChallenges' se "import"
 function loadChallenges() {
   fetchChallenges()
     .then((challenges) => {
-      allChallenges = challenges; // spara allt i en array
-      displayCards(allChallenges); //skickar data till display funtionen
+      allChallenges = challenges;
+      displayCards(allChallenges);
     })
     .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+      if (cardsContainer) {
+        cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+      }
     });
 }
 
-//DISPLAY FUNKTION
 function displayCards(challengesArray) {
-  cardsContainer.innerHTML = ""; // tömmer container innan det visas allt
-
+  if (!cardsContainer) return;
+  cardsContainer.innerHTML = "";
   challengesArray.forEach((challenge) => {
-    const card = createCard(challenge); //skapa varje kort
+    const card = createCard(challenge);
     cardsContainer.appendChild(card);
   });
 }
 
-//SKAPA KORT FUNKTION
 function createCard(data) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -51,7 +48,7 @@ function createCard(data) {
   card.dataset.labels = data.labels;
 
   const cardImage = document.createElement("img");
-  cardImage.src = data.image || "/img/images/hacker.png";
+  cardImage.src = data.image || "img/images/hacker.png";
   cardImage.alt = `Image for ${data.title}`;
   cardImage.classList.add("imageCard");
 
@@ -62,7 +59,6 @@ function createCard(data) {
   cardTitle.classList.add("roomTitle");
   cardTitle.textContent = `${data.title} (${data.type})`;
 
-  //funktion specifikt för rating (kanske kan underlätta)
   const starContainer = createStarContainer(Number(data.rating) || 0);
 
   const participants = document.createElement("p");
@@ -82,6 +78,9 @@ function createCard(data) {
   const bookButton = document.createElement("button");
   bookButton.classList.add("cardBtn");
   bookButton.textContent = "Book this room";
+  bookButton.addEventListener("click", () => {
+    window.location.href = "index.html#booking";
+  });
 
   btnDiv.appendChild(bookButton);
   container.appendChild(cardTitle);
@@ -96,7 +95,6 @@ function createCard(data) {
   return card;
 }
 
-// FUNKTION specifikt för rating-stars
 function createStarContainer(rating) {
   const starContainer = document.createElement("div");
   starContainer.classList.add("star");
@@ -130,21 +128,20 @@ if (hamburger && popupMenu && overlay && closeBtn) {
   });
 }
 
-startApp();
+if (cardsContainer) {
+  startApp();
+}
 
-//Kod för Filtrering med tags 
 const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
 let activeTags = [];
 
-// Click events för tag buttons
 tagIds.forEach((tagId) => {
   const btn = document.getElementById(tagId);
   if (btn) {
     btn.addEventListener("click", (e) => {
-      e.preventDefault(); 
-      btn.classList.toggle("active"); // toggle button style
+      e.preventDefault();
+      btn.classList.toggle("active");
 
-      // Uppdaterad lista av aktiva taggar
       activeTags = tagIds
         .filter((id) => {
           const b = document.getElementById(id);
@@ -152,24 +149,31 @@ tagIds.forEach((tagId) => {
         })
         .map((tag) => tag.toLowerCase());
 
-      filterChallengesByTags(); 
+      filterChallengesByTags();
     });
   }
 });
 
-// Funktion för att filtrera challenges baserad på activa tags 
 function filterChallengesByTags() {
+  if (!cardsContainer) return;
+
   if (activeTags.length === 0) {
-    displayCards(allChallenges); // Visa alla om ingen tagg är aktiverad
+    displayCards(allChallenges);
     return;
   }
 
   const filtered = allChallenges.filter((challenge) => {
-    let labels = challenge.labels || [];
+    const labels = challenge.labels || [];
     const labelsLower = labels.map((l) => l.toLowerCase());
-    // Challenge måste innehålla alla aktiva taggar
     return activeTags.every((tag) => labelsLower.includes(tag));
   });
 
-  displayCards(filtered); 
+  displayCards(filtered);
 }
+
+const staticBookButtons = document.querySelectorAll(".cardBtn");
+staticBookButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "index.html#booking";
+  });
+});
