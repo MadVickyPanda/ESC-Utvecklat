@@ -1,194 +1,197 @@
-// Startsida
+import { fetchChallenges } from "./API.js";
 
-const hamburger = document.getElementById('hamburger');
-const popupMenu = document.getElementById('popupMenu');
-const overlay = document.getElementById('overlay');
-const closeBtn = document.getElementById('closeBtn');
-let topThreeChallenges = [];
+const hamburger = document.getElementById("hamburger");
+const popupMenu = document.getElementById("popupMenu");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+const cardsContainer = document.getElementById("cards-container");
+const topThreeContainer = document.getElementById("top-three");
 
-fetch('challenges.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    const cardsContainer = document.getElementById('cards-container');
-    cardsContainer.style.display = 'grid';
-    cardsContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-    cardsContainer.style.gap = '1.25rem';
-    cardsContainer.style.padding = '1rem';
-    cardsContainer.style.justifyItems = 'center';
-    // topThreeChallenges = data.challenges.sort((a, b) => b.rating - a.rating).slice(0, 3);
-    // console.log(topThreeChallenges);
-    function createCard(data) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.dataset.id = data.id;
-      card.dataset.type = data.type;
-      card.dataset.title = data.title;
-      card.dataset.description = data.description;
-      card.dataset.minParticipants = data.minParticipants;
-      card.dataset.maxParticipants = data.maxParticipants;
-      card.dataset.rating = data.rating;
-      card.dataset.labels = data.labels;
-      const cardImage = document.createElement('img');
-      cardImage.src = '/img/images/hacker.png';
-      cardImage.alt = `Image for ${data.title}`;
-      cardImage.classList.add('imageCard');
+let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
 
-      const container = document.createElement('div');
-      container.classList.add('container');
+//Startar ''applikationen'' vid webbsidans laddning
+function startApp() {
+  loadChallenges();
+}
 
-      const cardTitle = document.createElement('h3');
-      cardTitle.classList.add('roomTitle');
-      cardTitle.textContent = `${data.title} (${data.type})`;
+//laddar challenges från funktionen 'fetchChallenges' se "import"
+function loadChallenges() {
+  fetchChallenges()
+    .then((challenges) => {
+      allChallenges = challenges; // spara allt i en array
 
-      const starContainer = document.createElement('div');
-      starContainer.classList.add('star');
-      for (let i = 0; i < 5; i++) {
-        const starImage = document.createElement('img');
-        starImage.src = i < data.rating ? 'img/images/Star 4.svg' : 'img/images/Star 5.svg';
-        starImage.width = 23;
-        starImage.height = 26;
-        starContainer.appendChild(starImage);
+      if (topThreeContainer) {
+        displayTopThree(allChallenges);
       }
-
-      const participants = document.createElement('p');
-      participants.classList.add('participants');
-      if (data.minParticipants === data.maxParticipants) {
-        participants.textContent = `${data.maxParticipants} participants`;
-      } else {
-        participants.textContent = `${data.minParticipants}-${data.maxParticipants} participants`;
+      if (cardsContainer) {
+        displayCards(allChallenges); //skickar data till display funtionen  
       }
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+    });
+}
 
-      const roomInfo = document.createElement('p');
-      roomInfo.classList.add('roomInfo');
-      roomInfo.innerHTML = `${data.description}`;
+function displayTopThree(challengesArray) {
+  const topThreeContainer = document.getElementById("top-three");
 
-      const btnDiv = document.createElement('div');
-      btnDiv.classList.add('btnDiv');
-      const bookButton = document.createElement('button');
-      bookButton.classList.add('cardBtn');
-      bookButton.textContent = 'Book this room';
-      btnDiv.appendChild(bookButton);
+  const topThreeChallenges = challengesArray.sort((a,b) => b.rating - a.rating).slice(0,3);
 
-      container.appendChild(cardTitle);
-      container.appendChild(starContainer);
-      container.appendChild(participants);
-      container.appendChild(roomInfo);
-      container.appendChild(btnDiv);
+  topThreeContainer.innerHTML = "";
 
-      card.appendChild(cardImage);
-      card.appendChild(container);
+  topThreeChallenges.forEach((challenge) => {
+    const card = createCard(challenge);
+    topThreeContainer.appendChild(card);
+  });
+}
 
-      cardsContainer.appendChild(card);
-    }
+//DISPLAY FUNKTION
+function displayCards(challengesArray) {
+  cardsContainer.innerHTML = ""; // tömmer container innan det visas allt
 
-    data.challenges.forEach(createCard);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  challengesArray.forEach((challenge) => {
+    const card = createCard(challenge); //skapa varje kort
+    cardsContainer.appendChild(card);
+  });
+}
+
+//SKAPA KORT FUNKTION
+function createCard(data) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.dataset.id = data.id;
+  card.dataset.type = data.type;
+  card.dataset.title = data.title;
+  card.dataset.description = data.description;
+  card.dataset.minParticipants = data.minParticipants;
+  card.dataset.maxParticipants = data.maxParticipants;
+  card.dataset.rating = data.rating;
+  card.dataset.labels = data.labels;
+
+  const cardImage = document.createElement("img");
+  cardImage.src = data.image || "/img/images/hacker.png";
+  cardImage.alt = `Image for ${data.title}`;
+  cardImage.classList.add("imageCard");
+
+  const container = document.createElement("div");
+  container.classList.add("container");
+
+  const cardTitle = document.createElement("h3");
+  cardTitle.classList.add("roomTitle");
+  cardTitle.textContent = `${data.title} (${data.type})`;
+
+  //funktion specifikt för rating (kanske kan underlätta)
+  const starContainer = createStarContainer(Number(data.rating) || 0);
+
+  const participants = document.createElement("p");
+  participants.classList.add("participants");
+  participants.textContent =
+    data.minParticipants === data.maxParticipants
+      ? `${data.maxParticipants} participants`
+      : `${data.minParticipants}-${data.maxParticipants} participants`;
+
+  const roomInfo = document.createElement("p");
+  roomInfo.classList.add("roomInfo");
+  roomInfo.innerHTML = data.description;
+
+  const btnDiv = document.createElement("div");
+  btnDiv.classList.add("btnDiv");
+
+  const bookButton = document.createElement("button");
+  bookButton.classList.add("cardBtn");
+  bookButton.textContent = "Book this room";
+
+  btnDiv.appendChild(bookButton);
+  container.appendChild(cardTitle);
+  container.appendChild(starContainer);
+  container.appendChild(participants);
+  container.appendChild(roomInfo);
+  container.appendChild(btnDiv);
+
+  card.appendChild(cardImage);
+  card.appendChild(container);
+
+  return card;
+}
+
+// FUNKTION specifikt för rating-stars
+function createStarContainer(rating) {
+  const starContainer = document.createElement("div");
+  starContainer.classList.add("star");
+
+  for (let i = 0; i < 5; i++) {
+    const starImage = document.createElement("img");
+    starImage.src =
+      i < rating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
+    starImage.width = 23;
+    starImage.height = 26;
+    starContainer.appendChild(starImage);
+  }
+
+  return starContainer;
+}
+
+if (hamburger && popupMenu && overlay && closeBtn) {
+  hamburger.addEventListener("click", () => {
+    popupMenu.classList.add("active");
+    overlay.classList.add("active");
   });
 
-hamburger.addEventListener('click', () => {
-  popupMenu.classList.add('active');
-  overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  popupMenu.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-  popupMenu.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-fetch('challenges.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    const cardsContainer = document.getElementById('cards-container');
-    cardsContainer.style.display = 'grid';
-    cardsContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-    cardsContainer.style.gap = '1.25rem';
-    cardsContainer.style.padding = '1rem';
-    cardsContainer.style.justifyItems = 'center';
-    // topThreeChallenges = data.challenges.sort((a, b) => b.rating - a.rating).slice(0, 3);
-    // console.log(topThreeChallenges);
-    function createCard(data) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.dataset.id = data.id;
-      card.dataset.type = data.type;
-      card.dataset.title = data.title;
-      card.dataset.description = data.description;
-      card.dataset.minParticipants = data.minParticipants;
-      card.dataset.maxParticipants = data.maxParticipants;
-      card.dataset.rating = data.rating;
-      card.dataset.labels = data.labels;
-      const cardImage = document.createElement('img');
-      cardImage.src = '/img/images/hacker.png';
-      cardImage.alt = `Image for ${data.title}`;
-      cardImage.classList.add('imageCard');
-
-      const container = document.createElement('div');
-      container.classList.add('container');
-
-      const cardTitle = document.createElement('h3');
-      cardTitle.classList.add('roomTitle');
-      cardTitle.textContent = `${data.title} (${data.type})`;
-
-      const starContainer = document.createElement('div');
-      starContainer.classList.add('star');
-      for (let i = 0; i < 5; i++) {
-        const starImage = document.createElement('img');
-        starImage.src = i < data.rating ? 'img/images/Star 4.svg' : 'img/images/Star 5.svg';
-        starImage.width = 23;
-        starImage.height = 26;
-        starContainer.appendChild(starImage);
-      }
-
-      const participants = document.createElement('p');
-      participants.classList.add('participants');
-      if (data.minParticipants === data.maxParticipants) {
-        participants.textContent = `${data.maxParticipants} participants`;
-      } else {
-        participants.textContent = `${data.minParticipants}-${data.maxParticipants} participants`;
-      }
-
-      const roomInfo = document.createElement('p');
-      roomInfo.classList.add('roomInfo');
-      roomInfo.innerHTML = `${data.description}`;
-
-      const btnDiv = document.createElement('div');
-      btnDiv.classList.add('btnDiv');
-      const bookButton = document.createElement('button');
-      bookButton.classList.add('cardBtn');
-      bookButton.textContent = 'Book this room';
-      btnDiv.appendChild(bookButton);
-
-      container.appendChild(cardTitle);
-      container.appendChild(starContainer);
-      container.appendChild(participants);
-      container.appendChild(roomInfo);
-      container.appendChild(btnDiv);
-
-      card.appendChild(cardImage);
-      card.appendChild(container);
-
-      cardsContainer.appendChild(card);
-    }
-
-    data.challenges.forEach(createCard);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  closeBtn.addEventListener("click", () => {
+    popupMenu.classList.remove("active");
+    overlay.classList.remove("active");
   });
+
+  overlay.addEventListener("click", () => {
+    popupMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  startApp(); 
+});
+
+//Kod för Filtrering med tags 
+const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
+let activeTags = [];
+
+// Click events för tag buttons
+tagIds.forEach((tagId) => {
+  const btn = document.getElementById(tagId);
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      btn.classList.toggle("active"); // toggle button style
+
+      // Uppdaterad lista av aktiva taggar
+      activeTags = tagIds
+        .filter((id) => {
+          const b = document.getElementById(id);
+          return b && b.classList.contains("active");
+        })
+        .map((tag) => tag.toLowerCase());
+
+      filterChallengesByTags(); 
+    });
+  }
+});
+
+// Funktion för att filtrera challenges baserad på activa tags 
+function filterChallengesByTags() {
+  if (activeTags.length === 0) {
+    displayCards(allChallenges); // Visa alla om ingen tagg är aktiverad
+    return;
+  }
+
+  const filtered = allChallenges.filter((challenge) => {
+    let labels = challenge.labels || [];
+    const labelsLower = labels.map((l) => l.toLowerCase());
+    // Challenge måste innehålla alla aktiva taggar
+    return activeTags.every((tag) => labelsLower.includes(tag));
+  });
+
+  displayCards(filtered); 
+}
