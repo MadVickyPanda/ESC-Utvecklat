@@ -4,59 +4,69 @@ const hamburger = document.getElementById("hamburger");
 const popupMenu = document.getElementById("popupMenu");
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
+
 const cardsContainer = document.getElementById("cards-container");
 const topThreeContainer = document.getElementById("top-three");
 
-let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
+let allChallenges = [];
+let activeTags = [];
 
-//Startar ''applikationen'' vid webbsidans laddning
-function startApp() {
-  loadChallenges();
-}
+initHamburger();
+initTags();
+initBookingForm();
+startApp();
 
-//laddar challenges från funktionen 'fetchChallenges' se "import"
-function loadChallenges() {
-  fetchChallenges()
-    .then((challenges) => {
-      allChallenges = challenges; // spara allt i en array
-
-      if (topThreeContainer) {
-        displayTopThree(allChallenges);
-      }
-      if (cardsContainer) {
-        displayCards(allChallenges); //skickar data till display funtionen  
-      }
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+function initHamburger() {
+  if (hamburger && popupMenu && overlay && closeBtn) {
+    hamburger.addEventListener("click", () => {
+      popupMenu.classList.add("active");
+      overlay.classList.add("active");
     });
+
+    closeBtn.addEventListener("click", () => {
+      popupMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      popupMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  }
 }
 
-function displayTopThree(challengesArray) {
-  const topThreeContainer = document.getElementById("top-three");
+async function startApp() {
+  try {
+    const data = await fetchChallenges();
+    allChallenges = Array.isArray(data.challenges) ? data.challenges : data;
 
-  const topThreeChallenges = challengesArray.sort((a,b) => b.rating - a.rating).slice(0,3);
+    if (topThreeContainer) {
+      const topThree = [...allChallenges]
+        .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+        .slice(0, 3);
+      displayCards(topThree, topThreeContainer);
+    }
 
-  topThreeContainer.innerHTML = "";
-
-  topThreeChallenges.forEach((challenge) => {
-    const card = createCard(challenge);
-    topThreeContainer.appendChild(card);
-  });
+    if (cardsContainer) {
+      displayCards(allChallenges, cardsContainer);
+    }
+  } catch (error) {
+    if (cardsContainer) {
+      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+    }
+    console.error(error);
+  }
 }
 
-//DISPLAY FUNKTION
-function displayCards(challengesArray) {
-  cardsContainer.innerHTML = ""; // tömmer container innan det visas allt
-
+function displayCards(challengesArray, container) {
+  if (!container) return;
+  container.innerHTML = "";
   challengesArray.forEach((challenge) => {
-    const card = createCard(challenge); //skapa varje kort
-    cardsContainer.appendChild(card);
+    const card = createCard(challenge);
+    container.appendChild(card);
   });
 }
 
-//SKAPA KORT FUNKTION
 function createCard(data) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -71,7 +81,7 @@ function createCard(data) {
   card.dataset.labels = data.labels;
 
   const cardImage = document.createElement("img");
-  cardImage.src = data.image || "/img/images/hacker.png";
+  cardImage.src = data.image || "img/images/hacker.png";
   cardImage.alt = `Image for ${data.title}`;
   cardImage.classList.add("imageCard");
 
@@ -82,7 +92,6 @@ function createCard(data) {
   cardTitle.classList.add("roomTitle");
   cardTitle.textContent = `${data.title} (${data.type})`;
 
-  //funktion specifikt för rating (kanske kan underlätta)
   const starContainer = createStarContainer(Number(data.rating) || 0);
 
   const participants = document.createElement("p");
@@ -99,9 +108,13 @@ function createCard(data) {
   const btnDiv = document.createElement("div");
   btnDiv.classList.add("btnDiv");
 
-  const bookButton = document.createElement("button");
-  bookButton.classList.add("cardBtn");
-  bookButton.textContent = "Book this room";
+const bookButton = document.createElement("button");
+bookButton.classList.add("cardBtn", "book-button");
+bookButton.textContent = "Book this room";
+bookButton.dataset.challengeId = data.id;
+bookButton.dataset.challengeTitle = data.title;
+bookButton.dataset.minParticipants = data.minParticipants;
+bookButton.dataset.maxParticipants = data.maxParticipants;
 
   btnDiv.appendChild(bookButton);
   container.appendChild(cardTitle);
@@ -116,7 +129,21 @@ function createCard(data) {
   return card;
 }
 
-// FUNKTION specifikt för rating-stars
+function handleBookClick() {
+  if (
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname === ""
+  ) {
+    const bookingSection = document.getElementById("booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  } else {
+    window.location.href = "index.html#booking";
+  }
+}
+
 function createStarContainer(rating) {
   const starContainer = document.createElement("div");
   starContainer.classList.add("star");
@@ -133,65 +160,81 @@ function createStarContainer(rating) {
   return starContainer;
 }
 
-if (hamburger && popupMenu && overlay && closeBtn) {
-  hamburger.addEventListener("click", () => {
-    popupMenu.classList.add("active");
-    overlay.classList.add("active");
-  });
+function initTags() {
+  const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
+  activeTags = [];
 
-  closeBtn.addEventListener("click", () => {
-    popupMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
+  tagIds.forEach((tagId) => {
+    const btn = document.getElementById(tagId);
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        btn.classList.toggle("active");
 
-  overlay.addEventListener("click", () => {
-    popupMenu.classList.remove("active");
-    overlay.classList.remove("active");
+        activeTags = tagIds
+          .filter((id) => {
+            const b = document.getElementById(id);
+            return b && b.classList.contains("active");
+          })
+          .map((tag) => tag.toLowerCase());
+
+        filterChallengesByTags();
+      });
+    }
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  startApp(); 
-});
-
-//Kod för Filtrering med tags 
-const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
-let activeTags = [];
-
-// Click events för tag buttons
-tagIds.forEach((tagId) => {
-  const btn = document.getElementById(tagId);
-  if (btn) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault(); 
-      btn.classList.toggle("active"); // toggle button style
-
-      // Uppdaterad lista av aktiva taggar
-      activeTags = tagIds
-        .filter((id) => {
-          const b = document.getElementById(id);
-          return b && b.classList.contains("active");
-        })
-        .map((tag) => tag.toLowerCase());
-
-      filterChallengesByTags(); 
-    });
-  }
-});
-
-// Funktion för att filtrera challenges baserad på activa tags 
 function filterChallengesByTags() {
+  if (!cardsContainer) return;
+
   if (activeTags.length === 0) {
-    displayCards(allChallenges); // Visa alla om ingen tagg är aktiverad
+    displayCards(allChallenges, cardsContainer);
     return;
   }
 
   const filtered = allChallenges.filter((challenge) => {
-    let labels = challenge.labels || [];
+    const labels = challenge.labels || [];
     const labelsLower = labels.map((l) => l.toLowerCase());
-    // Challenge måste innehålla alla aktiva taggar
     return activeTags.every((tag) => labelsLower.includes(tag));
   });
 
-  displayCards(filtered); 
+  displayCards(filtered, cardsContainer);
+}
+
+function initBookingForm() {
+  const form = document.getElementById("booking-form");
+  if (!form) return;
+
+  const dateInput = document.getElementById("booking-date");
+  const participantsInput = document.getElementById("booking-participants");
+  const nameInput = document.getElementById("booking-name");
+  const emailInput = document.getElementById("booking-email");
+  const message = document.getElementById("booking-message");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!dateInput || !participantsInput || !nameInput || !emailInput || !message) return;
+
+    const date = dateInput.value;
+    const participants = participantsInput.value;
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if (!date || !participants || !name || !email) {
+      message.textContent = "Please fill in all fields.";
+      message.classList.remove("booking-message--success");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      message.textContent = "Please enter a valid email.";
+      message.classList.remove("booking-message--success");
+      return;
+    }
+
+    message.textContent = `Thank you ${name}! Your booking for ${date} with ${participants} participants has been registered.`;
+    message.classList.add("booking-message--success");
+
+    form.reset();
+  });
 }
