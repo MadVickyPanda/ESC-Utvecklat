@@ -168,3 +168,16 @@ a.active {
     border-radius: 1rem;
     padding: 0.2rem;
 }
+#infomessage{
+     align-content: center;
+}
+
+#info{
+    text-align: center;
+    align-content: center;
+    font-size: 36px;
+    font-family: "Roboto";
+        font-style: bold;
+        font-weight: 700;
+       
+}
