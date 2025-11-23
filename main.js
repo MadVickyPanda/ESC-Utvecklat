@@ -195,3 +195,28 @@ function filterChallengesByTags() {
 
   displayCards(filtered); 
 }
+
+// Function för att filtrera challenges baserad på keyword
+const searchinput = document.getElementById('typing');
+const infoText = document.getElementById('info');
+const infomessage = document.getElementById('infomessage');
+
+infoText.textContent = "";
+if (searchinput) {
+    searchinput.addEventListener('keyup', e => {
+        const currentvalue = e.target.value.trim().toLowerCase();
+
+               const filtered = allChallenges.filter(challenge => {
+            const title = String(challenge.title || '').toLowerCase();
+            return title.includes(currentvalue);
+        });
+
+        displayCards(filtered);
+        if(filtered.length === 0) {
+             infomessage.style.display = 'block';    
+             infoText.textContent = "No match found";
+    }
+    else
+      infomessage.style.display = 'none';
+            });
+        }

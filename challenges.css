@@ -199,3 +199,10 @@ figcaption {
   height: 3rem;
   width: 11.2rem;
 }
+.infomessage{
+  display: none;
+}
+
+.info{
+  display: none;
+}
