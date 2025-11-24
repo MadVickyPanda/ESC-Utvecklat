@@ -184,6 +184,36 @@ function initTags() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  startApp(); 
+});
+
+//Kod för Filtrering med tags 
+const tagIds = ["web", "linux", "cryptography", "coding", "javascript", "bash", "hacking", "phreaking", "ssh", "ctf", "electronics"];
+let activeTags = [];
+
+// Click events för tag buttons
+tagIds.forEach((tagId) => {
+  const btn = document.getElementById(tagId);
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      btn.classList.toggle("active"); // toggle button style
+
+      // Uppdaterad lista av aktiva taggar
+      activeTags = tagIds
+        .filter((id) => {
+          const b = document.getElementById(id);
+          return b && b.classList.contains("active");
+        })
+        .map((tag) => tag.toLowerCase());
+
+      filterChallengesByTags(); 
+    });
+  }
+});
+
+// Funktion för att filtrera challenges baserad på activa tags 
 function filterChallengesByTags() {
   if (!cardsContainer) return;
 
@@ -238,3 +268,27 @@ function initBookingForm() {
     form.reset();
   });
 }
+// Function för att filtrera challenges baserad på keyword
+const searchinput = document.getElementById('typing');
+const infoText = document.getElementById('info');
+const infomessage = document.getElementById('infomessage');
+
+infoText.textContent = "";
+if (searchinput) {
+    searchinput.addEventListener('keyup', e => {
+        const currentvalue = e.target.value.trim().toLowerCase();
+
+               const filtered = allChallenges.filter(challenge => {
+            const title = String(challenge.title || '').toLowerCase();
+            return title.includes(currentvalue);
+        });
+
+        displayCards(filtered);
+        if(filtered.length === 0) {
+             infomessage.style.display = 'block';    
+             infoText.textContent = "No match found";
+    }
+    else
+      infomessage.style.display = 'none';
+            });
+        }
