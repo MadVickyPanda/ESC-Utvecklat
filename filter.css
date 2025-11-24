@@ -78,58 +78,9 @@ h2 {
     border-color: #8ACFE5;
 }
 
-#web {
-    border: 0.1rem #8ACFE5;
-    border-style: solid;
-    border-radius: 1rem;
-    padding: 0.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: #011827;
-}
-
-#linux {
-    border: 0.1rem #8ACFE5;
-    border-style: solid;
-    border-radius: 1rem;
-    padding: 0.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: #011827;
-}
-
-#cryptography {
-    border: 0.1rem #8ACFE5;
-    border-style: solid;
-    border-radius: 1rem;
-    padding: 0.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: #011827;
-}
-
-#coding {
-    border: 0.1rem #8ACFE5;
-    border-style: solid;
-    border-radius: 1rem;
-    ;
-    padding: 0.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: #011827;
-}
-
-#finaltag {
-    border: 0.1rem #8ACFE5;
-    border-style: solid;
-    border-radius: 1rem;
-    padding: 0.2rem;
-    text-align: center;
-    text-decoration: none;
-    color: #011827;
-}
-
-#someother {
+#web, #linux, #cryptography, #coding,
+#javascript, #bash, #hacking, #phreaking,
+#ssh, #ctf, #electronics {
     border: 0.1rem #8ACFE5;
     border-style: solid;
     border-radius: 1rem;
@@ -155,6 +106,12 @@ h2 {
 .typetags2 {
     display: flex;
     gap: 1rem;
+}
+
+.typetags3 {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.3rem;
 }
 
 #typing {
