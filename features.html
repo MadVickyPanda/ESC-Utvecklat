@@ -1,110 +1,161 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Our Challenges — ESC</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="challenges.css" type="text/css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Minimal inline helpers so filter panel looks OK without extra CSS changes.
+       If you already have styles in challenges.css, these won't clash much. */
+    .filter-panel { max-width: 980px; margin: 1rem auto; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+    .filter-group { margin-bottom: 12px; }
+    .filter-group label { display:inline-flex; align-items:center; gap:8px; font-weight:500; }
+    .tag-buttons { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .tag-btn { padding:6px 10px; border:1px solid #ccc; border-radius:6px; background:#fafafa; cursor:pointer; font-weight:600; }
+    .tag-btn.active, .tag-btn:active { background:#E3170A; color:#fff; border-color:#E3170A; }
+    #rating-filter { display:inline-block; vertical-align:middle; }
+    #filter-actions { display:flex; gap:8px; margin-top:8px; }
+    #cards-container { max-width:980px; margin:1rem auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:flex-start; }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
-            <figcaption>Hacker Escape Rooms</figcaption>
+  <header>
+    <div class="header">
+      <img class="logo" src="img/images/Group 1.png" alt="ESC logo" />
+      <figcaption>Hacker Escape Rooms</figcaption>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="features.html" class="playOne">Play online</a></li>
+        <li><a href="features.html" class="playTwo">Play on-site</a></li>
+        <li><a href="#" class="story">The story</a></li>
+        <li><a href="#" class="contact">Contact us</a></li>
+        <li><a href="index.html" class="home">Back to home page</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="headlineChallenges" style="max-width:980px;margin:1.5rem auto;">
+      <h1>Our Challenges</h1>
+    </div>
+
+    <!-- FILTER PANEL -->
+    <section class="filter-panel" aria-label="Filter challenges">
+      <h2>Filter challenges</h2>
+
+      <div class="filter-group">
+        <strong>By type</strong>
+        <div style="margin-top:8px;">
+          <label><input type="checkbox" id="filter-online" checked> Include online challenges</label>
+          <label style="margin-left:16px;"><input type="checkbox" id="filter-onsite" checked> Include on-site challenges</label>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="features.html" class="playOne">Play online</a></li>
-                <li><a href="features.html" class="playTwo">Play on-site</a></li>
-                <li><a href="#" class="story">The story</a></li>
-                <li><a href="#" class="contact">Contact us</a></li>
-                <li><a href="index.html" class="home">Back to home page</a></li>
-            </ul>
-        </nav>
-    </header>
+      </div>
 
-    <div class="headlineChallenges">
-        <h1>Our Challenges</h1>
+      <div class="filter-group">
+        <strong>By rating (minimum)</strong>
+        <div style="margin-top:8px;">
+          <!-- rating widget used for filtering -->
+          <div id="rating-filter" class="rating-widget" data-rating="0" aria-label="Filter by minimum rating"></div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <strong>Search</strong>
+        <div style="margin-top:8px;">
+          <input id="filter-text" type="text" placeholder="Search title or description" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <strong>By tags</strong>
+        <div class="tag-buttons" style="margin-top:8px;">
+          <!-- IDs must match those used in main.js -->
+          <button id="web" class="tag-btn" type="button">web</button>
+          <button id="linux" class="tag-btn" type="button">linux</button>
+          <button id="cryptography" class="tag-btn" type="button">cryptography</button>
+          <button id="coding" class="tag-btn" type="button">coding</button>
+          <button id="someother" class="tag-btn" type="button">someother</button>
+          <button id="finaltag" class="tag-btn" type="button">finaltag</button>
+        </div>
+      </div>
+
+      <div id="filter-actions">
+        <button id="filter-reset" class="btn" type="button" style="padding:8px 12px;border-radius:6px;background:#eee;border:1px solid #ccc;cursor:pointer;">Reset</button>
+        <button id="filter-close" class="btn" type="button" style="padding:8px 12px;border-radius:6px;background:#E3170A;color:#fff;border:none;cursor:pointer;">Close</button>
+      </div>
+    </section>
+
+    <!-- CARDS: container where JS will insert challenge cards -->
+    <div id="cards-container" class="scroll" aria-live="polite" aria-label="Challenges list">
+      <!-- cards inserted by main.js -->
     </div>
+  </main>
 
-    <div class="filterbutton">
-        <button class="filterBtn" onclick="document.querySelector('link').href='filter.css';">Filter challenges</button>
-    </div>
+  <footer style="max-width:980px;margin:2rem auto;text-align:center;color:#666;">
+    <small>ESC — Hacker Escape Rooms</small>
+  </footer>
 
-    <div class="containerfilter">
-        <h2>Filter challanges
-            <em><img src="close-button.png" class="close"
-                    onclick="document.querySelector('link').href='challenges.css';"></em>
-        </h2>
+  <!-- rating.js should be loaded as plain script (exposes window.Rating) -->
+  <script src="rating.js"></script>
 
-        <section class="filter">
+  <!-- main.js is a module and will generate cards + wire up filters -->
+  <script type="module" src="main.js"></script>
 
-            <div class="typecheckbox">
+  <script>
+    // small UI helpers (optional): make tag-buttons toggle 'active' class for visual feedback
+    document.addEventListener('DOMContentLoaded', () => {
+      const tagButtons = document.querySelectorAll('.tag-btn');
+      tagButtons.forEach(btn => {
+        btn.addEventListener('click', () => btn.classList.toggle('active'));
+      });
 
-                <h3 class="bytype">By type</h3>
-                <div class="checkbox">
-                    <input type="checkbox" id="online">
-                    <label for="online">Include online challanges</label><br>
-                    <input type="checkbox" id="onsite">
-                    <label for="onsite">Include on-site challanges</label>
-                </div>
-            </div>
-            <div class="rating">
-                <h3>By rating</h3>
-                <div class="starrating1">
-                    <span id="ratingX">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                    </span>
-                    <em>to</em>
-                    <span id="ratingY">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
+      // Reset button behaviour: clear filters and re-run
+      const reset = document.getElementById('filter-reset');
+      if (reset) {
+        reset.addEventListener('click', () => {
+          // uncheck checkboxes
+          const online = document.getElementById('filter-online');
+          const onsite = document.getElementById('filter-onsite');
+          if (online) online.checked = true;
+          if (onsite) onsite.checked = true;
 
-                    </span>
-                </div>
-            </div>
-            <div class="tags">
-                <h3>By tags</h3>
-                <div class="typetags1">
-                    <button id="web">Web</button>
-                    <button id="linux">Linux</button>
-                    <button id="cryptography">Cryptography</button>
-                    <button id="coding">Coding</button>
-                </div>
-                <div class="typetags2">
-                    <button id="someother">Some oher tag</button>
-                    <button id="finaltag">A final tag</button>
-                    
-                </div>
-            </div>
-            <div class="typingtext">
-                <h3>Or type to search for keyward</h3>
-                <input type="text" id="typing" value="Start typing to filter">
-            </div>
-        </section>
-    </div>
+          // clear text
+          const txt = document.getElementById('filter-text');
+          if (txt) txt.value = '';
 
-    
-    <div id="cards-container" class="scroll">
+          // clear rating widget (if available via window.Rating)
+          const ratingEl = document.getElementById('rating-filter');
+          if (ratingEl && window.Rating && typeof window.Rating.setRating === 'function') {
+            window.Rating.setRating(ratingEl, 0);
+          } else if (ratingEl && ratingEl.getRatingValue) {
+            ratingEl.setRatingValue(0);
+          } else {
+            // fallback: remove star fills shown by createRatingWidget fallback
+            ratingEl && (ratingEl.dataset.rating = 0);
+          }
 
-    </div>
+          // remove active from tag buttons
+          tagButtons.forEach(b => b.classList.remove('active'));
 
-    <script src='main.js' type="module"></script>
-    
+          // dispatch input event on text so main.js sees change
+          if (txt) txt.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+      }
+
+      // Close button simply scrolls to top (filter panel stays visible) — you can modify as needed.
+      const closeBtn = document.getElementById('filter-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+    });
+  </script>
 </body>
-
 </html>

@@ -85,7 +85,7 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
 
 .mobileOnline {
@@ -118,7 +118,6 @@ figcaption {
   font-weight: 400;
   width: 60%;
   margin-left: 2rem;
-  
 }
 
 .reviewTwo {
@@ -146,8 +145,10 @@ figcaption {
 }
 
 .imageCard {
-  height: auto;
-  width: fit-content;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .scroll {
@@ -155,14 +156,14 @@ figcaption {
   gap: 1.87rem;
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   padding-right: 1rem;
 }
 
 .roomTitle {
   font-size: 1.60rem;
   font-weight: 400;
-  text-align: left; 
+  text-align: left;
 }
 
 .card {
@@ -177,7 +178,7 @@ figcaption {
 }
 
 .cardTwo {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -188,7 +189,7 @@ figcaption {
 }
 
 .cardThree {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -209,15 +210,15 @@ figcaption {
 }
 
 .star {
-  color: #d6d6d6;           /* empty star color */
-  cursor: default;          /* not interactive for simple display */
+  color: #d6d6d6; /* empty star color */
+  cursor: default; /* not interactive for simple display */
   transition: color 120ms ease, transform 120ms ease;
   line-height: 1;
 }
 
 /* filled star */
 .star.full {
-  color: var(--red);        /* #E3170A */
+  color: var(--red); /* #E3170A */
 }
 
 /* when we want interactive behaviour (rating widget) */
@@ -228,14 +229,14 @@ figcaption {
 .rating-widget .star:focus {
   transform: scale(1.08);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(227,23,10,0.08);
+  box-shadow: 0 0 0 3px rgba(227, 23, 10, 0.08);
   border-radius: 3px;
 }
 
 /* small size modifier (if needed) */
-.stars.small .star { font-size: 0.95rem; 
+.stars.small .star {
+  font-size: 0.95rem;
 }
-
 
 .participants {
   font-size: 0.87rem;
@@ -250,13 +251,12 @@ figcaption {
   padding: 0.43rem;
   margin: 0;
   text-align: justify;
-  
 }
 
 .btnDiv {
   display: flex;
   justify-content: end;
-  margin-bottom: 1.25rem; 
+  margin-bottom: 1.25rem;
   margin-right: 1.25rem;
 }
 
@@ -271,7 +271,6 @@ figcaption {
   font-weight: 700;
   height: 3rem;
   width: 11.2rem;
-  
 }
 
 .onsiteBtnTwo {
@@ -289,7 +288,7 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
 
 .mobileOnlineTwo {
@@ -315,7 +314,7 @@ figcaption {
   font-weight: 400;
   margin-top: 1.875rem;
   padding-bottom: 1.875rem;
-  text-align: center; 
+  text-align: center;
 }
 
 .aboutText {
@@ -324,7 +323,7 @@ figcaption {
   text-align: center;
   padding-left: 1.56rem;
   padding-right: 1.56rem;
-  padding-top: 2.5rem; 
+  padding-top: 2.5rem;
 }
 
 .aboutBtn {
@@ -344,7 +343,6 @@ figcaption {
 .bookingImg {
   height: 18.75rem;
   width: 100%;
-  
 }
 
 .bookingHead {
@@ -379,7 +377,7 @@ figcaption {
   height: 4.12rem;
   margin-bottom: 3.12rem;
   margin-left: 1.5rem;
-  width: 70%; 
+  width: 70%;
 }
 
 .challengesImg {
@@ -499,7 +497,6 @@ h4 {
     font-family: "Roboto", sans-serif;
     height: 12rem;
     width: auto;
-    
   }
 
   .myCover {
@@ -513,12 +510,12 @@ h4 {
     gap: 6rem;
     justify-content: center;
     list-style: none;
-    margin-top: -3rem; 
+    margin-top: -3rem;
   }
-  .hamburgerMenu{
+  .hamburgerMenu {
     display: none;
   }
-  .popupMenu{
+  .popupMenu {
     display: none;
   }
   .playOne:hover,
@@ -537,7 +534,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   .playTwo {
@@ -549,7 +546,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   .story {
@@ -560,8 +557,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .contact {
@@ -572,8 +569,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .btnsNav {
@@ -659,11 +656,11 @@ h4 {
     justify-content: left;
     width: 60%;
   }
-  
-  .popular{
+
+  .popular {
     margin-top: -6rem;
   }
-  
+
   .scroll {
     justify-content: center;
     width: 1280px;
@@ -698,7 +695,7 @@ h4 {
     text-decoration: none;
     width: 16rem;
   }
-  .onsiteBtnTwo{
+  .onsiteBtnTwo {
     display: block;
     font-size: 1.12rem;
     height: 3.4rem;
@@ -735,15 +732,13 @@ h4 {
     text-align: left;
     padding-top: 3rem;
     width: 20rem;
-
   }
 
   .bookingText {
     display: flex;
     width: 20rem;
-
   }
-  .bookingBtn{
+  .bookingBtn {
     width: 15rem;
   }
   .challengesHead {
@@ -763,17 +758,15 @@ h4 {
     height: 24rem;
     margin: 0;
     width: 32rem;
-    
   }
 
   .challengesText {
     margin: 1.5rem 0;
     width: 20rem;
   }
-  .challengesBtn{
+  .challengesBtn {
     margin: 0;
     width: 15rem;
-    
   }
   footer {
     align-items: center;
@@ -788,7 +781,6 @@ h4 {
   .footerAbout {
     display: flex;
     flex-direction: column;
-
   }
 
   h4 {
@@ -811,25 +803,28 @@ h4 {
     margin-left: 3rem;
   }
 
-  /* === Rating stars === */
-.rating-stars {
-  display: inline-flex;
-  gap: 3px;
-  font-size: 22px;
-  color: #ccc;
-}
+  /* === Rating stars (desktop) === */
+  .rating-stars {
+    display: inline-flex;
+    gap: 3px;
+    font-size: 22px;
+    color: #ccc;
+    align-items: center;
+    margin-left: 0.62rem;
+  }
 
-.rating-stars .star-icon {
-  color: #ccc;
-  transition: color 0.15s;
-}
+  .rating-stars .star-icon {
+    color: #ccc;
+    transition: color 0.15s;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
 
-.rating-stars .star-icon.filled {
-  color: gold;
-}
+  .rating-stars .star-icon.filled {
+    color: gold;
+  }
 
-.rating-stars .star-icon.hover {
-  color: #ffdd66;
-}
-
+  .rating-stars .star-icon.hover {
+    color: #ffdd66;
+  }
 }
