@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Kod för Filtrering med tags 
-const tagIds = ["web", "linux", "cryptography", "coding", "someother", "finaltag"];
+const tagIds = ["web", "linux", "cryptography", "coding", "javascript", "bash", "hacking", "phreaking", "ssh", "ctf", "electronics"];
 let activeTags = [];
 
 // Click events för tag buttons
