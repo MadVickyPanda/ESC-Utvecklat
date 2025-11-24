@@ -4,21 +4,55 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Challenges</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- ORIGINAL PROJECT CSS -->
     <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- Minimal isolated CSS for star rating filter (kept on this page for safety) -->
+    <style>
+        /* Star rating UI – isolated styling (does not affect global CSS) */
+        .starrating1 {
+            font-size: 24px;
+            user-select: none;
+            display: inline-block;
+            padding: 6px 0;
+        }
+
+        .starrating1 .star {
+            cursor: pointer;
+            padding: 0 6px;
+            transition: transform 0.1s ease, color 0.1s ease;
+            color: #aaa;
+            font-size: 26px;
+            display: inline-block;
+        }
+
+        .starrating1 .star:hover {
+            transform: scale(1.15);
+        }
+
+        /* Active (selected) stars appear gold */
+        .starrating1 .star.active {
+            color: gold;
+            text-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
+            <img class="logo" src="img/images/Group 1.png" alt="ESC logo" />
             <figcaption>Hacker Escape Rooms</figcaption>
         </div>
+
         <nav>
             <ul class="menu">
                 <li><a href="features.html" class="playOne">Play online</a></li>
@@ -35,19 +69,23 @@
     </div>
 
     <div class="filterbutton">
+        <!-- Opens filter CSS -->
         <button class="filterBtn" onclick="document.querySelector('link').href='filter.css';">Filter challenges</button>
     </div>
 
     <div class="containerfilter">
         <h2>Filter challenges
-            <em><img src="close-button.png" class="close"
-                    onclick="document.querySelector('link').href='challenges.css';"></em>
+            <em>
+                <!-- Closes filter CSS -->
+                <img src="close-button.png" class="close"
+                    onclick="document.querySelector('link').href='challenges.css';">
+            </em>
         </h2>
 
         <section class="filter">
 
+            <!-- TYPE CHECKBOXES -->
             <div class="typecheckbox">
-
                 <h3 class="bytype">By type</h3>
                 <div class="checkbox">
                     <input type="checkbox" id="online">
@@ -56,27 +94,26 @@
                     <label for="onsite">Include on-site challenges</label>
                 </div>
             </div>
+
+            <!-- ======= STAR RATING FILTER (this is the part you edit) ======= -->
             <div class="rating">
                 <h3>By rating</h3>
-                <div class="starrating1">
-                    <span id="ratingX">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                    </span>
-                    <em>to</em>
-                    <span id="ratingY">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
 
-                    </span>
+                <!-- Replaced old image-based stars with simple text stars -->
+                <div class="starrating1" id="starFilter" aria-label="Star rating filter">
+                    <span class="star" data-value="1" title="1 star" role="button" aria-pressed="false">☆</span>
+                    <span class="star" data-value="2" title="2 stars" role="button" aria-pressed="false">☆</span>
+                    <span class="star" data-value="3" title="3 stars" role="button" aria-pressed="false">☆</span>
+                    <span class="star" data-value="4" title="4 stars" role="button" aria-pressed="false">☆</span>
+                    <span class="star" data-value="5" title="5 stars" role="button" aria-pressed="false">☆</span>
+
+                    <!-- Hidden element storing the selected rating -->
+                    <input type="hidden" id="selectedStarValue" value="0" aria-hidden="true">
                 </div>
             </div>
+            <!-- ======= END STAR RATING FILTER ======= -->
+
+            <!-- TAG FILTERS -->
             <div class="tags">
                 <h3>By tags</h3>
                 <div class="typetags1">
@@ -91,25 +128,28 @@
                     <button id="hacking">Hacking</button>
                     <button id="phreaking">Phreaking</button>
                 </div>
-                 <div class="typetags3">
+                <div class="typetags3">
                     <button id="ssh">Ssh</button>
                     <button id="ctf">CTF</button>
                     <button id="electronics">Electronics</button>
                 </div>
             </div>
+
             <div class="typingtext">
-                <h3>Or type to search for keyward</h3>
+                <h3>Or type to search for keyword</h3>
                 <input type="text" id="typing" value="Start typing to filter">
             </div>
         </section>
     </div>
 
+    <!-- INFO MESSAGE + CHALLENGE CARDS -->
     <div id="infomessage">
         <p id="info"></p>
     </div>
-    <div id="cards-container" class="scroll">
 
-    </div>
+    <div id="cards-container" class="scroll"></div>
+
+    <!-- FOOTER -->
     <footer>
         <div class="footerAbout">
             <h4>[Esc] Hacker Escape Rooms</h4>
@@ -136,7 +176,69 @@
             </ul>
         </nav>
     </footer>
+
+    <!-- Keep original main.js (do not change team code) -->
     <script src='main.js' type="module"></script>
+
+    <!--
+      Star UI helper: this script is page-scoped (runs only on features.html).
+      It updates the visual state of the stars and notifies existing filter logic
+      if such functions exist (applyStarFilter or applyFilters).
+      Comments in English as requested.
+    -->
+    <script>
+      (function() {
+        const container = document.getElementById('starFilter');
+        if (!container) return; // only run on pages with the star filter
+
+        const stars = Array.from(container.querySelectorAll('.star'));
+        const hidden = document.getElementById('selectedStarValue');
+
+        // Update visual state of stars (1..value => active)
+        function setActive(value) {
+          stars.forEach(s => {
+            const v = parseInt(s.dataset.value, 10);
+            s.classList.toggle('active', v <= value);
+            s.setAttribute('aria-pressed', v <= value ? 'true' : 'false');
+          });
+          if (hidden) hidden.value = value;
+        }
+
+        // Attach listeners (safely, avoid duplicate attachments)
+        stars.forEach(star => {
+          if (star.__star_ui_attached) return;
+          star.__star_ui_attached = true;
+
+          star.addEventListener('click', () => {
+            const v = parseInt(star.dataset.value, 10);
+            setActive(v);
+
+            // Notify existing project filter functions if present
+            if (typeof applyStarFilter === 'function') {
+              applyStarFilter(v);
+            } else if (typeof applyFilters === 'function') {
+              applyFilters();
+            } else {
+              // fallback: log for debugging
+              console.log('Star filter selected:', v);
+            }
+          });
+
+          // Hover behaviour for better UX
+          star.addEventListener('mouseover', () => {
+            const v = parseInt(star.dataset.value, 10);
+            stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value, 10) <= v));
+          });
+          star.addEventListener('mouseout', () => {
+            const cur = hidden ? parseInt(hidden.value, 10) || 0 : 0;
+            setActive(cur);
+          });
+        });
+
+        // Initialize to current value (if any)
+        setActive(hidden ? parseInt(hidden.value, 10) || 0 : 0);
+      })();
+    </script>
 
 </body>
 
