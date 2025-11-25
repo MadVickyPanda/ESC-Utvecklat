@@ -36,7 +36,7 @@ function loadChallenges() {
 function displayTopThree(challengesArray) {
   const topThreeContainer = document.getElementById("top-three");
 
-  const topThreeChallenges = challengesArray.sort((a,b) => b.rating - a.rating).slice(0,3);
+  const topThreeChallenges = challengesArray.sort((a, b) => b.rating - a.rating).slice(0, 3);
 
   topThreeContainer.innerHTML = "";
 
@@ -133,29 +133,35 @@ function createStarContainer(rating) {
   return starContainer;
 }
 
-if (hamburger && popupMenu && overlay && closeBtn) {
-  hamburger.addEventListener("click", () => {
-    popupMenu.classList.add("active");
-    overlay.classList.add("active");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    popupMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-
-  overlay.addEventListener("click", () => {
-    popupMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-}
 
 document.addEventListener("DOMContentLoaded", function () {
-  startApp(); 
+  startApp();
 });
 
-//Kod för Filtrering med tags 
-const tagIds = ["web", "linux", "cryptography", "coding", "javascript", "bash", "hacking", "phreaking", "ssh", "ctf", "electronics"];
+
+// skapa "No match found" message 
+const noMatchMessage = document.createElement("p");
+noMatchMessage.id = "noMatchMessage";
+noMatchMessage.textContent = "No match found";
+noMatchMessage.style.display = "none";
+noMatchMessage.style.textAlign = "center";
+noMatchMessage.style.padding = "10px";
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cardsContainer = document.getElementById("cards-container");
+  if (cardsContainer) {
+    cardsContainer.insertAdjacentElement("beforebegin", noMatchMessage);
+  }
+});
+
+
+// Filtrering med tags 
+const tagIds = [
+  "web", "linux", "cryptography", "coding", "javascript", "bash",
+  "hacking", "phreaking", "ssh", "ctf", "electronics"
+];
+
 let activeTags = [];
 
 // Click events för tag buttons
@@ -163,10 +169,10 @@ tagIds.forEach((tagId) => {
   const btn = document.getElementById(tagId);
   if (btn) {
     btn.addEventListener("click", (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
       btn.classList.toggle("active"); // toggle button style
 
-      // Uppdaterad lista av aktiva taggar
+      // Uppdatera lista av aktiva taggar
       activeTags = tagIds
         .filter((id) => {
           const b = document.getElementById(id);
@@ -174,27 +180,36 @@ tagIds.forEach((tagId) => {
         })
         .map((tag) => tag.toLowerCase());
 
-      filterChallengesByTags(); 
+      filterChallengesByTags();
     });
   }
 });
 
-// Funktion för att filtrera challenges baserad på activa tags 
+// Funktion för att filtrera challenges baserad på aktiva tags 
 function filterChallengesByTags() {
   if (activeTags.length === 0) {
-    displayCards(allChallenges); // Visa alla om ingen tagg är aktiverad
+    displayCards(allChallenges);
+    noMatchMessage.style.display = "none"; // ADDED
     return;
   }
 
   const filtered = allChallenges.filter((challenge) => {
     let labels = challenge.labels || [];
     const labelsLower = labels.map((l) => l.toLowerCase());
-    // Challenge måste innehålla alla aktiva taggar
     return activeTags.every((tag) => labelsLower.includes(tag));
   });
 
-  displayCards(filtered); 
+  displayCards(filtered);
+
+
+  // Visa/dälj "NO MATCH FOUND" message
+  if (filtered.length === 0) {
+    noMatchMessage.style.display = "block";
+  } else {
+    noMatchMessage.style.display = "none";
+  }
 }
+
 
 // Function för att filtrera challenges baserad på keyword
 const searchinput = document.getElementById('typing');
@@ -203,20 +218,20 @@ const infomessage = document.getElementById('infomessage');
 
 infoText.textContent = "";
 if (searchinput) {
-    searchinput.addEventListener('keyup', e => {
-        const currentvalue = e.target.value.trim().toLowerCase();
+  searchinput.addEventListener('keyup', e => {
+    const currentvalue = e.target.value.trim().toLowerCase();
 
-               const filtered = allChallenges.filter(challenge => {
-            const title = String(challenge.title || '').toLowerCase();
-            return title.includes(currentvalue);
-        });
+    const filtered = allChallenges.filter(challenge => {
+      const title = String(challenge.title || '').toLowerCase();
+      return title.includes(currentvalue);
+    });
 
-        displayCards(filtered);
-        if(filtered.length === 0) {
-             infomessage.style.display = 'block';    
-             infoText.textContent = "No match found";
+    displayCards(filtered);
+    if (filtered.length === 0) {
+      infomessage.style.display = 'block';
+      infoText.textContent = "No match found";
     }
     else
       infomessage.style.display = 'none';
-            });
-        }
+  });
+}
