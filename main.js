@@ -206,9 +206,8 @@ infoText.textContent = "";
 if (searchinput) {
     searchinput.addEventListener('keyup', e => {
         const currentvalue = e.target.value.trim().toLowerCase();
-
-               const filtered = allChallenges.filter(challenge => {
-            const title = String(challenge.title || '').toLowerCase();
+         const filtered = allChallenges.filter(challenge => {
+         const title = String(challenge.title || '').toLowerCase();
             return title.includes(currentvalue);
         });
 
@@ -216,7 +215,6 @@ if (searchinput) {
         if(filtered.length === 0) {
              infomessage.style.display = 'block';    
              footer.style.display = 'block';  
-            /* footer.style.gridTemplateColumns = "50% 25% 25%";*/
              infoText.textContent = "No matching challenges";
     }
     else{
