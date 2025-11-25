@@ -1,110 +1,129 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Our Challenges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="challenges.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="header">
-            <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
-            <figcaption>Hacker Escape Rooms</figcaption>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="features.html" class="playOne">Play online</a></li>
-                <li><a href="features.html" class="playTwo">Play on-site</a></li>
-                <li><a href="#" class="story">The story</a></li>
-                <li><a href="#" class="contact">Contact us</a></li>
-                <li><a href="index.html" class="home">Back to home page</a></li>
-            </ul>
-        </nav>
+      <div class="header">
+        <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
+        <figcaption>Hacker Escape Rooms</figcaption>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="features.html" class="playOne">Play online</a></li>
+          <li><a href="features.html" class="playTwo">Play on-site</a></li>
+          <li><a href="#" class="story">The story</a></li>
+          <li><a href="#" class="contact">Contact us</a></li>
+          <li><a href="index.html" class="home">Back to home page</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="headlineChallenges">
-        <h1>Our Challenges</h1>
+      <h1>Our Challenges</h1>
     </div>
 
     <div class="filterbutton">
-        <button class="filterBtn" onclick="document.querySelector('link').href='filter.css';">Filter challenges</button>
+      <button
+        class="filterBtn"
+        onclick="document.querySelector('link[rel=stylesheet]').href='filter.css';"
+      >
+        Filter challenges
+      </button>
     </div>
 
     <div class="containerfilter">
-        <h2>Filter challanges
-            <em><img src="close-button.png" class="close"
-                    onclick="document.querySelector('link').href='challenges.css';"></em>
-        </h2>
+      <h2>
+        Filter challanges
+        <em
+          ><img
+            src="close-button.png"
+            class="close"
+            onclick="document.querySelector('link[rel=stylesheet]').href='challenges.css';"
+        /></em>
+      </h2>
 
-        <section class="filter">
+      <section class="filter">
+        <div class="typecheckbox">
+          <h3 class="bytype">By type</h3>
+          <div class="checkbox">
+            <input type="checkbox" id="online" />
+            <label for="online">Include online challanges</label><br />
+            <input type="checkbox" id="onsite" />
+            <label for="onsite">Include on-site challanges</label>
+          </div>
+        </div>
 
-            <div class="typecheckbox">
+        <div class="rating">
+          <h3>By rating</h3>
+          <div class="starrating1">
+            <span id="ratingX">
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+            </span>
+            <em>to</em>
+            <span id="ratingY">
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+            </span>
+          </div>
+        </div>
 
-                <h3 class="bytype">By type</h3>
-                <div class="checkbox">
-                    <input type="checkbox" id="online">
-                    <label for="online">Include online challanges</label><br>
-                    <input type="checkbox" id="onsite">
-                    <label for="onsite">Include on-site challanges</label>
-                </div>
-            </div>
-            <div class="rating">
-                <h3>By rating</h3>
-                <div class="starrating1">
-                    <span id="ratingX">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                    </span>
-                    <em>to</em>
-                    <span id="ratingY">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
-                        <img src="img/images/Star 5.svg" width="23" height="26">
+        <div class="tags">
+          <h3>By tags</h3>
+          <div class="typetags1">
+            <button id="web">Web</button>
+            <button id="linux">Linux</button>
+            <button id="cryptography">Cryptography</button>
+            <button id="coding">Coding</button>
+          </div>
+          <div class="typetags2">
+            <button id="someother">Some oher tag</button>
+            <button id="finaltag">A final tag</button>
+          </div>
+        </div>
 
-                    </span>
-                </div>
-            </div>
-            <div class="tags">
-                <h3>By tags</h3>
-                <div class="typetags1">
-                    <button id="web">Web</button>
-                    <button id="linux">Linux</button>
-                    <button id="cryptography">Cryptography</button>
-                    <button id="coding">Coding</button>
-                </div>
-                <div class="typetags2">
-                    <button id="someother">Some oher tag</button>
-                    <button id="finaltag">A final tag</button>
-                    
-                </div>
-            </div>
-            <div class="typingtext">
-                <h3>Or type to search for keyward</h3>
-                <input type="text" id="typing" value="Start typing to filter">
-            </div>
-        </section>
+        <div class="typingtext">
+          <h3>Or type to search for keyward</h3>
+          <input type="text" id="typing" value="Start typing to filter" />
+        </div>
+      </section>
     </div>
 
-    
-    <div id="cards-container" class="scroll">
+    <div id="cards-container" class="scroll"></div>
 
+    <div id="booking-overlay" class="booking-overlay booking-hidden">
+      <div class="booking-modal">
+        <button id="booking-close" class="booking-close-button">×</button>
+        <div id="booking-header" class="booking-header"></div>
+        <div id="booking-content" class="booking-content"></div>
+      </div>
     </div>
 
-    <script src='main.js' type="module"></script>
-    
-</body>
-
+    <script src="main.js" type="module"></script>
+    <script src="booking.js"></script>
+  </body>
 </html>
