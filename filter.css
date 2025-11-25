@@ -181,3 +181,74 @@ a.active {
         font-weight: 700;
        
 }
+
+
+footer {
+    
+      display: grid;
+        grid-template-columns: 50% 25% 25%;
+        grid-template-rows: auto;
+    align-items: center;
+    border: 0;
+   /* flex-direction: row;*/
+    font-weight: 400;
+    height: 20rem;
+    margin-top: 5rem;
+    width: auto;
+    background-color: #011827;
+  }
+
+
+
+  h4 {
+    margin-bottom: 0;
+    margin-left: 4.9rem;
+      color: white;
+  font-weight: 700;
+  font-size: 1.12rem;
+  }
+
+  .follow {
+    margin-top: -1rem;
+  }
+
+  .footerText {
+   
+    margin-right: 6rem;
+    margin-left: 5rem;
+    width: 20rem;
+    color: white;
+    font-weight: 400;
+  font-size: 1rem;
+  }
+
+   .siteList,
+  .socialList {
+    margin-left: 3rem;
+    list-style: none;
+     color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  }
+
+.footerHead {
+  color: white;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.siteMap {
+   
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+    /*display: flex;
+    flex-direction: column;*/
+}
+.socials{
+    display: block;
+     color: white;
+  font-weight: 400;
+  font-size: 1rem;
+}
+

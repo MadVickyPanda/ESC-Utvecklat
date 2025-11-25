@@ -6,7 +6,8 @@ const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const cardsContainer = document.getElementById("cards-container");
 const topThreeContainer = document.getElementById("top-three");
-
+const footer = document.querySelector("footer");
+footer.style.display = 'none';  
 let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
 
 //Startar ''applikationen'' vid webbsidans laddning
@@ -214,9 +215,12 @@ if (searchinput) {
         displayCards(filtered);
         if(filtered.length === 0) {
              infomessage.style.display = 'block';    
-             infoText.textContent = "No match found";
+             footer.style.display = 'block';  
+            /* footer.style.gridTemplateColumns = "50% 25% 25%";*/
+             infoText.textContent = "No matching challenges";
     }
-    else
+    else{
+      footer.style.display = 'none';  
       infomessage.style.display = 'none';
-            });
+ } });
         }
