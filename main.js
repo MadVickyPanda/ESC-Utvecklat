@@ -235,3 +235,5 @@ if (searchinput) {
       infomessage.style.display = 'none';
   });
 }
+
+

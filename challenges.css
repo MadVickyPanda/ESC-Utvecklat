@@ -106,6 +106,18 @@ figcaption {
     width: 10rem;
 }
 
+#resetRating{
+   background-color: white;
+    border: solid 0.1rem #8acfe5;
+    border-radius: 0.25rem;
+    color: black;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.7rem;
+    height: 1rem;
+    text-align: center;
+    width: 7rem;
+}
 .containerfilter {
     display: none;
 }
