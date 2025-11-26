@@ -216,9 +216,11 @@ if (searchinput) {
         displayCards(filtered);
         if(filtered.length === 0) {
              infomessage.style.display = 'block';    
-             infoText.textContent = "No match found";
+             footer.style.display = 'block';  
+             infoText.textContent = "No matching challenges";
     }
-    else
+    else{
+      footer.style.display = 'none';  
       infomessage.style.display = 'none';
-            });
+ } });
         }

@@ -130,6 +130,7 @@ a.active {
 }
 
 #info{
+     margin-top: 50px;
     text-align: center;
     align-content: center;
     font-size: 36px;
@@ -138,56 +139,80 @@ a.active {
         font-weight: 700;
        
 }
+
 footer {
-    align-content: center;
-    background-color: #011827;
-    display: flex;
+
+    align-items: center;
     border: 0;
-    padding-top: 5rem;
-    flex-direction: row;
     font-weight: 400;
     height: 20rem;
     margin-top: 5rem;
     width: auto;
-}
+    background-color: #011827;
+  }
 
-.footerAbout {
-    display: flex;
-    flex-direction: column;
-}
+  h4 {
+    margin-bottom: 0;
+    margin-left: 4.9rem;
+      color: white;
+  font-weight: 700;
+  font-size: 1.12rem;
+  }
 
-.footerText {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-    text-align: left;
+  .follow {
+    margin-top: -1rem;
+  }
+  .footerAbout{
+    position: absolute;
+   top: 1050px;
+   left: 50px;
+  }
+
+  .footerText {
+   
     margin-right: 6rem;
     margin-left: 5rem;
     width: 20rem;
+    color: white;
+    font-weight: 400;
+  font-size: 1rem;
+  }
+
+   .siteList,
+  .socialList {
+    margin-left: 3rem;
+    list-style: none;
+     color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  }
+
+.footerHead {
+  color: white;
+  font-size: 1.12rem;
+  font-weight: 700;
 }
 
 .siteMap {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
+   position: absolute;
+   top: 1050px;
+   left: 600px;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+    
+}
+.Legal{
+    margin-bottom: 20px;
+}
+.socials{
+    display: block;
+     position: absolute;
+   top: 1100px;
+   left: 900px;
+     color: white;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
-h4 {
-    color: white;
-    font-weight: 700;
-    font-size: 1.12rem;
-    margin-bottom: 0;
-    margin-left: 4.9rem;
-}
 
-.socials {
-    color: white;
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-.siteList,
-.socialList {
-    list-style: none;
-    margin-left: 3rem;
-}
