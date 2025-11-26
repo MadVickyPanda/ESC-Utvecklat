@@ -200,6 +200,8 @@ function filterChallengesByTags() {
 const searchinput = document.getElementById('typing');
 const infoText = document.getElementById('info');
 const infomessage = document.getElementById('infomessage');
+const footer = document.querySelector("footer");
+footer.style.display = 'none';  
 
 infoText.textContent = "";
 if (searchinput) {

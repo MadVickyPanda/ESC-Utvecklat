@@ -138,3 +138,56 @@ a.active {
         font-weight: 700;
        
 }
+footer {
+    align-content: center;
+    background-color: #011827;
+    display: flex;
+    border: 0;
+    padding-top: 5rem;
+    flex-direction: row;
+    font-weight: 400;
+    height: 20rem;
+    margin-top: 5rem;
+    width: auto;
+}
+
+.footerAbout {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerText {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: left;
+    margin-right: 6rem;
+    margin-left: 5rem;
+    width: 20rem;
+}
+
+.siteMap {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h4 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.12rem;
+    margin-bottom: 0;
+    margin-left: 4.9rem;
+}
+
+.socials {
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.siteList,
+.socialList {
+    list-style: none;
+    margin-left: 3rem;
+}
