@@ -658,6 +658,7 @@ h4 {
 
   #top-three {
     width: 1280px;
+    margin: 0 auto;
   }
 
   #top-three > * {
