@@ -152,7 +152,6 @@ figcaption {
   overflow-y: hidden;
   white-space: nowrap;
   width: 92vw;
-  scroll-snap-type: x mandatory;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -654,16 +653,6 @@ h4 {
   .scroll {
     justify-content: center;
     width: 1280px;
-  }
-
-  #top-three {
-    width: 1280px;
-    margin: 0 auto;
-  }
-
-  #top-three > * {
-    width: 364px;
-    flex-shrink: 0;
   }
 
   .roomTitle {
