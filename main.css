@@ -654,6 +654,16 @@ h4 {
     justify-content: center;
     width: 1280px;
   }
+ 
+  #top-three {
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  #top-three > * {
+    width: 364px;
+    flex-shrink: 0;
+  }
 
   .roomTitle {
     margin-left: 0.6rem;
