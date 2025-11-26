@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const minStars = document.getElementById("ratingX");
     const maxStars = document.getElementById("ratingY");
-    const resetBtn = document.getElementById("resetRating"); // reset button in HTML
+    const resetBtn = document.getElementById("resetRating"); // reset button i HTML
 
-    // function to activate hover + click stars
+    // Aktivera hover och klicka för att välja stjärna
     function activateStars(container, setValue) {
         if (!container) return;
         const stars = container.querySelectorAll("img");
-        let currentRating = 0; // store selected rating
+        let currentRating = 0; // lagra vald rating
 
         stars.forEach((star, i) => {
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            // click to select rating
+            // Klicka för att välja rating
             star.addEventListener("click", () => {
                 currentRating = i + 1;
                 stars.forEach((s, j) => {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // restore selected rating on mouse leave
+        // Återställ den valda betygsstjärnan när musen lämnar
         container.addEventListener("mouseleave", () => {
             stars.forEach((s, j) => {
                 s.src = j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // activate min and max stars
+    // Aktivera min and max stars
     activateStars(minStars, val => ratingMin = val);
     activateStars(maxStars, val => ratingMax = val);
 
-    // filter function
+    // filter funktion
     function filterCardsByRating() {
         const cards = document.querySelectorAll("#cards-container .card");
         let anyVisible = false;
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (noMatch) noMatch.style.display = anyVisible ? "none" : "block";
     }
 
-    // reset button functionality
+    // reset button funktion
     if (resetBtn) {
         resetBtn.addEventListener("click", () => {
             // reset ratings
@@ -75,11 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
             minStars.querySelectorAll("img").forEach(s => s.src = "img/images/Star 5.svg");
             maxStars.querySelectorAll("img").forEach(s => s.src = "img/images/Star 5.svg");
 
-            // show all cards
+            // Visa alla kort
             const cards = document.querySelectorAll("#cards-container .card");
             cards.forEach(card => card.style.display = "");
 
-            // hide "no match found"
+            // göm "no match found"
             const noMatch = document.getElementById("noMatchMessage");
             if (noMatch) noMatch.style.display = "none";
         });

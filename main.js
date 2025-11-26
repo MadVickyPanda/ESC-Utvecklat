@@ -170,7 +170,7 @@ tagIds.forEach((tagId) => {
   if (btn) {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      btn.classList.toggle("active"); // toggle button style
+      btn.classList.toggle("active"); 
 
       // Uppdatera lista av aktiva taggar
       activeTags = tagIds
@@ -189,7 +189,7 @@ tagIds.forEach((tagId) => {
 function filterChallengesByTags() {
   if (activeTags.length === 0) {
     displayCards(allChallenges);
-    noMatchMessage.style.display = "none"; // ADDED
+    noMatchMessage.style.display = "none";
     return;
   }
 
@@ -202,7 +202,7 @@ function filterChallengesByTags() {
   displayCards(filtered);
 
 
-  // Visa/dälj "NO MATCH FOUND" message
+  // Visa/dölj "NO MATCH FOUND" message
   if (filtered.length === 0) {
     noMatchMessage.style.display = "block";
   } else {
