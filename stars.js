@@ -5,33 +5,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const minStars = document.getElementById("ratingX");
     const maxStars = document.getElementById("ratingY");
-    const resetBtn = document.getElementById("resetRating"); // We'll add this in HTML
+    const resetBtn = document.getElementById("resetRating"); // reset button in HTML
 
+    // function to activate hover + click stars
     function activateStars(container, setValue) {
         if (!container) return;
         const stars = container.querySelectorAll("img");
+        let currentRating = 0; // store selected rating
 
         stars.forEach((star, i) => {
-            star.addEventListener("click", () => {
 
-                // highlight stars
+            // hover highlight
+            star.addEventListener("mouseenter", () => {
                 stars.forEach((s, j) => {
                     s.src = j <= i ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
                 });
+            });
 
-                setValue(i + 1);
-
-                // filter cards
+            // click to select rating
+            star.addEventListener("click", () => {
+                currentRating = i + 1;
+                stars.forEach((s, j) => {
+                    s.src = j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
+                });
+                setValue(currentRating);
                 filterCardsByRating();
+            });
+        });
+
+        // restore selected rating on mouse leave
+        container.addEventListener("mouseleave", () => {
+            stars.forEach((s, j) => {
+                s.src = j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
             });
         });
     }
 
-    // attach click events to min/max stars
+    // activate min and max stars
     activateStars(minStars, val => ratingMin = val);
     activateStars(maxStars, val => ratingMax = val);
 
-    // function to filter cards
+    // filter function
     function filterCardsByRating() {
         const cards = document.querySelectorAll("#cards-container .card");
         let anyVisible = false;
@@ -39,24 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach(card => {
             const rating = Number(card.dataset.rating || 0);
             if (rating >= ratingMin && rating <= ratingMax) {
-                card.style.display = ""; // show
+                card.style.display = "";
                 anyVisible = true;
             } else {
-                card.style.display = "none"; // hide
+                card.style.display = "none";
             }
         });
 
-        // show/hide "No match found"
         const noMatch = document.getElementById("noMatchMessage");
-        if (noMatch) {
-            noMatch.style.display = anyVisible ? "none" : "block";
-        }
+        if (noMatch) noMatch.style.display = anyVisible ? "none" : "block";
     }
 
-    // reset function
+    // reset button functionality
     if (resetBtn) {
         resetBtn.addEventListener("click", () => {
-            // reset min/max rating
+            // reset ratings
             ratingMin = 0;
             ratingMax = 5;
 
@@ -68,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cards = document.querySelectorAll("#cards-container .card");
             cards.forEach(card => card.style.display = "");
 
-            // hide "No match found"
+            // hide "no match found"
             const noMatch = document.getElementById("noMatchMessage");
             if (noMatch) noMatch.style.display = "none";
         });
