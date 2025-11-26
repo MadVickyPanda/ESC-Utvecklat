@@ -129,21 +129,6 @@ function createCard(data) {
   return card;
 }
 
-function handleBookClick() {
-  if (
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/" ||
-    window.location.pathname === ""
-  ) {
-    const bookingSection = document.getElementById("booking");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
-    }
-  } else {
-    window.location.href = "index.html#booking";
-  }
-}
-
 function createStarContainer(rating) {
   const starContainer = document.createElement("div");
   starContainer.classList.add("star");

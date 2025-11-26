@@ -1,212 +1,170 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Our Challenges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="challenges.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ESC Hacker escape room</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-</head>
-
-<!-- STARTSIDA -->
-<body>
-  <header>
-    <div class="header">
-      <img class="logo" src="img/images/Group 1.png" alt="logotype ESC">
-      <figcaption>Hacker Escape Rooms</figcaption>
-    </div>
-
-    <div class="hamburgerMenu">
-      <div class="hamburger" id="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+  <body>
+    <header>
+      <div class="header">
+        <img class="logo" src="img/images/Group 1.png" alt="logotype ESC" />
+        <figcaption>Hacker Escape Rooms</figcaption>
       </div>
-
-      <div class="popupMenu" id="popupMenu">
-        <button class="closeBtn" id="closeBtn">&times;</button>
-        <ul class="navBtn">
-          <li><a href="features.html">Play online</a></li>
-          <li><a href="features.html">Play on-site</a></li>
-          <li><a href="#">The story</a></li>
-          <li><a href="#">Contact us</a></li>
+      <nav>
+        <ul class="menu">
+          <li><a href="features.html" class="playOne">Play online</a></li>
+          <li><a href="features.html" class="playTwo">Play on-site</a></li>
+          <li><a href="#" class="story">The story</a></li>
+          <li><a href="#" class="contact">Contact us</a></li>
+          <li><a href="index.html" class="home">Back to home page</a></li>
         </ul>
-      </div>
+      </nav>
+    </header>
 
-      <div class="overlay" id="overlay"></div>
+    <div class="headlineChallenges">
+      <h1>Our Challenges</h1>
     </div>
 
-    <nav>
-      <ul class="menu">
-        <li><a href="features.html" class="playOne">Play online</a></li>
-        <li><a href="features.html" class="playTwo">Play on-site</a></li>
-        <li><a href="#" class="story">The story</a></li>
-        <li><a href="#" class="contact">Contact us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <img src="img/images/hacker.png" alt="hacker sitting by its computer" class="myCover">
-
-    <section class="btnsNav">
-      <div class="btnList">
-        <a href="features.html" class="onlineBtn">Online challenges</a>
-        <a href="features.html" class="onsiteBtn">On-site challenges</a>
-        <a href="features.html" class="mobileOnline">Online challenges</a>
-      </div>
-    </section>
-
-    <section class="reviews">
-      <img src="img/images/image 3.png" alt="Portrait of John Doe" width="96" height="96" class="userImg">
-      <div class="reviewOne">
-        <p>
-          This is a quote about how amazing this place is and how much fun me
-          and my friends had when we tried it
-        </p>
-        <p class="name">John Doe, visited us in September 2021</p>
-      </div>
-
-      <img src="img/images/image 3.png" alt="Portrait of John Doe" width="96" height="96" class="userImg2">
-      <div class="reviewTwo">
-        <p>
-          This is a quote about how amazing this place is and how much fun me
-          and my friends had when we tried it
-        </p>
-        <p class="name">John Doe, visited us in September 2021</p>
-      </div>
-    </section>
-
-    <div class="popular">
-      <p>Popular challenges right now</p>
+    <div class="filterbutton">
+      <button
+        class="filterBtn"
+        onclick="document.querySelector('link[rel=stylesheet]').href='filter.css';"
+      >
+        Filter challenges
+      </button>
     </div>
 
-    <section id="top-three" class="scroll"></section>
+    <div class="containerfilter">
+      <h2>
+        Filter challenges
+        <em>
+          <img
+            src="close-button.png"
+            class="close"
+            onclick="document.querySelector('link[rel=stylesheet]').href='challenges.css';"
+          />
+        </em>
+      </h2>
 
-    <section>
-      <div class="btnList">
-        <a href="features.html" class="onlineBtnTwo">Online challenges</a>
-        <a href="features.html" class="onsiteBtnTwo">On-site challenges</a>
-        <a href="features.html" class="mobileOnlineTwo">Online challenges</a>
+      <section class="filter">
+        <div class="typecheckbox">
+          <h3 class="bytype">By type</h3>
+          <div class="checkbox">
+            <input type="checkbox" id="online" />
+            <label for="online">Include online challenges</label><br />
+            <input type="checkbox" id="onsite" />
+            <label for="onsite">Include on-site challenges</label>
+          </div>
+        </div>
+
+        <div class="rating">
+          <h3>By rating</h3>
+          <div class="starrating1">
+            <span id="ratingX">
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+            </span>
+            <em>to</em>
+            <span id="ratingY">
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+              <img src="img/images/Star 5.svg" width="23" height="26" />
+            </span>
+          </div>
+        </div>
+
+        <div class="tags">
+          <h3>By tags</h3>
+          <div class="typetags1">
+            <button id="web">Web</button>
+            <button id="linux">Linux</button>
+            <button id="cryptography">Cryptography</button>
+            <button id="coding">Coding</button>
+          </div>
+          <div class="typetags2">
+            <button id="javascript">Javascript</button>
+            <button id="bash">Bash</button>
+            <button id="hacking">Hacking</button>
+            <button id="phreaking">Phreaking</button>
+          </div>
+          <div class="typetags3">
+            <button id="ssh">Ssh</button>
+            <button id="ctf">CTF</button>
+            <button id="electronics">Electronics</button>
+          </div>
+        </div>
+
+        <div class="typingtext">
+          <h3>Or type to search for keyward</h3>
+          <input type="text" id="typing" value="Start typing to filter" />
+        </div>
+      </section>
+    </div>
+
+    <div id="infomessage">
+      <p id="info"></p>
+    </div>
+
+    <div id="cards-container" class="scroll"></div>
+
+    <footer>
+      <div class="footerAbout">
+        <h4>[Esc] Hacker Escape Rooms</h4>
+        <p class="footerText">
+          Quodsi haberent magnalia inter potentiam et divitias, et non illam
+          quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+          felicitatis libertatisque perficiuntur.
+        </p>
       </div>
-    </section>
+      <nav class="siteMap">
+        <h4>Site Map</h4>
+        <ul class="siteList">
+          <li>The Story</li>
+          <li>Contact Us</li>
+          <li>Legal</li>
+          <li>Play Online</li>
+          <li>Play on-site</li>
+        </ul>
+      </nav>
+      <nav class="socials">
+        <h4 class="follow">Follow us on</h4>
+        <ul class="socialList">
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+        </ul>
+      </nav>
+    </footer>
 
-    <section class="about">
-      <p class="aboutText">
-        Quodsi haberent magnalia inter potentiam et<br>
-        divitias, et non illam quidem haec eo spectant<br>
-        haec quoque vos omnino desit illud quo solo<br>
-        felicitatis libertatisque perficiuntur.
-      </p>
-      <button class="aboutBtn">Read the full story</button>
-    </section>
-
-    <section>
-      <article class="booking" id="booking">
-        <img src="img/images/nesa-by-makers-IgUR1iX0mqM-unsplash 1.png" width="480" height="440"
-          class="bookingImg">
-        <p class="bookingHead">
-          Play with your friends or build your team stronger at work
-        </p>
-        <p class="bookingText">
-          Praeterea, ex culpa non invenies unum aut non accusatis unum.
-          Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-        </p>
-
-        <!-- Din nya boknings-formulär -->
-        <form id="booking-form" class="booking-form">
-          <label class="booking-label">
-            Choose date:
-            <input type="date" id="booking-date" required>
-          </label>
-
-          <label class="booking-label">
-            Participants:
-            <input type="number" id="booking-participants" min="1" max="10" required>
-          </label>
-
-          <label class="booking-label">
-            Name:
-            <input type="text" id="booking-name" required>
-          </label>
-
-          <label class="booking-label">
-            Email:
-            <input type="email" id="booking-email" required>
-          </label>
-
-          <button type="submit" class="bookingFormBtn">
-            Confirm booking
-          </button>
-        </form>
-
-        <p id="booking-message" class="booking-message"></p>
-      </article>
-
-      <article class="challenges">
-        <img src="img/images/kelly-sikkema-YK0HPwWDJ1I-unsplash 1.png" width="480" height="440"
-          class="challengesImg">
-        <p class="challengesHead">
-          Play online or visit our venue for one of our 25 escape rooms
-        </p>
-        <p class="challengesText">
-          Praeterea, ex culpa non invenies unum aut non accusatis unum.
-          Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-        </p>
-        <button class="challengesBtn" onclick="location.href='features.html'">
-          See all challenges
-        </button>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footerAbout">
-      <h4>[Esc] Hacker Escape Rooms</h4>
-      <p class="footerText">
-        Quodsi haberent magnalia inter potentiam et divitias,
-        et non illam quidem haec eo spectant haec quoque vos
-        omnino desit illud quo solo felicitatis libertatisque perficiuntur.
-      </p>
+    <div id="booking-overlay" class="booking-overlay booking-hidden">
+      <div class="booking-modal">
+        <button id="booking-close" class="booking-close-button">×</button>
+        <div id="booking-header" class="booking-header"></div>
+        <div id="booking-content" class="booking-content"></div>
+      </div>
     </div>
-    <nav class="siteMap">
-      <h4>Site Map</h4>
-      <ul class="siteList">
-        <li>The Story</li>
-        <li>Contact Us</li>
-        <li>Legal</li>
-        <li>Play Online</li>
-        <li>Play on-site</li>
-      </ul>
-    </nav>
-    <nav class="socials">
-      <h4 class="follow">Follow us on</h4>
-      <ul class="socialList">
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>Twitter</li>
-      </ul>
-    </nav>
-  </footer>
 
-  <!-- Modal för bokningsbekräftelse -->
-  <div id="booking-overlay" class="booking-overlay booking-hidden">
-    <div class="booking-modal">
-      <button id="booking-close" class="booking-close-button">×</button>
-      <div id="booking-header" class="booking-header"></div>
-      <div id="booking-content" class="booking-content"></div>
-    </div>
-  </div>
-
-  <script src="main.js" type="module"></script>
-</body>
-
+    <script src="main.js" type="module"></script>
+    <script src="booking.js"></script>
+  </body>
 </html>
