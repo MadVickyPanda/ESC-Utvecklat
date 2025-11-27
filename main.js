@@ -7,6 +7,7 @@ const closeBtn = document.getElementById("closeBtn");
 
 const cardsContainer = document.getElementById("cards-container");
 const topThreeContainer = document.getElementById("top-three");
+const infoElement = document.getElementById("info");
 
 let allChallenges = [];
 let activeTags = [];
@@ -146,51 +147,47 @@ function createStarContainer(rating) {
 }
 
 function initTags() {
-  const tagIds = [
-    "web",
-    "linux",
-    "cryptography",
-    "coding",
-    "someother",
-    "finaltag",
-  ];
+  // Hämta ALLA tag-knappar från .tags-sektionen
+  const tagButtons = document.querySelectorAll(".tags button");
   activeTags = [];
 
-  tagIds.forEach((tagId) => {
-    const btn = document.getElementById(tagId);
-    if (btn) {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        btn.classList.toggle("active");
+  if (!tagButtons.length) return;
 
-        activeTags = tagIds
-          .filter((id) => {
-            const b = document.getElementById(id);
-            return b && b.classList.contains("active");
-          })
-          .map((tag) => tag.toLowerCase());
+  tagButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      btn.classList.toggle("active");
 
-        filterChallengesByTags();
-      });
-    }
+      activeTags = Array.from(tagButtons)
+        .filter((b) => b.classList.contains("active"))
+        .map((b) => b.id.toLowerCase());
+
+      filterChallengesByTags();
+    });
   });
 }
 
 function filterChallengesByTags() {
   if (!cardsContainer) return;
 
-  if (activeTags.length === 0) {
-    displayCards(allChallenges, cardsContainer);
-    return;
+  let result = allChallenges;
+
+  if (activeTags.length > 0) {
+    result = allChallenges.filter((challenge) => {
+      const labels = challenge.labels || [];
+      const labelsLower = labels.map((l) => l.toLowerCase());
+      return activeTags.every((tag) => labelsLower.includes(tag));
+    });
   }
 
-  const filtered = allChallenges.filter((challenge) => {
-    const labels = challenge.labels || [];
-    const labelsLower = labels.map((l) => l.toLowerCase());
-    return activeTags.every((tag) => labelsLower.includes(tag));
-  });
+  displayCards(result, cardsContainer);
 
-  displayCards(filtered, cardsContainer);
+  if (infoElement) {
+    infoElement.textContent =
+      result.length === 0 && activeTags.length > 0
+        ? "No challenges match the selected filters."
+        : "";
+  }
 }
 
 function initBookingForm() {
