@@ -88,6 +88,15 @@ figcaption {
   width: 70%; 
 }
 
+.onsiteBtn::before {
+  font-family: "Font Awesome 6 Free";
+  margin-right: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.onsiteBtn::before {
+  content : "\f015";
+}
 .mobileOnline {
   background-color: white;
   border: none;
@@ -99,6 +108,16 @@ figcaption {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mobileOnline::before {
+  font-family: "Font Awesome 6 Free";
+  margin-right: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.mobileOnline::before {
+  content : "\e163";
 }
 
 .userImg {
@@ -279,6 +298,18 @@ figcaption {
   width: 70%; 
 }
 
+
+.onsiteBtnTwo::before {
+  font-family: "Font Awesome 6 Free";
+  margin-right: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.onsiteBtnTwo::before {
+  content : "\f015";
+}
+
+
 .mobileOnlineTwo {
   background-color: white;
   border: none;
@@ -295,6 +326,18 @@ figcaption {
 .onlineBtnTwo {
   display: none;
 }
+
+
+.mobileOnlineTwo::before {
+  font-family: "Font Awesome 6 Free";
+  margin-right: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.mobileOnlineTwo::before {
+  content : "\e163";
+}
+
 
 .about {
   background-color: #011827;
@@ -594,6 +637,17 @@ h4 {
     width: 16rem;
   }
 
+  
+  .onlineBtn::before {
+    font-family: "Font Awesome 6 Free";
+    margin-right: 0.625rem;
+    font-size: 1.25rem;
+  }
+  
+  .onlineBtn::before {
+    content : "\e163";
+  }
+
   .onsiteBtn {
     align-content: center;
     background-color: #8ACFE5;
@@ -608,6 +662,16 @@ h4 {
     text-align: center;
     text-decoration: none;
     width: 16rem;
+  }
+   
+  .onsiteBtn::before {
+    font-family: "Font Awesome 6 Free";
+    margin-right: 0.625rem;
+    font-size: 1.25rem;
+  }
+  
+  .onsiteBtn::before {
+    content : "\f015";
   }
 
   .userImg {
@@ -704,6 +768,17 @@ h4 {
     font-size: 1.12rem;
     height: 3.4rem;
     width: 16rem;
+  }
+
+    
+  .onlineBtnTwo::before {
+    font-family: "Font Awesome 6 Free";
+    margin-right: 0.625rem;
+    font-size: 1.25rem;
+  }
+  
+  .onlineBtnTwo::before {
+    content : "\e163";
   }
 
   .about {
