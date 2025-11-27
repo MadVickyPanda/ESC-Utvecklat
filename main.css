@@ -163,8 +163,9 @@ figcaption {
 
 .imageCard {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 270px;
+  object-fit: fill;
+  display: block;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
