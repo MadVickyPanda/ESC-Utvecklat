@@ -7,6 +7,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='booking.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -45,9 +46,7 @@
         </h2>
 
         <section class="filter">
-
             <div class="typecheckbox">
-
                 <h3 class="bytype">By type</h3>
                 <div class="checkbox">
                     <input type="checkbox" id="online">
@@ -56,6 +55,7 @@
                     <label for="onsite">Include on-site challenges</label>
                 </div>
             </div>
+
             <div class="rating">
                 <h3>By rating</h3>
                 <div class="starrating1">
@@ -78,7 +78,6 @@
                 <button id="resetRating">Reset Rating Filter</button>
             </div>
 
-
             <div class="tags">
                 <h3>By tags</h3>
                 <div class="typetags1">
@@ -99,6 +98,7 @@
                     <button id="electronics">Electronics</button>
                 </div>
             </div>
+
             <div class="typingtext">
                 <h3>Or type to search for keyword</h3>
                 <input type="text" id="typing" value="Start typing to filter">
@@ -109,9 +109,10 @@
     <div id="infomessage">
         <p id="info"></p>
     </div>
-    <div id="cards-container" class="scroll">
 
+    <div id="cards-container" class="scroll">
     </div>
+
     <footer>
         <div class="footerAbout">
             <h4>[Esc] Hacker Escape Rooms</h4>
@@ -138,8 +139,10 @@
             </ul>
         </nav>
     </footer>
+
     <script src="main.js" type="module"></script>
     <script src="stars.js" type="module"></script>
+    <script src="booking.js" type="module"></script>
 </body>
 
 </html>
