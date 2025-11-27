@@ -1,88 +1,89 @@
+import { updateRatingFilter } from "./main.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  let ratingMin = 0;
+  let ratingMax = 5;
 
-    let ratingMin = 0;
-    let ratingMax = 5;
+  const minStars = document.getElementById("ratingX");
+  const maxStars = document.getElementById("ratingY");
+  const resetBtn = document.getElementById("resetRating"); // reset button i HTML
 
-    const minStars = document.getElementById("ratingX");
-    const maxStars = document.getElementById("ratingY");
-    const resetBtn = document.getElementById("resetRating"); // reset button i HTML
+  // Aktivera hover och klicka för att välja stjärna
+  function activateStars(container, setValue) {
+    if (!container) return;
+    const stars = container.querySelectorAll("img");
+    let currentRating = 0; // lagra vald rating
 
-    // Aktivera hover och klicka för att välja stjärna
-    function activateStars(container, setValue) {
-        if (!container) return;
-        const stars = container.querySelectorAll("img");
-        let currentRating = 0; // lagra vald rating
-
-        stars.forEach((star, i) => {
-
-            // hover highlight
-            star.addEventListener("mouseenter", () => {
-                stars.forEach((s, j) => {
-                    s.src = j <= i ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
-                });
-            });
-
-            // Klicka för att välja rating
-            star.addEventListener("click", () => {
-                currentRating = i + 1;
-                stars.forEach((s, j) => {
-                    s.src = j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
-                });
-                setValue(currentRating);
-                filterCardsByRating();
-            });
+    stars.forEach((star, i) => {
+      // hover highlight
+      star.addEventListener("mouseenter", () => {
+        stars.forEach((s, j) => {
+          s.src = j <= i ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
         });
+      });
 
-        // Återställ den valda betygsstjärnan när musen lämnar
-        container.addEventListener("mouseleave", () => {
-            stars.forEach((s, j) => {
-                s.src = j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
-            });
+      // Klicka för att välja rating
+      star.addEventListener("click", () => {
+        currentRating = i + 1;
+        stars.forEach((s, j) => {
+          s.src =
+            j < currentRating
+              ? "img/images/Star 4.svg"
+              : "img/images/Star 5.svg";
         });
-    }
+        setValue(currentRating);
+        updateRatingFilter(ratingMin, ratingMax);
+      });
+    });
 
-    // Aktivera min and max stars
-    activateStars(minStars, val => ratingMin = val);
-    activateStars(maxStars, val => ratingMax = val);
+    // Återställ den valda betygsstjärnan när musen lämnar
+    container.addEventListener("mouseleave", () => {
+      stars.forEach((s, j) => {
+        s.src =
+          j < currentRating ? "img/images/Star 4.svg" : "img/images/Star 5.svg";
+      });
+    });
+  }
 
-    // filter funktion
-    function filterCardsByRating() {
-        const cards = document.querySelectorAll("#cards-container .card");
-        let anyVisible = false;
+  // Aktivera min and max stars
+  activateStars(minStars, (val) => (ratingMin = val));
+  activateStars(maxStars, (val) => (ratingMax = val));
 
-        cards.forEach(card => {
-            const rating = Number(card.dataset.rating || 0);
-            if (rating >= ratingMin && rating <= ratingMax) {
-                card.style.display = "";
-                anyVisible = true;
-            } else {
-                card.style.display = "none";
-            }
-        });
+  // filter funktion
+  //   function filterCardsByRating() {
+  //     const cards = document.querySelectorAll("#cards-container .card");
+  //     let anyVisible = false;
 
-        const noMatch = document.getElementById("noMatchMessage");
-        if (noMatch) noMatch.style.display = anyVisible ? "none" : "block";
-    }
+  //     cards.forEach((card) => {
+  //       const rating = Number(card.dataset.rating || 0);
+  //       if (rating >= ratingMin && rating <= ratingMax) {
+  //         card.style.display = "";
+  //         anyVisible = true;
+  //       } else {
+  //         card.style.display = "none";
+  //       }
+  //     });
 
-    // reset button funktion
-    if (resetBtn) {
-        resetBtn.addEventListener("click", () => {
-            // reset ratings
-            ratingMin = 0;
-            ratingMax = 5;
+  //     const noMatch = document.getElementById("noMatchMessage");
+  //     if (noMatch) noMatch.style.display = anyVisible ? "none" : "block";
+  //   }
 
-            // reset star visuals
-            minStars.querySelectorAll("img").forEach(s => s.src = "img/images/Star 5.svg");
-            maxStars.querySelectorAll("img").forEach(s => s.src = "img/images/Star 5.svg");
+  // reset button funktion
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      // reset ratings
+      ratingMin = 0;
+      ratingMax = 5;
 
-            // Visa alla kort
-            const cards = document.querySelectorAll("#cards-container .card");
-            cards.forEach(card => card.style.display = "");
+      // reset star visuals
+      minStars
+        .querySelectorAll("img")
+        .forEach((s) => (s.src = "img/images/Star 5.svg"));
+      maxStars
+        .querySelectorAll("img")
+        .forEach((s) => (s.src = "img/images/Star 5.svg"));
 
-            // göm "no match found"
-            const noMatch = document.getElementById("noMatchMessage");
-            if (noMatch) noMatch.style.display = "none";
-        });
-    }
-
+      updateRatingFilter(ratingMin, ratingMax);
+    });
+  }
 });
