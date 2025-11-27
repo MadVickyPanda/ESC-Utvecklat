@@ -7,14 +7,12 @@ const closeBtn = document.getElementById("closeBtn");
 
 const cardsContainer = document.getElementById("cards-container");
 const topThreeContainer = document.getElementById("top-three");
-const infoElement = document.getElementById("info");
 
 let allChallenges = [];
 let activeTags = [];
 
 initHamburger();
 initTags();
-initBookingForm();
 startApp();
 
 function initHamburger() {
@@ -51,11 +49,10 @@ async function startApp() {
     if (cardsContainer) {
       displayCards(allChallenges, cardsContainer);
     }
-  } catch (error) {
+  } catch {
     if (cardsContainer) {
       cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
     }
-    console.error(error);
   }
 }
 
@@ -147,7 +144,6 @@ function createStarContainer(rating) {
 }
 
 function initTags() {
-  // Hämta ALLA tag-knappar från .tags-sektionen
   const tagButtons = document.querySelectorAll(".tags button");
   activeTags = [];
 
@@ -181,56 +177,4 @@ function filterChallengesByTags() {
   }
 
   displayCards(result, cardsContainer);
-
-  if (infoElement) {
-    infoElement.textContent =
-      result.length === 0 && activeTags.length > 0
-        ? "No challenges match the selected filters."
-        : "";
-  }
-}
-
-function initBookingForm() {
-  const form = document.getElementById("booking-form");
-  if (!form) return;
-
-  const dateInput = document.getElementById("booking-date");
-  const participantsInput = document.getElementById("booking-participants");
-  const nameInput = document.getElementById("booking-name");
-  const emailInput = document.getElementById("booking-email");
-  const message = document.getElementById("booking-message");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (
-      !dateInput ||
-      !participantsInput ||
-      !nameInput ||
-      !emailInput ||
-      !message
-    )
-      return;
-
-    const date = dateInput.value;
-    const participants = participantsInput.value;
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-
-    if (!date || !participants || !name || !email) {
-      message.textContent = "Please fill in all fields.";
-      message.classList.remove("booking-message--success");
-      return;
-    }
-
-    if (!email.includes("@")) {
-      message.textContent = "Please enter a valid email.";
-      message.classList.remove("booking-message--success");
-      return;
-    }
-
-    message.textContent = `Thank you ${name}! Your booking for ${date} with ${participants} participants has been registered.`;
-    message.classList.add("booking-message--success");
-
-    form.reset();
-  });
 }
