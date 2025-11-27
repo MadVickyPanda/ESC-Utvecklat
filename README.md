@@ -67,3 +67,12 @@ Viktoria ska lägga till fler ettiketter efter vad som finns i api
 Kristoffer jobbar med de 3 korten på startsidan, skickar pullrequest idag.  
 Imans booking ser jättebra ut, men vi måste lösa konflikterna. Hon gör en synko och gör booking efter senaste versionen va koden.  
 Möte ska bokas in nästa vecka också, tids bestäms på måndag.  
+
+
+Möte torsdag 27/11 
+ 
+Prata med Iman om hennes kod igen. Main.Js ska inte ändras, booking ska läggas separat.  Diskutera lite hur hon ligger till, rekommenderas ta kontakt med Rickard. Lenson ska göra filter challenges online on-site. När booking är klar så gör vi lite css tweaks.  
+ 
+Annars är vi som klara.  
+Inlämning imorgon 
+
