@@ -92,15 +92,6 @@ function createCard(data) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  card.dataset.id = data.id;
-  card.dataset.type = data.type;
-  card.dataset.title = data.title;
-  card.dataset.description = data.description;
-  card.dataset.minParticipants = data.minParticipants;
-  card.dataset.maxParticipants = data.maxParticipants;
-  card.dataset.rating = data.rating;
-  card.dataset.labels = data.labels;
-
   const cardImage = document.createElement("img");
   cardImage.src = data.image || "/img/images/hacker.png";
   cardImage.alt = `Image for ${data.title}`;
