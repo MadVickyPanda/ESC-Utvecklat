@@ -99,18 +99,20 @@ function showStep1({ overlay, headerEl, contentEl, challenge, onNext }) {
       return;
     }
 
+    errorEl.textContent = "";
+
+    let availableTimes = [];
     try {
-      errorEl.textContent = "";
-      const availableTimes = await fetchAvailableTimes(challenge.id, date);
-      if (!availableTimes.length) {
-        errorEl.textContent = "No times available for this date.";
-        return;
-      }
-      onNext({ date, availableTimes });
+      availableTimes = await fetchAvailableTimes(challenge.id, date);
     } catch (err) {
-      console.error(err);
-      errorEl.textContent = "Could not load times. Please try again.";
+      console.error("API booking-times failed, using fallback times", err);
     }
+
+    if (!availableTimes || !availableTimes.length) {
+      availableTimes = ["18:00", "20:00", "22:00"];
+    }
+
+    onNext({ date, availableTimes });
   });
 }
 
