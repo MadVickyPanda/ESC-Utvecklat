@@ -1,0 +1,109 @@
+/* --- HAMBURGER MENU --- */
+.hamburgerMenu {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  height: 1.37rem;
+  justify-content: space-between;
+  width: 1.87rem;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: white;
+  border-radius: 0.1rem;
+  height: 0.2rem;
+  transition: 0.3s;
+  width: 100%;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 800; /* below popupMenu (z-index: 900) */
+}
+
+.overlay.active {
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* POPUP MENU */
+.popupMenu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  max-width: 90vw;
+  width: 90%;
+  height: 95vh;
+  background: #011827;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 900;
+}
+
+.popupMenu.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* CLOSE BUTTON */
+.closeBtn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+/* MENU ITEMS */
+.popupMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popupMenu li {
+  margin-bottom: 1.7rem;
+}
+
+.popupMenu a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.popupMenu a:hover {
+  color: #8ACFE5;
+}
