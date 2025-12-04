@@ -11,6 +11,8 @@ const onsiteCheckbox = document.getElementById("onsite");
 const searchinput = document.getElementById("typing");
 const infoText = document.getElementById("info");
 const infomessage = document.getElementById("infomessage");
+const filterButton = document.querySelector(".filterbutton");
+const containerFilter = document.querySelector(".containerfilter");
 
 let allChallenges = []; // sparar alla för framtida filter/sortering om det behövs
 
@@ -49,6 +51,11 @@ function loadChallenges() {
     .then((challenges) => {
       allChallenges = challenges; // spara allt i en array
 
+      cardsContainer.classList.remove("error");
+      filterButton.classList.remove("hidden");
+      containerFilter.classList.remove("hidden");
+      infomessage.classList.remove("hidden");
+
       if (topThreeContainer) {
         displayTopThree(allChallenges);
       }
@@ -58,7 +65,23 @@ function loadChallenges() {
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
-      cardsContainer.innerHTML = "<p>Could not load challenges.</p>";
+      cardsContainer.innerHTML = "";
+      cardsContainer.classList.add("error");
+      filterButton.classList.add("hidden");
+      containerFilter.classList.add("hidden");
+      infomessage.classList.add("hidden");
+
+      const errorDiv = document.createElement("div");
+      const errorMessage = document.createElement("h3");
+      errorMessage.textContent = "Sorry, " + error.message;
+      const errorImg = document.createElement("img");
+      errorImg.src = "img/images/error.png";
+      errorImg.alt = "Error icon";
+      errorDiv.appendChild(errorMessage);
+      errorDiv.appendChild(errorImg);
+
+      errorDiv.classList.add("errorDiv");
+      cardsContainer.appendChild(errorDiv);
     });
 }
 
