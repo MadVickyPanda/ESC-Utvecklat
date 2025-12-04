@@ -88,6 +88,15 @@ function showStep1({ overlay, headerEl, contentEl, challenge, onNext }) {
   const cancelBtn = contentEl.querySelector("#booking-cancel");
   const nextBtn = contentEl.querySelector("#booking-next-1");
 
+  if (dateInput) {
+    dateInput.addEventListener("input", () => {
+      errorEl.textContent = "";
+    });
+    dateInput.addEventListener("change", () => {
+      errorEl.textContent = "";
+    });
+  }
+
   cancelBtn.addEventListener("click", () => {
     overlay.classList.add("booking-hidden");
   });
@@ -95,7 +104,7 @@ function showStep1({ overlay, headerEl, contentEl, challenge, onNext }) {
   nextBtn.addEventListener("click", async () => {
     const date = dateInput.value;
     if (!date) {
-      errorEl.textContent = "Please choose a date.";
+      errorEl.textContent = "Välj ett datum innan du går vidare.";
       return;
     }
 
@@ -173,6 +182,16 @@ function showStep2({
   const backBtn = contentEl.querySelector("#booking-back");
   const nextBtn = contentEl.querySelector("#booking-next-2");
 
+  [timeSelect, participantsSelect, nameInput, emailInput].forEach((el) => {
+    if (!el) return;
+    el.addEventListener("input", () => {
+      errorEl.textContent = "";
+    });
+    el.addEventListener("change", () => {
+      errorEl.textContent = "";
+    });
+  });
+
   backBtn.addEventListener("click", () => {
     onBack();
   });
@@ -184,13 +203,15 @@ function showStep2({
     const email = emailInput.value.trim();
 
     if (!time || !participants || !name || !email) {
-      errorEl.textContent = "Please fill in all fields.";
+      errorEl.textContent = "Fyll i alla fält innan du går vidare.";
       return;
     }
     if (!email.includes("@")) {
-      errorEl.textContent = "Please enter a valid email.";
+      errorEl.textContent = "Ange en giltig e-postadress.";
       return;
     }
+
+    errorEl.textContent = "";
 
     onNext({ time, participants, name, email });
   });
