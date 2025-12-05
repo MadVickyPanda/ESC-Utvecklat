@@ -51,10 +51,21 @@ function loadChallenges() {
     .then((challenges) => {
       allChallenges = challenges; // spara allt i en array
 
-      cardsContainer.classList.remove("error");
-      filterButton.classList.remove("hidden");
-      containerFilter.classList.remove("hidden");
-      infomessage.classList.remove("hidden");
+      if (cardsContainer) {
+        cardsContainer.classList.remove("error");
+      }
+      if (topThreeContainer) {
+        topThreeContainer.classList.remove("error");
+      }
+      if (filterButton) {
+        filterButton.classList.remove("hidden");
+      }
+      if (containerFilter) {
+        containerFilter.classList.remove("hidden");
+      }
+      if (infomessage) {
+        infomessage.classList.remove("hidden");
+      }
 
       if (topThreeContainer) {
         displayTopThree(allChallenges);
@@ -65,23 +76,36 @@ function loadChallenges() {
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
-      cardsContainer.innerHTML = "";
-      cardsContainer.classList.add("error");
-      filterButton.classList.add("hidden");
-      containerFilter.classList.add("hidden");
-      infomessage.classList.add("hidden");
+      if (filterButton) filterButton.classList.add("hidden");
+      if (containerFilter) containerFilter.classList.add("hidden");
+      if (infomessage) infomessage.classList.add("hidden");
 
-      const errorDiv = document.createElement("div");
-      const errorMessage = document.createElement("h3");
-      errorMessage.textContent = "Sorry, " + error.message;
-      const errorImg = document.createElement("img");
-      errorImg.src = "img/images/error.png";
-      errorImg.alt = "Error icon";
-      errorDiv.appendChild(errorMessage);
-      errorDiv.appendChild(errorImg);
+      if (cardsContainer) {
+        cardsContainer.innerHTML = "";
+        cardsContainer.classList.add("error");
 
-      errorDiv.classList.add("errorDiv");
-      cardsContainer.appendChild(errorDiv);
+        const errorDiv = document.createElement("div");
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent = "Sorry.... " + error.message;
+        const errorImg = document.createElement("img");
+        errorImg.src = "img/images/error.png";
+        errorImg.alt = "Error icon";
+        errorDiv.appendChild(errorMessage);
+        errorDiv.appendChild(errorImg);
+
+        errorDiv.classList.add("errorDiv");
+        cardsContainer.appendChild(errorDiv);
+      }
+      if (topThreeContainer) {
+        topThreeContainer.innerHTML = "";
+        topThreeContainer.classList.add("error");
+        const errorDiv = document.createElement("div");
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent = "Sorry.... " + error.message;
+        errorDiv.appendChild(errorMessage);
+        errorDiv.classList.add("errorDiv");
+        topThreeContainer.appendChild(errorDiv);
+      }
     });
 }
 

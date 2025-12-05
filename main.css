@@ -72,7 +72,7 @@ figcaption {
 
 .onsiteBtn {
   align-content: center;
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   border: none;
   border-radius: 0.25rem;
   color: black;
@@ -85,7 +85,7 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
 
 .onsiteBtn::before {
@@ -95,12 +95,12 @@ figcaption {
 }
 
 .onsiteBtn::before {
-  content : "\f015";
+  content: "\f015";
 }
 .mobileOnline {
   background-color: white;
   border: none;
-  color: #36769D;
+  color: #36769d;
   display: flex;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -117,7 +117,7 @@ figcaption {
 }
 
 .mobileOnline::before {
-  content : "\e163";
+  content: "\e163";
 }
 
 .userImg {
@@ -137,7 +137,6 @@ figcaption {
   font-weight: 400;
   width: 60%;
   margin-left: 2rem;
-  
 }
 
 .reviewTwo {
@@ -193,14 +192,14 @@ figcaption {
   gap: 1.87rem;
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   padding-right: 1rem;
 }
 
 .roomTitle {
   font-size: 18px;
   font-weight: 400;
-  text-align: left; 
+  text-align: left;
   padding-left: 0.43rem;
 }
 
@@ -216,7 +215,7 @@ figcaption {
 }
 
 .cardTwo {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -227,7 +226,7 @@ figcaption {
 }
 
 .cardThree {
- background-color: white;
+  background-color: white;
   border: #011827;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.233);
@@ -256,18 +255,17 @@ figcaption {
   padding: 0.43rem;
   margin: 0;
   text-align: justify;
-  
 }
 
 .btnDiv {
   display: flex;
   justify-content: end;
-  margin-bottom: 1.25rem; 
+  margin-bottom: 1.25rem;
   margin-right: 1.25rem;
 }
 
 .cardBtn {
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.4rem;
   color: white;
@@ -277,12 +275,11 @@ figcaption {
   font-weight: 700;
   height: 3rem;
   width: 11.2rem;
-  
 }
 
 .onsiteBtnTwo {
   align-content: center;
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   border: none;
   border-radius: 0.25rem;
   color: black;
@@ -295,9 +292,8 @@ figcaption {
   margin-top: 1.87rem;
   text-align: center;
   text-decoration: none;
-  width: 70%; 
+  width: 70%;
 }
-
 
 .onsiteBtnTwo::before {
   font-family: "Font Awesome 6 Free";
@@ -306,14 +302,13 @@ figcaption {
 }
 
 .onsiteBtnTwo::before {
-  content : "\f015";
+  content: "\f015";
 }
-
 
 .mobileOnlineTwo {
   background-color: white;
   border: none;
-  color: #36769D;
+  color: #36769d;
   display: flex;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -327,7 +322,6 @@ figcaption {
   display: none;
 }
 
-
 .mobileOnlineTwo::before {
   font-family: "Font Awesome 6 Free";
   margin-right: 0.625rem;
@@ -335,9 +329,8 @@ figcaption {
 }
 
 .mobileOnlineTwo::before {
-  content : "\e163";
+  content: "\e163";
 }
-
 
 .about {
   background-color: #011827;
@@ -345,7 +338,7 @@ figcaption {
   font-weight: 400;
   margin-top: 1.875rem;
   padding-bottom: 1.875rem;
-  text-align: center; 
+  text-align: center;
 }
 
 .aboutText {
@@ -354,14 +347,14 @@ figcaption {
   text-align: center;
   padding-left: 1.56rem;
   padding-right: 1.56rem;
-  padding-top: 2.5rem; 
+  padding-top: 2.5rem;
 }
 
 .aboutBtn {
   background-color: #011827;
-  border-color: #8ACFE5;
+  border-color: #8acfe5;
   border-radius: 0.25rem;
-  color: #8ACFE5;
+  color: #8acfe5;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   height: 4.12rem;
@@ -374,7 +367,6 @@ figcaption {
 .bookingImg {
   height: 18.75rem;
   width: 100%;
-  
 }
 
 .bookingHead {
@@ -397,7 +389,7 @@ figcaption {
 
 .bookingBtn {
   align-items: center;
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.25rem;
   color: white;
@@ -409,7 +401,7 @@ figcaption {
   height: 4.12rem;
   margin-bottom: 3.12rem;
   margin-left: 1.5rem;
-  width: 70%; 
+  width: 70%;
 }
 
 .challengesImg {
@@ -437,7 +429,7 @@ figcaption {
 
 .challengesBtn {
   align-items: center;
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   border-radius: 0.25rem;
   color: white;
@@ -501,8 +493,21 @@ h4 {
   list-style: none;
 }
 
-@media (min-width: 600px) {
+#top-three.error {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
 
+.errorDiv {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  color: #011827;
+  text-shadow: 1px 1px 1px #011827;
+}
+
+@media (min-width: 600px) {
   html,
   body {
     justify-content: center;
@@ -529,7 +534,6 @@ h4 {
     font-family: "Roboto", sans-serif;
     height: 12rem;
     width: auto;
-    
   }
 
   .myCover {
@@ -543,19 +547,19 @@ h4 {
     gap: 6rem;
     justify-content: center;
     list-style: none;
-    margin-top: -3rem; 
+    margin-top: -3rem;
   }
-  .hamburgerMenu{
+  .hamburgerMenu {
     display: none;
   }
-  .popupMenu{
+  .popupMenu {
     display: none;
   }
   .playOne:hover,
   .playTwo:hover,
   .story:hover,
   .contact:hover {
-    color: #8ACFE5;
+    color: #8acfe5;
   }
 
   .playOne {
@@ -567,7 +571,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   .playTwo {
@@ -579,7 +583,7 @@ h4 {
     font-style: bold;
     font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   .story {
@@ -590,8 +594,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .contact {
@@ -602,8 +606,8 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-style: bold;
     font-size: 1.3rem;
-    font-weight: 700; 
-    text-decoration: none; 
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .btnsNav {
@@ -623,7 +627,7 @@ h4 {
 
   .onlineBtn {
     align-content: center;
-    background-color: #E3170A;
+    background-color: #e3170a;
     border: none;
     border-radius: 0.25rem;
     color: white;
@@ -637,20 +641,19 @@ h4 {
     width: 16rem;
   }
 
-  
   .onlineBtn::before {
     font-family: "Font Awesome 6 Free";
     margin-right: 0.625rem;
     font-size: 1.25rem;
   }
-  
+
   .onlineBtn::before {
-    content : "\e163";
+    content: "\e163";
   }
 
   .onsiteBtn {
     align-content: center;
-    background-color: #8ACFE5;
+    background-color: #8acfe5;
     border: none;
     border-radius: 0.25rem;
     color: black;
@@ -663,15 +666,15 @@ h4 {
     text-decoration: none;
     width: 16rem;
   }
-   
+
   .onsiteBtn::before {
     font-family: "Font Awesome 6 Free";
     margin-right: 0.625rem;
     font-size: 1.25rem;
   }
-  
+
   .onsiteBtn::before {
-    content : "\f015";
+    content: "\f015";
   }
 
   .userImg {
@@ -710,16 +713,16 @@ h4 {
     justify-content: left;
     width: 60%;
   }
-  
-  .popular{
+
+  .popular {
     margin-top: -6rem;
   }
-  
+
   .scroll {
     justify-content: center;
     width: 1280px;
   }
- 
+
   #top-three {
     width: 1280px;
     margin: 0 auto;
@@ -750,7 +753,7 @@ h4 {
 
   .onlineBtnTwo {
     align-content: center;
-    background-color: #E3170A;
+    background-color: #e3170a;
     border: none;
     border-radius: 0.25rem;
     color: white;
@@ -763,22 +766,21 @@ h4 {
     text-decoration: none;
     width: 16rem;
   }
-  .onsiteBtnTwo{
+  .onsiteBtnTwo {
     display: block;
     font-size: 1.12rem;
     height: 3.4rem;
     width: 16rem;
   }
 
-    
   .onlineBtnTwo::before {
     font-family: "Font Awesome 6 Free";
     margin-right: 0.625rem;
     font-size: 1.25rem;
   }
-  
+
   .onlineBtnTwo::before {
-    content : "\e163";
+    content: "\e163";
   }
 
   .about {
@@ -811,15 +813,13 @@ h4 {
     text-align: left;
     padding-top: 3rem;
     width: 20rem;
-
   }
 
   .bookingText {
     display: flex;
     width: 20rem;
-
   }
-  .bookingBtn{
+  .bookingBtn {
     width: 15rem;
   }
   .challengesHead {
@@ -839,17 +839,15 @@ h4 {
     height: 24rem;
     margin: 0;
     width: 32rem;
-    
   }
 
   .challengesText {
     margin: 1.5rem 0;
     width: 20rem;
   }
-  .challengesBtn{
+  .challengesBtn {
     margin: 0;
     width: 15rem;
-    
   }
   footer {
     align-items: center;
@@ -864,7 +862,6 @@ h4 {
   .footerAbout {
     display: flex;
     flex-direction: column;
-
   }
 
   h4 {
@@ -887,5 +884,16 @@ h4 {
     margin-left: 3rem;
   }
 
-  
+  #top-three.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .errorDiv {
+    font-size: 25px;
+    color: #011827;
+    text-shadow: 1px 1px 1px #011827;
+  }
 }

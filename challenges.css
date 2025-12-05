@@ -292,7 +292,12 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+}
+
+.errorDiv p {
+  font-size: 40px;
+  color: #011827;
+  text-shadow: 1px 1px 2px #011827;
 }
 
 #cards-container.error {
