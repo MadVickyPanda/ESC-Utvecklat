@@ -120,6 +120,7 @@ function createCard(data) {
     for (let i = 49; i >= 0; i-- {
       if (data.description.charAt(i) == " ") {
         roomInfo.textContent = data.description.slice(0, index) + "...";
+        break;
       }
     }
   } else {
