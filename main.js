@@ -19,7 +19,7 @@ let searchKeyword = "";
 let includeOnline = false;
 let includeOnsite = false;
 
-// Rating-värden kommer från stars.js via window.updateRatingFilter
+// Rating-värden kommer från stars.js
 let currentRatingMin = 0;
 let currentRatingMax = 5;
 
@@ -92,15 +92,6 @@ function createCard(data) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  card.dataset.id = data.id;
-  card.dataset.type = data.type;
-  card.dataset.title = data.title;
-  card.dataset.description = data.description;
-  card.dataset.minParticipants = data.minParticipants;
-  card.dataset.maxParticipants = data.maxParticipants;
-  card.dataset.rating = data.rating;
-  card.dataset.labels = data.labels;
-
   const cardImage = document.createElement("img");
   cardImage.src = data.image || "/img/images/hacker.png";
   cardImage.alt = `Image for ${data.title}`;
@@ -168,21 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
   startApp();
 });
 
-// skapa "No match found" message
-// const noMatchMessage = document.createElement("p");
-// noMatchMessage.id = "noMatchMessage";
-// noMatchMessage.textContent = "No match found";
-// noMatchMessage.style.display = "none";
-// noMatchMessage.style.textAlign = "center";
-// noMatchMessage.style.padding = "10px";
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const cardsContainer = document.getElementById("cards-container");
-//   if (cardsContainer) {
-//     cardsContainer.insertAdjacentElement("beforebegin", noMatchMessage);
-//   }
-// });
-
 // Click events för tag buttons
 tagIds.forEach((tagId) => {
   const btn = document.getElementById(tagId);
@@ -204,30 +180,6 @@ tagIds.forEach((tagId) => {
   }
 });
 
-// Funktion för att filtrera challenges baserad på aktiva tags
-// function filterChallengesByTags() {
-//   if (activeTags.length === 0) {
-//     displayCards(allChallenges);
-//     noMatchMessage.style.display = "none";
-//     return;
-//   }
-
-//   const filtered = allChallenges.filter((challenge) => {
-//     let labels = challenge.labels || [];
-//     const labelsLower = labels.map((l) => l.toLowerCase());
-//     return activeTags.every((tag) => labelsLower.includes(tag));
-//   });
-
-//   displayCards(filtered);
-
-//   // Visa/dölj "NO MATCH FOUND" message
-//   if (filtered.length === 0) {
-//     noMatchMessage.style.display = "block";
-//   } else {
-//     noMatchMessage.style.display = "none";
-//   }
-// }
-
 // Function för att filtrera challenges baserad på keyword
 infoText.textContent = "";
 if (searchinput) {
@@ -236,22 +188,6 @@ if (searchinput) {
     applyAllFilters();
   });
 }
-// if (searchinput) {
-//   searchinput.addEventListener("keyup", (e) => {
-//     const currentvalue = e.target.value.trim().toLowerCase();
-
-//     const filtered = allChallenges.filter((challenge) => {
-//       const title = String(challenge.title || "").toLowerCase();
-//       return title.includes(currentvalue);
-//     });
-
-//     displayCards(filtered);
-//     if (filtered.length === 0) {
-//       infomessage.style.display = "block";
-//       infoText.textContent = "No match found";
-//     } else infomessage.style.display = "none";
-//   });
-// }
 
 function filterChallengesByType() {
   includeOnline = !!(onlineCheckbox && onlineCheckbox.checked);
