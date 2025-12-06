@@ -163,7 +163,16 @@ function createCard(data) {
 
   const roomInfo = document.createElement("p");
   roomInfo.classList.add("roomInfo");
-  roomInfo.innerHTML = data.description;
+  if (data.description.length > 50) {
+    for (let i = 49; i >= 0; i-- {
+      if (data.description.charAt(i) == " ") {
+        roomInfo.textContent = data.description.slice(0, index) + "...";
+        break;
+      }
+    }
+  } else {
+    roomInfo.textContent = data.description;
+  }
 
   const btnDiv = document.createElement("div");
   btnDiv.classList.add("btnDiv");
