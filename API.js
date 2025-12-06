@@ -4,7 +4,8 @@ export async function fetchChallenges() {
   const response = await fetch(API_URL);
 
   if (!response.ok) {
-    throw new Error("Network response was not ok");
+    const errorText = await response.text();
+    const error = new Error(errorText || "Network response failed");
   }
 
   const data = await response.json();
@@ -12,6 +13,5 @@ export async function fetchChallenges() {
   //console.loggar bara för eran skull om det är något ni vill se
   console.log(data.challenges);
   console.log(data);
-  // API:t returnerar { challenges: [...] }
-  return data.challenges; // <-- returnerar arrayen direkt
+  return data.challenges;
 }

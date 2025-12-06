@@ -112,7 +112,8 @@ function showStep1({ overlay, headerEl, contentEl, challenge, onNext }) {
     const today = new Date().toISOString().split("T")[0];
 
     if (date < today) {
-      errorEl.textContent = "Du kan inte välja ett datum som redan har passerat.";
+      errorEl.textContent =
+        "Du kan inte välja ett datum som redan har passerat.";
       return;
     }
 
