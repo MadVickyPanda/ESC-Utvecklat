@@ -103,8 +103,17 @@ function showStep1({ overlay, headerEl, contentEl, challenge, onNext }) {
 
   nextBtn.addEventListener("click", async () => {
     const date = dateInput.value;
+
     if (!date) {
       errorEl.textContent = "Välj ett datum innan du går vidare.";
+      return;
+    }
+
+    const today = new Date().toISOString().split("T")[0];
+
+    if (date < today) {
+      errorEl.textContent =
+        "Du kan inte välja ett datum som redan har passerat.";
       return;
     }
 
